@@ -1,0 +1,41 @@
+@import "../../layout/content-sidebar";
+// @import "../layout/sidebar-content";
+
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+@import "woocommerce-single";
+@import "primary/posts-and-pages";
+@import "default"; // pm resets
+@import "home"; // home page
+@import "about-us"; // about us page
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+@import "primary/comments";
+
+/* ----- Theme ----- */
+
+/* ----- Global Elements ----- */
+// remove single post thumbnails
+.post-thumbnail {
+	display: none;
+}
+// page title hide on all posts & pages
+.entry-header {
+  display: none;
+}
+// all posts & pages spacing top bottom (not home)
+.site-content {
+	// padding-top: 5.25rem; // header height padding
+}
+.single .entry-content {
+	margin-top: 0;
+}
+@include media-breakpoint-up(lg) {
+	.site-content {
+		// padding-top: 8.125rem; // header height padding
+	}
+}
+/* ----- /Global Elements ----- */

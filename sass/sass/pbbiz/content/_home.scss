@@ -1,0 +1,63 @@
+/* ----- Main Home ----- */
+
+// ----- row 1 master slider -----
+
+
+// ----- row 2 new item loop -----
+.row-new-products .wp-block-column .wp-block-image {
+  margin: 0 auto;
+  max-width: 6rem;
+}
+.row-new-products .wp-block-column > h2 {
+  color: #fff;
+}
+.row-new-products .wp-block-column > p {
+  color: #fff;
+  text-align: center;
+}
+.row-new-products .product-carousel {
+  @include flexbox;
+  @include justify-content(space-between)
+}
+.row-new-products .card-wrapper {
+  max-width: 18%;
+  @include box-shadow(0px 10px 22px 0px rgba(0,0,0,0.75));
+}
+.row-new-products .card-thumbnail-fl img {
+  max-height: 230px;
+}
+
+//
+@include media-breakpoint-down(lg) { // 1199.98px and down
+
+}
+@include media-breakpoint-down(md) { // 991.98px and down
+
+}
+@include media-breakpoint-down(sm) { // 767.98px and down
+
+}
+@include media-breakpoint-down(xs) { // 575.98px and down
+
+}
+
+
+
+@include media-breakpoint-up(sm) { // 576px and up
+  .row-new-products .wp-block-column .wp-block-image {
+    max-width: 8rem;
+  }
+}
+@include media-breakpoint-up(md) { // 768px and up
+
+}
+@include media-breakpoint-up(lg) { // 992px and up
+  .row-new-products .wp-block-column .wp-block-image {
+    max-width: 9rem;
+  }
+}
+@include media-breakpoint-up(xl) { // 1200px and up
+  .row-new-products .wp-block-column .wp-block-image {
+    max-width: 12rem;
+  }
+}

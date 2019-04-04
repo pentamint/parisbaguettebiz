@@ -1,0 +1,47 @@
+// post navigation
+.post-navigation {
+  width: 100%;
+  min-height: 1.5em;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 6em;
+}
+.nav-next {
+  float: right;
+}
+.nav-previous {
+  float: left;
+  margin-bottom: 1em;
+}
+.nav-next::after{
+  content: "→";
+}
+.nav-previous::before {
+  content: "←";
+}
+/* / */
+@media (min-width: 576px) {
+  .post-navigation {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .post-navigation {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .post-navigation {
+    max-width: 960px;
+    margin-bottom: 4em;
+  }
+}
+@media (min-width: 1200px) {
+  .post-navigation {
+    max-width: 1140px;
+    margin-bottom: 5em;
+  }
+}
+/* ----- /Single.php ----- */

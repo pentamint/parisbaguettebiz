@@ -1,0 +1,34 @@
+@import "default";
+
+/* custom style */
+
+// ----- Layout ----- //
+.footer-wrapper {
+  padding: 4rem 0 2rem 0;
+}
+#footer-sidebar {
+  // @include font-size(0.8125);
+}
+#footer-sidebar > div {
+  margin-bottom: 1.25rem;
+}
+#menu-footer-menu li {
+	margin-bottom: .25rem;
+}
+.colophon-wrapper {
+  padding: 0.9375rem 0;
+}
+#colophon {
+  // @include font-size(0.6875);
+}
+//
+@include media-breakpoint-up(md) {
+
+}
+// Daum Map
+.root_daum_roughmap {
+  width: 100% !important;
+}
+.root_daum_roughmap .wrap_map {
+  height: 200px !important;
+}

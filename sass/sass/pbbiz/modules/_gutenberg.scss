@@ -1,0 +1,47 @@
+/* ----- Bug fixes ----- */
+.has-1-columns .wp-block-column { // row 1col bug fix
+  margin-right: auto !important; // bootstrap col center
+  margin-left: auto !important; // bootstrap col center
+  flex-basis: 100%;
+}
+.has-2-columns .wp-block-column { // row 2cols bug fix
+  flex-basis: calc((100% - 30px) / 2);
+}
+/* ----- /Bug fixes ----- */
+/* ----- Defaults ----- */
+// row top bottom margin
+.wp-block-columns {
+  padding: 4rem 0 4rem;
+}
+//
+// add flex attr to containers within gutenberg columns
+.wp-block-columns .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+@include media-breakpoint-up(md) {
+  .wp-block-columns .container {
+    flex-wrap: nowrap;
+  }
+}
+//
+// enclose elements within column
+.wp-block-column {
+  position: relative;
+}
+// word wrap
+.wp-block-column {
+  word-break: keep-all;
+}
+// remove column bottom margin
+.wp-block-column {
+  margin-bottom: 0;
+}
+// grid layout
+.wp-block-column:not(:last-child), .wp-block-column:nth-child(odd) {
+  margin-right: 30px; // adjust mr right
+}
+.wp-block-column:not(:first-child), .wp-block-column:nth-child(even) {
+  margin-left: 0 !important; // remove mr left
+}
+//

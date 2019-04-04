@@ -1,0 +1,22 @@
+/* ----- page name ----- */
+
+.icon-wrap {
+  @include flexbox;
+  @include justify-content(space-between);
+}
+.logo-in-product {
+  margin-bottom: 2rem;
+}
+
+@include media-breakpoint-up(sm) { // 576px and up
+
+}
+@include media-breakpoint-up(md) { // 768px and up
+
+}
+@include media-breakpoint-up(lg) { // 992px and up
+
+}
+@include media-breakpoint-up(xl) { // 1200px and up
+
+}

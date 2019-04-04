@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'NanumBarunGothic';
+    src: url(/pbbiz/wp-content/themes/paris-baguette-biz/fonts/NanumBarunGothicWebLight.eot);
+    src: url(/pbbiz/wp-content/themes/paris-baguette-biz/fonts/NanumBarunGothicWebLight.eot?#iefix) format('embedded-opentype'),
+         url(/pbbiz/wp-content/themes/paris-baguette-biz/fonts/NanumBarunGothicWebLight.woff) format('woff'),
+         url(/pbbiz/wp-content/themes/paris-baguette-biz/fonts/NanumBarunGothicWebLight.ttf) format('truetype');
+    font-weight:300;
+   }
+   @font-face {
+    font-family: 'NanumBarunGothic';
+    src: url(/pbbiz/wp-content/themes/paris-baguette-biz/fonts/NanumBarunGothicWeb.eot);
+    src: url(/pbbiz/wp-content/themes/paris-baguette-biz/fonts/NanumBarunGothicWeb.eot?#iefix) format('embedded-opentype'),
+         url(/pbbiz/wp-content/themes/paris-baguette-biz/fonts/NanumBarunGothicWeb.woff) format('woff'),
+         url(/pbbiz/wp-content/themes/paris-baguette-biz/fonts/NanumBarunGothicWeb.ttf) format('truetype');
+    font-weight:400;
+   }
+   @font-face {
+    font-family: 'NanumBarunGothic';
+    src: url(/pbbiz/wp-content/themes/paris-baguette-biz/fonts/NanumBarunGothicWebBold.eot);
+    src: url(/pbbiz/wp-content/themes/paris-baguette-biz/fonts/NanumBarunGothicWebBold.eot?#iefix) format('embedded-opentype'),
+         url(/pbbiz/wp-content/themes/paris-baguette-biz/fonts/NanumBarunGothicWebBold.woff) format('woff'),
+         url(/pbbiz/wp-content/themes/paris-baguette-biz/fonts/NanumBarunGothicWebBold.ttf) format('truetype');
+    font-weight:700;
+   }
+
+$font__main: 'Noto Sans KR', 'Roboto', sans-serif;
+$font__kor: 'Noto Sans KR', sans-serif;
+$font__eng: 'Roboto', sans-serif;
+$font__nav: 'Montserrat', 'NanumBarunGothic', sans-serif;
+$font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font__pre: "Courier 10 Pitch", Courier, monospace;
+$font__line-height-body: 1.5;
+$font__line-height-pre: 1.6;

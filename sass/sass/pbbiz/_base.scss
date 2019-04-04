@@ -1,0 +1,10 @@
+html {
+  visibility: hidden; /* js changes to shown after page load */
+}
+body {
+  -webkit-tap-highlight-color:transparent; /* 클릭 하이라이트 제거 */
+  word-break: keep-all; /* Wordwrap 설정 */
+}
+button:focus {
+  outline: none;
+}

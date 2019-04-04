@@ -1,0 +1,14 @@
+/* 2 columns footer col-md-3 col-md-9 */
+
+// remove edit button
+.entry-footer {
+  display: none;
+}
+.footer-wrapper {
+  background-color: $color__background-footer;
+  border-top: 3px solid $color__border-footer;
+}
+.colophon-wrapper {
+  background-color: $color__background-colophon;
+  border-top: 1px solid $color__border-colophon;
+}

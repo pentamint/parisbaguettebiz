@@ -1,0 +1,12 @@
+// set main content layout
+$size__site-main: 100%;
+$size__site-sidebar: 25%;
+
+// set mobile menu breakpoint: xs / sm / md / lg / xl
+$breakpoint__mobile-nav: lg;
+
+// set main menu flex direction: column / row
+$flex-direction__main-nav: row;
+
+// set main menu justify content: flex-start / flex-end / center / space-between / space-around
+$justify-content__main-nav: space-between;

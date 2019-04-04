@@ -1,0 +1,14 @@
+.navbar .navbar-nav .menu-item .nav-link {
+	font-family: $font__nav;
+}
+@include media-breakpoint-up($breakpoint__mobile-nav) {
+	.navbar-toggle {
+		display: none !important; // hide hamburger on larger devices
+	}
+	.navbar-nav {
+		@include justify-content(center);
+	}
+	.navbar-nav .dropdown-menu.show {
+		position: absolute; // dropdown ignore width
+	}
+}

@@ -1,0 +1,90 @@
+// ----- Theme Typography
+
+// --- font size
+// - var
+$min_width: 320px;
+$max_width: 1200px;
+$min_font: 13px;
+$max_font: 18px;
+
+$mod_1: 1.1; // mobile
+$mod_2: 1.2; // desktop
+
+// - usage
+html {
+  @include fluid-type($min_width, $max_width, $min_font, $max_font);
+}
+h1 {
+  font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem;
+  @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2*$mod_2 *$min_font);
+	font-weight: 700;
+}
+h2 {
+  font-size: $mod_1*$mod_1*$mod_1 *1rem;
+  @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+	font-weight: 700;
+}
+h3 {
+  font-size: $mod_1*$mod_1 *1rem;
+  @include fluid-type($min_width, $max_width, $mod_1*$mod_1 *$min_font, $mod_2*$mod_2 *$min_font);
+	font-weight: 700;
+}
+.entry-title {
+
+}
+.widget-title {
+	margin-bottom: 1rem;
+}
+// footer colophon
+.site-info {
+  @include fluid-type($min_width, $max_width, 0.8 *$min_font, 1 *$min_font);
+}
+.post_title {
+
+}
+.row_title {
+	color: $color__text-title;
+}
+.row_subtitle {
+	@include font-size(1.5);
+	color: $color__text-subtitle;
+	font-weight: 700;
+	margin-bottom: 1.25rem;
+}
+.row_p {
+
+}
+
+// Page Layout
+.row2 {
+	background-color: $color__background-row2;
+}
+.row4 {
+	background-color: $color__background-row4;
+}
+.row2 .wp-block-column, .row4 .wp-block-column { // enable child z-index lower than parent
+	z-index: 0;
+}
+// Page Elements
+// row separator
+hr {
+	background-color: transparent;
+	border-bottom: 2px solid transparent;
+	border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+	border-image-slice: 1;
+	height: 2px;
+	margin: 9px;
+	width: 100%;
+	z-index: -1; // enable inline separator
+}
+// bordered block outer & inner
+
+// post loops
+.card-title { // post loop grid outer
+  background-color: #f6cb5f;
+  padding: 1rem .25rem;
+  text-align: center;
+}
+.card-title a { // post loop grid inner
+  font-weight: 700;
+}

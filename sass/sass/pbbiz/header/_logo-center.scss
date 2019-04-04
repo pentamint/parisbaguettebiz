@@ -1,0 +1,24 @@
+.site-branding {
+  text-align: center;
+}
+@include media-breakpoint-up(lg) {
+  .site-header.sticky .site-branding {
+    margin: 0;
+    padding: .5rem 0;
+    text-align:left ;
+  }
+  .site-header.sticky .navbar {
+    position: absolute;
+  }
+  .site-header.sticky .navbar-collapse {
+    padding-top: 0;
+  }
+  .site-header.sticky .navbar-collapse ul {
+    border-top: none;
+  }
+  .site-header.sticky .navbar-nav {
+    position: absolute;
+    top: 15px;
+    right: 0;
+  }
+}

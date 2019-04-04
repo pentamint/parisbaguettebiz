@@ -1,0 +1,22 @@
+.site-header {
+  top: 0;
+}
+.site-header.sticky {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+.site-header.sticky {
+  background-color: $color__background-header-sticky;
+}
+@media screen and (min-width: 601px) {
+  .admin-bar .site-header {
+    top: 46px;
+  }
+}
+@media screen and (min-width: 783px) {
+  .admin-bar .site-header {
+    top: 32px;
+  }
+}

@@ -1,0 +1,54 @@
+@import "default";
+
+/*--------------------------------------------------------------
+## Header background: block / transparent
+--------------------------------------------------------------*/
+// @import "transparent";
+
+/*--------------------------------------------------------------
+## Logo position: logo-center / logo-right
+--------------------------------------------------------------*/
+@import "logo-left";
+// @import "logo-center";
+// @import "logo-right";
+
+/*--------------------------------------------------------------
+## Header on scroll: block / fixed
+--------------------------------------------------------------*/
+@import "fixed";
+
+/*--------------------------------------------------------------
+## Secondary navigation bar
+--------------------------------------------------------------*/
+// @import "secondary-bar";
+
+/* ----- Theme ----- */
+
+
+// VAR - on scroll fixed header height
+.header-sticky-height {
+  height: 61.42px;
+}
+// VAR - logo spacing: top & bottom
+.site-branding {
+  padding: 1.5625rem 0;
+  text-align: center; // center logo
+}
+// logo size: responsive % / fixed unit
+.custom-logo-link {
+  max-width: 16rem;
+}
+.site-header.sticky .custom-logo-link {
+  max-width: 16rem;
+}
+@include media-breakpoint-up($breakpoint__mobile-nav) {
+  .site-branding {
+    text-align: left;
+  }
+  .custom-logo-link {
+    max-width: 14rem;
+  }
+  .site-header.sticky .custom-logo-link {
+    max-width: 14rem;
+  }
+}
