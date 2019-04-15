@@ -1,0 +1,5 @@
+@include media-breakpoint-up($breakpoint__mobile-nav) { // <- set bootstrap mobile menu breakpoint
+    #top-header .navbar {
+        padding: 0; // remove top and bottom padding
+    }
+}

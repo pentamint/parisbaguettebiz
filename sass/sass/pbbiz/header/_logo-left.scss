@@ -1,31 +1,17 @@
 @include media-breakpoint-up($breakpoint__mobile-nav) {
-  // reset fullwidth menu width
-  .navbar, .nav-wrapper {
-    width: auto;
+  // align logo left
+  .site-branding {
+    text-align: left;
   }
   // align menu right
   .navbar {
-		padding: 1.27rem 0;
     left: auto;
     right: 0;
-  }
-  .site-header.sticky .site-branding {
-    margin: 0;
-    padding: 1.5625rem 0;
-  }
-  .site-header.sticky .navbar {
-    position: absolute;
-    left: 0;
   }
   .site-header.sticky .navbar-collapse {
     padding-top: 0;
   }
   .site-header.sticky .navbar-collapse ul {
     border-top: none;
-  }
-  .site-header.sticky .navbar-nav {
-    position: absolute;
-    top: 15px;
-    right: 0;
   }
 }

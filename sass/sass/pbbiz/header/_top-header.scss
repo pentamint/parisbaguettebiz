@@ -1,0 +1,11 @@
+@include media-breakpoint-up($breakpoint__mobile-nav) { // <- set bootstrap mobile menu breakpoint
+    // top header properties
+    #top-header {
+        background-color: $color__background-top-header;
+        // border-bottom: 2px solid #034a99;
+    }
+    // top header font properties
+    #top-header .nav-link {
+        font-size: .621rem;
+    }
+}

@@ -115,6 +115,15 @@ function pbbiz_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
+		'name'          => 'Top Header Widget', 'PBBiz',
+		'id'            => 'top-header-widget-1',
+		'description'   => 'Add widgets here.', 'PBBiz',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
 		'name' => 'Footer Sidebar 1',
 		'id' => 'footer-sidebar-1',
 		'description' => 'Appears in the footer area',
@@ -215,6 +224,11 @@ require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 
 // Enqueueing Google Fonts
 function custom_add_google_fonts() {
- wp_enqueue_style( 'custom-google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Noto+Sans+KR:400,700|Roboto:400,700', false );
+ wp_enqueue_style( 'custom-google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,700', false );
 }
 add_action( 'wp_enqueue_scripts', 'custom_add_google_fonts' );
+
+// Register Secondary Nav Menu
+register_nav_menus( array(
+	'secondary' => esc_html__( 'Secondary Menu', 'PBBiz' ),
+) );

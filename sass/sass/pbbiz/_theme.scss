@@ -56,6 +56,9 @@ h3 {
 }
 
 // Page Layout
+.row {
+  margin: 0 auto; // separate container & row elements
+}
 .row2 {
 	background-color: $color__background-row2;
 }

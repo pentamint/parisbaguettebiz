@@ -17,44 +17,58 @@
 ## Navigation Layout
 --------------------------------------------------------------*/
 @import "default";
-@import "nav-logo-left";
+@import "nav-row-fit";
+@import "nav-secondary-menu";
 
 /* ----- Theme Codes ----- */
 
-// Navigation Variables
-
-// mobile menu list top spacing
+// Mobile hamburger menu position
+.site-header.sticky .hamburger {
+  padding: 1.75rem 1rem;
+}
+@media screen and (min-width: 783px) {
+  .site-header.sticky .hamburger {
+    padding: 1.75rem 1rem;
+  }
+}
+// Mobile menu list top spacing
 .navbar-collapse {
   padding-top: 7.7rem;
 }
-// mobile menu list max width
+// Mobile menu list max width
 .navbar-collapse.show {
   max-width: 450px;
 }
-// mobile menu item default spacing
-.navbar-nav .nav-link {
+// Mobile menu item spacing
+.navbar-nav > li > .nav-link {
   padding: 0.75rem 1rem;
 }
 
-@include media-breakpoint-up(lg) {
-  // mobile menu list top spacing remove
+@include media-breakpoint-up($breakpoint__mobile-nav) {
+  // Mobile menu list remove top spacing
   .navbar-collapse {
     padding-top: 0;
   }
-  .navbar-nav {
-
+  // PC main header navbar design
+  .menu-primary > ul > li > .nav-link {
+    padding: 0.5rem 2rem;
   }
-  .navbar-collapse ul li:nth-child(1) > a[aria-expanded=true] {
-    color: #90c31f;
+  // PC top header navbar design
+  .menu-secondary > ul > li > .nav-link {
+    padding: 0.75rem 1rem;
   }
-  .navbar-collapse .nav-item:nth-child(1) > .dropdown-menu {
-    border-top: 3px solid #90c31f;
+  // PC main header navbar expanded menu text color
+  .menu-primary > ul > li > a[aria-expanded=true] {
+    color: $color__text-nav-hover;
+  }
+  // PC main header navbar expanded menu top border design
+  .menu-primary > ul > li > .dropdown-menu {
+    border-top: 3px solid #034a99;
   }
 }
 // dropdown menu link color
 .navbar-collapse ul li ul.dropdown-menu.show li a:hover {
-  color: #90c31f;
-  font-weight: 700;
+  color: $color__text-nav-dropdown-hover;
 }
 
 // menu item 2nd spacing
@@ -66,21 +80,19 @@
   @include font-size(0.875);
 }
 @include media-breakpoint-up($breakpoint__mobile-nav) {
-  // lg + menu padding
-  .navbar-nav .nav-link {
-    padding: 0.5rem 2rem;
-  }
   // nav bar position
-  .navbar-collapse {
+  .menu-primary.navbar-collapse {
     ul {
-      border-top: 1px solid #eee;
       li {
         a { // nav link color
           @include font-size(0.875);
           color: $color__text-nav;
           font-weight: 700;
+          transition: transform .5s;
           &:hover {
             color: $color__text-nav-hover;
+            font-weight: 900;
+            transform: scale(1.1);
           }
         }
         ul.dropdown-menu.show {
@@ -96,6 +108,7 @@
                 background-color: $color__background-nav-dropdown-active;
               }
               color: $color__text-nav-dropdown;
+              @include font-size(0.75);
             }
           }
         }
@@ -114,7 +127,7 @@
 .site-header.sticky .navbar-collapse {
   padding-top: 4.5rem;
 }
-@include media-breakpoint-up(lg) {
+@include media-breakpoint-up($breakpoint__mobile-nav) {
   // change header layout on scroll
   .site-header.sticky .site-branding {
     position: relative;
@@ -132,6 +145,9 @@
     float: right;
   }
 }
+
+/* ----- Transitions ----- */
+
 // header transitions
 .site-header, .site-header .site-branding, .site-header .navbar-collapse, .site-header .navbar-collapse ul li:nth-child(3), .site-header .navbar-collapse ul li:nth-child(4) {
   -webkit-transition: 0.5s ease-in-out;

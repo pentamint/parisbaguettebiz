@@ -26,7 +26,35 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'PBBiz' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="container">
+		<div id="top-header">
+			<div class="row container">
+				<?php if ( is_active_sidebar ( 'top-header-widget-1' ) ) : ?>
+					<div id="header-widget-1" class="header-widget widget-area" role="complementary">
+						<?php dynamic_sidebar ( 'top-header-widget-1' ); ?>
+					</div><!-- #header-widget-1 -->
+				<?php endif; ?>
+				<nav class="navbar navbar-default" role="navigation">
+					<div class="nav-wrapper">
+						<div class="collapse navbar-collapse menu-secondary" id="top-navbar-collapse-1">
+							<?php
+								wp_nav_menu( array(
+									'menu'           	=> '',
+									'theme_location'    => 'secondary',
+									'depth'             => 2,
+									'container'         => '',
+									'container_class'   => 'collapse navbar-collapse',
+									'container_id'      => 'top-navbar-collapse-1',
+									'menu_class'        => 'nav navbar-nav',
+									'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+									'walker'            => new wp_bootstrap_navwalker())
+								);
+							?>
+						</div><!-- .navbar-colapse -->
+					</div><!-- .nav-wrapper -->
+				</nav><!-- .navbar -->
+			</div><!-- .row -->
+		</div><!-- #top-header -->
+		<div id="main-header" class="container">
 			<div class="site-branding">
 				<?php
 				the_custom_logo();
@@ -50,7 +78,7 @@
 			<nav class="navbar navbar-default" role="navigation">
 				<div class="nav-wrapper">
 					<!-- Brand and toggle get grouped for better mobile display -->
-					<button type="button" class="navbar-toggle hamburger hamburger--emphatic" data-toggle="collapse" data-target="#navbar-collapse-1">
+					<button type="button" class="navbar-toggle hamburger hamburger--spring" data-toggle="collapse" data-target="#navbar-collapse-1">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="hamburger-box">
     				<span class="hamburger-inner"></span>
@@ -72,7 +100,7 @@
 						?>
 						<div class="menu-overlay"></div>
 					</div><!-- navbar-colapse -->
-				</div><!-- .row -->
+				</div><!-- .nav-wrapper -->
 			</nav>
 		</div><!-- .container -->
 	</header><!-- #masthead -->

@@ -1,9 +1,27 @@
+/*--------------------------------------------------------------
+## Light Website Color theme
+
+-- Primary color
+Blue
+#034a99
+
+-- Secondary color
+
+
+
+-- Accent Color
+Orange
+#d2811e
+
+--------------------------------------------------------------*/
+
 $color__background-body: #fff;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
 $color__background-button: #e6e6e6;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
+$color__background-top-header: #f2f2f2;
 $color__background-header: #fff;
 $color__background-header-sticky: #fff;
 $color__background-footer: #f9f9f9;
@@ -19,7 +37,7 @@ $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
 $color__link: #333; // a font color
-$color__link-hover: #faab00;
+$color__link-hover: #d2811e;
 $color__link-visited: #333;
 $color__text-title: #333; // title font color
 $color__text-subtitle: #666; // subtitle font color
@@ -28,12 +46,13 @@ $color__text-sub: #9a9999; // body font color light
 $color__text-footer: #333; // footer font color
 $color__text-colophon: #969696; // colophon font color
 $color__text-nav: #333; // lg+ main nav font color
-$color__text-nav-hover: #faab00;
+$color__text-nav-hover: #d2811e;
 $color__text-nav-dropdown: #333; // lg+ main nav dropdown font color
-$color__text-nav-dropdown-hover: #fff;
+$color__text-nav-dropdown-hover: #d2811e;
 $color__text-nav-dropdown-active: #f9f9f9;
 
-
+// border color scheme
+$color__border-primary: #034a99;
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
@@ -47,12 +66,12 @@ $color__background-mobile-menu-wrapper: #23282d;
 $color__background-mobile-menu-inner: #23282d;
 $color__background-mobile-menu-dropdown: #32373c;
 $color__background-mobile-menu-list-hover: #191e23;
-$color__background-mobile-menu-list-active: #faab00;
+$color__background-mobile-menu-list-active: #d2811e;
 $color__background-mobile-menu-list-2-hover: #32373c;
 $color__background-mobile-menu-list-2-active: #32373c;
 
 $color__link-mobile-menu-list: #eee;
-$color__link-mobile-menu-list-hover: #faab00;
+$color__link-mobile-menu-list-hover: #d2811e;
 $color__link-mobile-menu-list-active: #fff;
-$color__link-mobile-menu-list-2-hover: #faab00;
+$color__link-mobile-menu-list-2-hover: #d2811e;
 $color__link-mobile-menu-list-2-active: #fff;
