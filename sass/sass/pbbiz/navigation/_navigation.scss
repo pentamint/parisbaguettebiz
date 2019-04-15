@@ -55,7 +55,9 @@
   }
   // PC top header navbar design
   .menu-secondary > ul > li > .nav-link {
-    padding: 0.75rem 1rem;
+    padding: .28rem .75rem;
+    @include font-size(0.621);
+    font-weight: 900;
   }
   // PC main header navbar expanded menu text color
   .menu-primary > ul > li > a[aria-expanded=true] {
@@ -63,7 +65,7 @@
   }
   // PC main header navbar expanded menu top border design
   .menu-primary > ul > li > .dropdown-menu {
-    border-top: 3px solid #034a99;
+    border-top: 3px solid #0d1d74;
   }
 }
 // dropdown menu link color
@@ -82,27 +84,28 @@
 @include media-breakpoint-up($breakpoint__mobile-nav) {
   // nav bar position
   .menu-primary.navbar-collapse {
-    ul {
-      li {
-        a { // nav link color
-          @include font-size(0.875);
+    >ul {
+      >li {
+        >a { // nav link color
+          @include font-size(0.8);
           color: $color__text-nav;
-          font-weight: 700;
+          font-weight: 900;
           transition: transform .5s;
           &:hover {
             color: $color__text-nav-hover;
-            font-weight: 900;
             transform: scale(1.1);
           }
         }
-        ul.dropdown-menu.show {
+        >ul.dropdown-menu.show {
           -webkit-box-shadow: 0px 3px 64px -17px rgba(0,0,0,0.75);
           -moz-box-shadow: 0px 3px 64px -17px rgba(0,0,0,0.75);
           box-shadow: 0px 3px 64px -17px rgba(0,0,0,0.75);
-          li {
-            a {
+          >li {
+            >a {
               &:hover {
                 background-color: $color__background-nav-dropdown-hover;
+                color: $color__text-nav-dropdown-hover;
+                font-weight: 900;
               }
               &:active {
                 background-color: $color__background-nav-dropdown-active;
@@ -115,9 +118,10 @@
       }
     }
   }
-  // current menu parent menu item color
-  .navbar-collapse .menu-item-77.current-menu-parent a {
-    color: #90c31f;
+  // current active menu item design
+  .menu-primary.navbar-collapse > ul > .current-menu-item > a, .menu-primary.navbar-collapse > ul > li.show > a {
+    color: $color__text-nav-hover;
+    transform: scale(1.1);
   }
 }
 
@@ -148,7 +152,7 @@
 
 /* ----- Transitions ----- */
 
-// header transitions
+// Header transitions
 .site-header, .site-header .site-branding, .site-header .navbar-collapse, .site-header .navbar-collapse ul li:nth-child(3), .site-header .navbar-collapse ul li:nth-child(4) {
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;

@@ -1,12 +1,16 @@
 @include media-breakpoint-up($breakpoint__mobile-nav) {
-  // align logo left
+  // Logo align left
   .site-branding {
     text-align: left;
   }
-  // align menu right
-  .navbar {
-    left: auto;
-    right: 0;
+  // Logo and navbar-nav separate
+  #main-header .navbar {
+    margin-left: 17rem;
+    max-width: calc( 100% - 17rem );
+  }
+  // Primary nav align right
+  #main-header .navbar .navbar-nav {
+    @include flex-just(flex-end);
   }
   .site-header.sticky .navbar-collapse {
     padding-top: 0;

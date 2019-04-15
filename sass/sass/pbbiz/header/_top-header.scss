@@ -1,11 +1,55 @@
 @include media-breakpoint-up($breakpoint__mobile-nav) { // <- set bootstrap mobile menu breakpoint
-    // top header properties
+    // Top header properties
     #top-header {
         background-color: $color__background-top-header;
         // border-bottom: 2px solid #034a99;
+        height: 1.75rem;
+        border-top: 5px solid #0d1d74;
+        transition: all .2s linear;
     }
-    // top header font properties
-    #top-header .nav-link {
-        font-size: .621rem;
+    // Top header widget remove spacing
+    #top-header .widget-area p {
+        font-size: .69rem;
+        font-weight: 900;
+        margin-bottom: 0;
+        margin-top: .2rem;
+        opacity: 1;
+        transition: all .2s linear;
     }
+    // Top header navbar-nav width property
+    #top-header .navbar {
+        margin-left: 67%;
+        max-width: 33%;
+        margin-top: 0;
+        opacity: 1;
+        transition: all .2s linear;
+    }
+    // Top header navbar-nav menu align right
+    #top-header .navbar .navbar-nav {
+    @include flex-just(flex-end);
+    }
+    // Secondary nav divider logged out
+    #top-header .navbar .navbar-nav li:not(:first-child):before {
+        display: block;
+        position: absolute;
+        top: .5rem;
+        right: 3.2rem;
+        width: 1px;
+        height: .5rem;
+        background-color: #808080;
+        content: '';
+    }
+    // Secondary nav divider logged in
+    body.logged-in #top-header .navbar .navbar-nav li:not(:first-child):before {
+        right: 3.72rem;
+    }
+    // On scroll top bar collapse
+    .site-header.sticky #top-header {
+        height: 0;
+    }
+    .site-header.sticky #top-header .widget-area p, .site-header.sticky #top-header .navbar {
+        margin-top: -1.5rem;
+        opacity: 0;
+    }
+
 }

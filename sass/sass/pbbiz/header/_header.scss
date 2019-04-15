@@ -46,6 +46,10 @@
   .custom-logo-link {
     max-width: 14rem;
   }
+  // PC logo fix height jump issue on scroll
+  .custom-logo-link .custom-logo {
+    height: 1rem;
+  }
   // PC fixed header logo size
   .site-header.sticky .custom-logo-link {
     max-width: 14rem;

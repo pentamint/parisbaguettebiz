@@ -24,18 +24,28 @@
 }
 // page title hide on all posts & pages
 .entry-header {
-  display: none;
+	display: none;
 }
-// all posts & pages spacing top bottom (not home)
-.site-content {
-	// padding-top: 5.25rem; // header height padding
+.site-header.sticky .site-content {
+	// padding-top: 5.25rem; // header height padding	
 }
 .single .entry-content {
 	margin-top: 0;
 }
 @include media-breakpoint-up(lg) {
+	// all posts & pages spacing bottom
 	.site-content {
-		// padding-top: 8.125rem; // header height padding
+		padding-bottom: 4em;
+	}
+	// all posts & pages spacing top (not home) due to banner
+	body:not(.home) .site-content {
+		padding-top: 4em;
+	}
+	.site-header.sticky + .site-content {
+		padding-top: 6.1rem; // header height padding				
+	}
+	body:not(.home) .site-header.sticky + .site-content {
+		padding-top: 9rem; // header height padding		
 	}
 }
 /* ----- /Global Elements ----- */
