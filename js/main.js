@@ -25,8 +25,15 @@
     window.onscroll = function() {myFunction()};
     // Get the header
     var header = document.getElementById("masthead");
-    // Get the offset position of the navbar
-    var sticky = header.offsetTop;
+    // If top header exist, get main header
+    var mainheader = document.getElementById("main-header");
+    
+    // // Get the offset position of the header
+    // var sticky = header.offsetTop;
+    // If top header exist, get the offset position of the main header instead
+    var sticky = mainheader.offsetTop;
+
+
     // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
     function myFunction() {
       if (window.pageYOffset > sticky) {

@@ -17,11 +17,6 @@
 .custom-logo-link {
   width: 100%;
 }
-// Logo default img attr
-.custom-logo-link .custom-logo {
-  object-fit: contain;
-  font-family: 'object-fit: contain;';
-}
 @include media-breakpoint-up($breakpoint__mobile-nav) {
   // Header enclose child contents
   .site-header .container {

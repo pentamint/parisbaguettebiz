@@ -103,7 +103,6 @@ add_action( 'after_setup_theme', 'pbbiz_content_width', 0 );
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
- 
 function pbbiz_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'PBBiz' ),

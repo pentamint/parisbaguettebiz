@@ -2,8 +2,8 @@
 body {
   -ms-overflow-style: none;
 }
-// Object fit fix
-img {
+// Object fit fix exclude logo
+img:not(.custom-logo) {
   object-fit: cover;
   font-family: 'object-fit: cover;';
 }
