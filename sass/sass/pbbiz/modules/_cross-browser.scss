@@ -1,13 +1,13 @@
-/* ----- Internet Explorer Fixes ----- */
+// ----- Internet Explorer Fixes
 body {
   -ms-overflow-style: none;
 }
-// object fit fix
+// Object fit fix
 img {
   object-fit: cover;
   font-family: 'object-fit: cover;';
 }
-// bootstrap flex menu bug fix
+// Bootstrap flex menu bug fix
 .navbar :not(.show).collapse {
   max-height: 4em; /* menu height overflow fix */
 }

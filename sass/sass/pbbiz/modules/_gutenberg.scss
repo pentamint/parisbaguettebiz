@@ -9,6 +9,10 @@
 }
 /* ----- /Bug fixes ----- */
 /* ----- Defaults ----- */
+// Page content top bottom spacing
+.entry-content > .wp-block-columns:first-of-type {
+  padding-top: 0;
+}
 // row top bottom margin
 .wp-block-columns {
   padding: 4rem 0 4rem;

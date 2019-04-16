@@ -1,9 +1,13 @@
+// Show page after load all elements
 html {
-  visibility: hidden; /* js changes to shown after page load */
+  visibility: hidden;
 }
+// Essentials
 body {
-  -webkit-tap-highlight-color:transparent; /* 클릭 하이라이트 제거 */
-  word-break: keep-all; /* Wordwrap 설정 */
+  // Remove click highlight
+  -webkit-tap-highlight-color: transparent;
+  // Wordwrap
+  word-break: keep-all;
 }
 button:focus {
   outline: none;

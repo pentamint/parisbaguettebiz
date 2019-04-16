@@ -1,7 +1,7 @@
 // ----- Theme Typography
 
-// --- font size
-// - var
+// --- Fluid typography settings
+// var
 $min_width: 320px;
 $max_width: 1200px;
 $min_font: 13px;
@@ -10,7 +10,7 @@ $max_font: 18px;
 $mod_1: 1.1; // mobile
 $mod_2: 1.2; // desktop
 
-// - usage
+// usage
 html {
   @include fluid-type($min_width, $max_width, $min_font, $max_font);
 }
@@ -29,16 +29,19 @@ h3 {
   @include fluid-type($min_width, $max_width, $mod_1*$mod_1 *$min_font, $mod_2*$mod_2 *$min_font);
 	font-weight: 700;
 }
+
 .entry-title {
 
 }
 .widget-title {
 	margin-bottom: 1rem;
 }
+
 // footer colophon
 .site-info {
   @include fluid-type($min_width, $max_width, 0.8 *$min_font, 1 *$min_font);
 }
+
 .post_title {
 
 }
@@ -55,7 +58,7 @@ h3 {
 
 }
 
-// Page Layout
+// --- Page Layout
 .row {
   margin: 0 auto; // separate container & row elements
 }
@@ -68,7 +71,7 @@ h3 {
 .row2 .wp-block-column, .row4 .wp-block-column { // enable child z-index lower than parent
 	z-index: 0;
 }
-// Page Elements
+// --- Page Elements
 // row separator
 hr {
 	background-color: transparent;
