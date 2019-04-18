@@ -31,7 +31,7 @@
         display: block;
         position: absolute;
         top: .5rem;
-        right: 3.2rem;
+        right: 4rem;
         width: 1px;
         height: .5rem;
         background-color: #808080;
@@ -39,6 +39,6 @@
     }
     // Secondary nav divider logged in
     body.logged-in #top-header .navbar .navbar-nav li:not(:first-child):before {
-        right: 3.72rem;
+        right: 4.65rem;
     }
 }

@@ -11818,7 +11818,7 @@ a {
     display: block;
     position: absolute;
     top: .5rem;
-    right: 3.2rem;
+    right: 4rem;
     width: 1px;
     height: .5rem;
     background-color: #808080;
@@ -11826,7 +11826,7 @@ a {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000341}}
   body.logged-in #top-header .navbar .navbar-nav li:not(:first-child):before {
-    right: 3.72rem; } }
+    right: 4.65rem; } }
 /* ----- Theme ----- */
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_header\.scss}line{font-family:\0000332}}
 .custom-logo-link {
