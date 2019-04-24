@@ -34,7 +34,7 @@
 						<?php dynamic_sidebar ( 'top-header-widget-1' ); ?>
 					</div><!-- #header-widget-1 -->
 				<?php endif; ?>
-				<nav class="navbar navbar-default" role="navigation">
+				<nav class="navbar navbar-secondary" role="navigation">
 					<div class="nav-wrapper">
 						<div class="collapse navbar-collapse menu-secondary" id="top-navbar-collapse-1">
 							<?php
@@ -77,7 +77,7 @@
 				</div><!-- .site-branding -->
 
 				<!-- #site-navigation -->
-				<nav class="navbar navbar-default" role="navigation">
+				<nav class="navbar navbar-default navbar-primary" role="navigation">
 					<div class="nav-wrapper">
 						<!-- Brand and toggle get grouped for better mobile display -->
 						<button type="button" class="navbar-toggle hamburger hamburger--spring" data-toggle="collapse" data-target="#navbar-collapse-1">

@@ -1,17 +1,32 @@
+// ----- Top header design ----- //
+#top-header {
+    border-top: 5px solid #0d1d74;    
+}
+// Mobile widget remove margin
+#top-header .header-widget .widget_text {
+    margin: 0;
+}
+// Mobile hide widget text
+#top-header .header-widget p {
+    display: none;
+}
+@include media-breakpoint-up(md) {
+    // Tablet++ insert here
+}
 @include media-breakpoint-up($breakpoint__mobile-nav) { // <- set bootstrap mobile menu breakpoint
     // Top header properties
     #top-header {
         background-color: $color__background-top-header;
         // border-bottom: 2px solid #034a99;
         height: 1.75rem;
-        border-top: 5px solid #0d1d74;
     }
     // Top header hide on fixed header scroll
     .site-header.sticky #top-header {
         display: none;
     }
-    // Top header widget remove spacing
+    // Top header text widget design
     #top-header .widget-area p {
+        display: block;
         font-size: .69rem;
         font-weight: 900;
         margin-bottom: 0;

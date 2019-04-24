@@ -48,6 +48,7 @@
   // add hamburgers support for bootstrap mobile menu
   $('.navbar-toggle').click(function () {
           $('.navbar-toggle').toggleClass('is-active');
+          $('.menu-secondary').toggleClass('show');
    });
 
 	// add bootstrap container to gutenberg wp-block-column class

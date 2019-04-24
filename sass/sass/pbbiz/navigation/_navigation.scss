@@ -35,8 +35,8 @@
 .navbar-collapse {
   padding-top: 7.7rem;
 }
-// Mobile menu list max width
-.navbar-collapse.show {
+// Mobile menu list max width #RF01
+.navbar-collapse.show, .navbar-collapse {
   max-width: 450px;
 }
 // Mobile menu item spacing
@@ -48,6 +48,7 @@
   // Mobile menu list remove top spacing
   .navbar-collapse {
     padding-top: 0;
+    max-width: inherit; // reset mobile menu width #RF01
   }
   // PC main header navbar design
   .menu-primary > ul > li > .nav-link {
