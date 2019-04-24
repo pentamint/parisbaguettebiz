@@ -29,6 +29,10 @@
 .site-header.sticky .site-content {
 	// padding-top: 5.25rem; // header height padding	
 }
+// Mobile all posts & pages spacing top (not home) due to banner
+body:not(.home) .site-content {
+	padding-top: 3em;
+}
 .single .entry-content {
 	margin-top: 0;
 }
@@ -37,7 +41,7 @@
 	.site-content {
 		padding-bottom: 4em;
 	}
-	// all posts & pages spacing top (not home) due to banner
+	// PC all posts & pages spacing top (not home) due to banner
 	body:not(.home) .site-content {
 		padding-top: 4em;
 	}

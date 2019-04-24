@@ -1,4 +1,4 @@
-/* ----- Bug fixes ----- */
+/* ----- Bug fixes & bootstrap compatibility settings ----- */
 .has-1-columns .wp-block-column { // row 1col bug fix
   margin-right: auto !important; // bootstrap col center
   margin-left: auto !important; // bootstrap col center
@@ -7,7 +7,17 @@
 .has-2-columns .wp-block-column { // row 2cols bug fix
   flex-basis: calc((100% - 30px) / 2);
 }
-/* ----- /Bug fixes ----- */
+// PC columns bootstrap tweaks - col margin revised
+@media (min-width: 600px) {
+  .wp-block-column:not(:first-child) {
+    margin-left: 0;
+  }
+  .wp-block-column:last-child {
+    margin-right: 0;
+  }
+}
+/* ----- /Bug fixes & bootstrap compatibility settings ----- */
+
 /* ----- Defaults ----- */
 // Page content top bottom spacing
 .entry-content > .wp-block-columns:first-of-type {
@@ -18,6 +28,7 @@
   padding: 4rem 0 4rem;
 }
 //
+
 // add flex attr to containers within gutenberg columns
 .wp-block-columns .container {
   display: flex;
@@ -29,6 +40,7 @@
   }
 }
 //
+
 // enclose elements within column
 .wp-block-column {
   position: relative;
@@ -41,7 +53,9 @@
 .wp-block-column {
   margin-bottom: 0;
 }
-// grid layout
+
+// Mobile grid 2 col layout
+@include media-breakpoint-down(md) {
 .wp-block-column:not(:last-child), .wp-block-column:nth-child(odd) {
   margin-right: 30px; // adjust mr right
 }
@@ -49,3 +63,4 @@
   margin-left: 0 !important; // remove mr left
 }
 //
+}

@@ -10596,7 +10596,7 @@ img:not(.custom-logo) {
   .navbar :not(.show).collapse {
     margin: 0 auto;
     /* menu centering fix */ } }
-/* ----- Bug fixes ----- */
+/* ----- Bug fixes & bootstrap compatibility settings ----- */
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_gutenberg\.scss}line{font-family:\000032}}
 .has-1-columns .wp-block-column {
   margin-right: auto !important;
@@ -10607,45 +10607,53 @@ img:not(.custom-logo) {
 .has-2-columns .wp-block-column {
   flex-basis: calc((100% - 30px) / 2); }
 
-/* ----- /Bug fixes ----- */
+@media (min-width: 600px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_gutenberg\.scss}line{font-family:\0000312}}
+  .wp-block-column:not(:first-child) {
+    margin-left: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_gutenberg\.scss}line{font-family:\0000315}}
+  .wp-block-column:last-child {
+    margin-right: 0; } }
+/* ----- /Bug fixes & bootstrap compatibility settings ----- */
 /* ----- Defaults ----- */
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_gutenberg\.scss}line{font-family:\0000313}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_gutenberg\.scss}line{font-family:\0000323}}
 .entry-content > .wp-block-columns:first-of-type {
   padding-top: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_gutenberg\.scss}line{font-family:\0000317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_gutenberg\.scss}line{font-family:\0000327}}
 .wp-block-columns {
   padding: 4rem 0 4rem; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_gutenberg\.scss}line{font-family:\0000322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_gutenberg\.scss}line{font-family:\0000333}}
 .wp-block-columns .container {
   display: flex;
   flex-wrap: wrap; }
 
 @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_gutenberg\.scss}line{font-family:\0000327}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_gutenberg\.scss}line{font-family:\0000338}}
   .wp-block-columns .container {
     flex-wrap: nowrap; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_gutenberg\.scss}line{font-family:\0000333}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_gutenberg\.scss}line{font-family:\0000345}}
 .wp-block-column {
   position: relative; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_gutenberg\.scss}line{font-family:\0000337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_gutenberg\.scss}line{font-family:\0000349}}
 .wp-block-column {
   word-break: keep-all; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_gutenberg\.scss}line{font-family:\0000341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_gutenberg\.scss}line{font-family:\0000353}}
 .wp-block-column {
   margin-bottom: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_gutenberg\.scss}line{font-family:\0000345}}
-.wp-block-column:not(:last-child), .wp-block-column:nth-child(odd) {
-  margin-right: 30px; }
+@media (max-width: 991.98px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_gutenberg\.scss}line{font-family:\0000359}}
+  .wp-block-column:not(:last-child), .wp-block-column:nth-child(odd) {
+    margin-right: 30px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_gutenberg\.scss}line{font-family:\0000348}}
-.wp-block-column:not(:first-child), .wp-block-column:nth-child(even) {
-  margin-left: 0 !important; }
-
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_gutenberg\.scss}line{font-family:\0000362}}
+  .wp-block-column:not(:first-child), .wp-block-column:nth-child(even) {
+    margin-left: 0 !important; } }
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -10658,15 +10666,20 @@ optgroup,
 textarea {
   color: #333;
   font-family: "Roboto", "Nanum Gothic", sans-serif;
-  font-size: 13px;
-  font-size: 0.8125rem;
+  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.5; }
 
 @media (min-width: 768px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/typography\/_typography\.scss}line{font-family:\0000316}}
+  body,
+  button,
+  input,
+  select,
+  optgroup,
   textarea {
-    font-size: 16px;
-    font-size: 1rem; } }
+    font-size: 13px;
+    font-size: 0.8125rem; } }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/typography\/_headings\.scss}line{font-family:\000031}}
 h1, h2, h3, h4, h5, h6 {
   clear: both; }
@@ -11633,24 +11646,28 @@ a {
 .entry-header {
   display: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/content\/_content\.scss}line{font-family:\0000332}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/content\/_content\.scss}line{font-family:\0000333}}
+body:not(.home) .site-content {
+  padding-top: 3em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/content\/_content\.scss}line{font-family:\0000336}}
 .single .entry-content {
   margin-top: 0; }
 
 @media (min-width: 992px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/content\/_content\.scss}line{font-family:\0000337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/content\/_content\.scss}line{font-family:\0000341}}
   .site-content {
     padding-bottom: 4em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/content\/_content\.scss}line{font-family:\0000341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/content\/_content\.scss}line{font-family:\0000345}}
   body:not(.home) .site-content {
     padding-top: 4em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/content\/_content\.scss}line{font-family:\0000344}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/content\/_content\.scss}line{font-family:\0000348}}
   .site-header.sticky + .site-content {
     padding-top: 4.8rem; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/content\/_content\.scss}line{font-family:\0000347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/content\/_content\.scss}line{font-family:\0000351}}
   body:not(.home) .site-header.sticky + .site-content {
     padding-top: 9rem; } }
 /* ----- /Global Elements ----- */
