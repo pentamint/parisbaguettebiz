@@ -16,6 +16,16 @@
     margin-right: 0;
   }
 }
+@media (max-width: 599.98px) {
+  // Column size adjusted
+  .wp-block-column {
+    flex-basis: calc(50% - 8px);
+  }
+  // Add MR right for mobile
+  .wp-block-column:nth-child(odd) {
+    margin-right: 16px;
+  }
+}
 /* ----- /Bug fixes & bootstrap compatibility settings ----- */
 
 /* ----- Defaults ----- */
@@ -54,13 +64,15 @@
   margin-bottom: 0;
 }
 
-// Mobile grid 2 col layout
+// Mobile column layout settings
 @include media-breakpoint-down(md) {
-.wp-block-column:not(:last-child), .wp-block-column:nth-child(odd) {
-  margin-right: 30px; // adjust mr right
-}
-.wp-block-column:not(:first-child), .wp-block-column:nth-child(even) {
-  margin-left: 0 !important; // remove mr left
-}
+  // Mobile 2 col layout
+  .wp-block-column {
+    flex-basis: calc(50% - 16px);
+  }
+  // Mobile remove margin right on every 2nd elements
+  .wp-block-column:nth-child(2n) {
+    margin-right: 0;
+  }
 //
 }

@@ -2,6 +2,10 @@
 #top-header {
     border-top: 5px solid #0d1d74;    
 }
+// Top header apply flex
+#top-header .container {
+    display: flex;
+}
 // Mobile widget remove margin
 #top-header .header-widget .widget_text {
     margin: 0;

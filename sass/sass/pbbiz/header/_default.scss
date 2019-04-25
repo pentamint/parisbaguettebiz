@@ -9,9 +9,11 @@
   -moz-box-shadow: 0px 3px 64px -17px rgba(0,0,0,0.75);
   box-shadow: 0px 3px 64px -17px rgba(0,0,0,0.75);
 }
-// Logo default mobile centered
-.site-branding {
-  text-align: center;
+// Header apply flex
+#main-header .container {
+  display: flex;
+  align-items: center; // vertical middle elements
+  justify-content: center; // mobile center logo
 }
 // Logo default size
 .custom-logo-link {
@@ -25,5 +27,11 @@
   // Header widget margin padding reset
   .site-header .header-widget .widget {
     margin: 0;
+  }
+}
+@include media-breakpoint-down(md) {
+  .navbar {
+    top: 0;
+    left: 0;
   }
 }

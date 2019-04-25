@@ -25,7 +25,6 @@
   position: absolute;
   padding: 0;
   top: 0;
-  left: 0;
   z-index: 1000;
 }
 // menu list left spacing removed
@@ -101,6 +100,10 @@
 @include media-breakpoint-up($breakpoint__mobile-nav) {
   .hamburger {
     display: none;
+  }
+  // Unset mobile navbar top 0
+  .navbar {
+    top: inherit;
   }
   .navbar :not(.show).collapse {
     display: block;

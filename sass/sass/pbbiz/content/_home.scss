@@ -1,31 +1,64 @@
 /* ----- Main Home ----- */
 
-// ----- row 1 master slider -----
+// --- Row 1 hero slider ---
 
 
-// ----- row 2 new item loop -----
-.row-new-products .wp-block-column .wp-block-image {
-  margin: 0 auto;
-  max-width: 6rem;
+// --- Row 2 notice & promo ---
+.page-id-19 {
+  .line-notice {
+    position: relative;
+    .line_left {
+      position: absolute;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background-color: #0d1d74;
+      z-index: -1;
+    }
+    .line_right {
+      position: absolute;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background-color: #f2f2f2;
+      z-index: -1;
+    }
+    .container {
+      display: flex;
+      align-items: center;
+      .notice_preview_title {
+        flex-basis: 7%;
+        p {
+          margin-bottom: 0;
+          color: #fff;
+          font-weight: 900;
+        }
+      }
+      .notice_preview_content {
+        flex-basis: 43%
+      }
+      #kboard-default-latest {
+        table {
+          margin-bottom: 0; // remove margin bottom
+          border-bottom: none; // remove border bottom
+          >thead {
+            display: none;
+          }
+          td {
+            border-top: none;
+          }
+        }
+      }
+      // Line notice text color
+      .kboard-default-cut-strings, .kboard-latest-date {
+        color: #fff;
+      }
+    } // !--- .container
+  }
 }
-.row-new-products .wp-block-column > h2 {
-  color: #fff;
-}
-.row-new-products .wp-block-column > p {
-  color: #fff;
-  text-align: center;
-}
-.row-new-products .product-carousel {
-  @include flexbox;
-  @include justify-content(space-between)
-}
-.row-new-products .card-wrapper {
-  max-width: 18%;
-  @include box-shadow(0px 10px 22px 0px rgba(0,0,0,0.75));
-}
-.row-new-products .card-thumbnail-fl img {
-  max-height: 230px;
-}
+
+// --- Row 3 membership promo ---
+
 
 //
 @include media-breakpoint-down(lg) { // 1199.98px and down
@@ -44,20 +77,14 @@
 
 
 @include media-breakpoint-up(sm) { // 576px and up
-  .row-new-products .wp-block-column .wp-block-image {
-    max-width: 8rem;
-  }
+
 }
 @include media-breakpoint-up(md) { // 768px and up
 
 }
 @include media-breakpoint-up(lg) { // 992px and up
-  .row-new-products .wp-block-column .wp-block-image {
-    max-width: 9rem;
-  }
+
 }
 @include media-breakpoint-up(xl) { // 1200px and up
-  .row-new-products .wp-block-column .wp-block-image {
-    max-width: 12rem;
-  }
+
 }

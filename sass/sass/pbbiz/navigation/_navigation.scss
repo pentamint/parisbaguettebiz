@@ -22,13 +22,13 @@
 
 /* ----- Theme Codes ----- */
 
-// Mobile hamburger menu position
+// Mobile sticky hamburger menu position
 .site-header.sticky .hamburger {
-  padding: 1.75rem 1rem;
+  padding: 30px 1rem;
 }
 @media screen and (min-width: 783px) {
   .site-header.sticky .hamburger {
-    padding: 1.75rem 1rem;
+    padding: 30px 1rem;
   }
 }
 // Mobile menu list top spacing
@@ -52,7 +52,7 @@
   }
   // PC main header navbar design
   .menu-primary > ul > li > .nav-link {
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 1.25rem;
   }
   // PC top header navbar design
   .menu-secondary > ul > li > .nav-link {

@@ -1,7 +1,7 @@
 @include media-breakpoint-up($breakpoint__mobile-nav) {
   // Logo align left
-  .site-branding {
-    text-align: left;
+  #main-header .container {
+    justify-content: left;
   }
   // Logo and navbar-nav separate
   #main-header .navbar {
