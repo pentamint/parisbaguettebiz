@@ -4,7 +4,7 @@
 }
 // Top header navbar font family
 .menu-secondary ul li a {
-	font-family: $font__top-nav;
+	font-family: $font__sub-nav;
 }
 @include media-breakpoint-up($breakpoint__mobile-nav) {
 	.navbar-toggle {

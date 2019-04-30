@@ -91,10 +91,8 @@
           @include font-size(0.8);
           color: $color__text-nav;
           font-weight: 900;
-          transition: transform .5s;
           &:hover {
             color: $color__text-nav-hover;
-            transform: scale(1.1);
           }
         }
         >ul.dropdown-menu.show {
@@ -116,13 +114,14 @@
             }
           }
         }
+        // Current active menu item design
+        &.current-menu-item, &.show {
+          a {
+            color: $color__text-nav-hover;
+          }
+        }
       }
     }
-  }
-  // current active menu item design
-  .menu-primary.navbar-collapse > ul > .current-menu-item > a, .menu-primary.navbar-collapse > ul > li.show > a {
-    color: $color__text-nav-hover;
-    transform: scale(1.1);
   }
 }
 
@@ -148,19 +147,5 @@
   }
   .site-header.sticky .navbar-nav {
     float: right;
-  }
-}
-
-/* ----- Transitions ----- */
-
-// Header transitions
-.site-header, .site-header .site-branding, .site-header .navbar-collapse, .site-header .navbar-collapse ul li:nth-child(3), .site-header .navbar-collapse ul li:nth-child(4) {
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
-}
-@include media-breakpoint-down(md) {
-  .site-header, .site-header .site-branding, .site-header .navbar-collapse, .site-header .navbar-collapse ul li:nth-child(3), .site-header .navbar-collapse ul li:nth-child(4) {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }

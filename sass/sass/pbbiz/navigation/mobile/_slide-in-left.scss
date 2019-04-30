@@ -101,8 +101,9 @@
   .hamburger {
     display: none;
   }
-  // Unset mobile navbar top 0
+  // Unset mobile navbar settings
   .navbar {
+    position: inherit;
     top: inherit;
   }
   .navbar :not(.show).collapse {

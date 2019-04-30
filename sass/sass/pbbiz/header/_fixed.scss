@@ -10,6 +10,15 @@
 .site-header.sticky {
   background-color: $color__background-header-sticky;
 }
+// ----- Logo size
+// Mobile fixed header logo size
+.site-header.sticky .custom-logo-link {
+  max-width: $size__logo-mobile-fixed-x;
+}
+.site-header.sticky .custom-logo-link img {
+  max-height: $size__logo-mobile-fixed-y;
+}
+
 @media screen and (min-width: 601px) {
   .admin-bar .site-header {
     top: 46px;
@@ -18,5 +27,19 @@
 @media screen and (min-width: 783px) {
   .admin-bar .site-header {
     top: 32px;
+  }
+}
+@include media-breakpoint-up($breakpoint__mobile-nav) {
+  // ----- Logo size
+  // PC fixed header logo size
+  .site-header.sticky .custom-logo-link {
+    max-width: $size__logo-pc-fixed-x;
+  }
+  .site-header.sticky .custom-logo-link img {
+    max-height: $size__logo-pc-fixed-y;
+  }
+  // PC fixed header logo repositioning
+  .site-header.sticky .site-branding {
+    margin-top: 20px;
   }
 }

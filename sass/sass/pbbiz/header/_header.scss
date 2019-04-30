@@ -25,30 +25,24 @@
 /* ----- Theme ----- */
 
 // ----- Mobile ----- //
+
 // Option - on scroll fixed header height
 .header-sticky-height {
   // height: 61.42px;
 }
 // Header height
 #main-header .container {
-  height: 65px;
+  height: 70px;
 }
-// Mobile logo size: responsive % / fixed unit
-.custom-logo-link {
-  max-width: 16rem;
-}
-// Mobile fixed header logo size
-.site-header.sticky .custom-logo-link {
-  max-width: 16rem;
+.site-branding {
+  padding: 5px;
+  background-color: #fff;
+  border-radius: 100px;
 }
 
 @include media-breakpoint-up($breakpoint__mobile-nav) {
-  // PC logo size
-  .custom-logo-link {
-    max-width: 14rem;
-  }
-  // PC fixed header logo size
-  .site-header.sticky .custom-logo-link {
-    max-width: 14rem;
+  // Logo PC positioning
+  .site-branding {
+    margin-top: -25px;
   }
 }

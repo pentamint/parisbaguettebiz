@@ -1,7 +1,7 @@
 @include media-breakpoint-up($breakpoint__mobile-nav) {
   // Logo align left
   #main-header .container {
-    justify-content: left;
+    @include justify-content(flex-start);
   }
   // Logo and navbar-nav separate
   #main-header .navbar {
@@ -10,7 +10,7 @@
   }
   // Primary nav align right
   #main-header .navbar .navbar-nav {
-    justify-content: $justify-content__main-nav;
+    @include justify-content($justify-content__main-nav);
   }
   .site-header.sticky .navbar-collapse {
     padding-top: 0;

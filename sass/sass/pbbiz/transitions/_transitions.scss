@@ -1,0 +1,29 @@
+// ----- Set global transitions
+
+
+// ----- Set mobile transitions
+
+
+// ----- Set PC transitions
+@include media-breakpoint-up($breakpoint__mobile-nav) {
+  // --- Header
+  .site-branding {
+    @include transition(all .3s ease-out);  
+  }
+  // --- Navigation
+  .menu-primary.navbar-collapse {
+    >ul {
+      >li {
+        >a {
+          transition: transform .5s;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+        &.current-menu-item, &.show {
+            transform: scale(1.1);
+        }
+      }
+    }
+  }
+}

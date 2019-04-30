@@ -27,7 +27,7 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'PBBiz' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div id="top-header" class="row">
+		<div id="top-header">
 			<div class="container">
 				<?php if ( is_active_sidebar ( 'top-header-widget-1' ) ) : ?>
 					<div id="header-widget-1" class="header-widget widget-area" role="complementary">
@@ -55,7 +55,7 @@
 				</nav><!-- .navbar -->
 			</div><!-- .container -->
 		</div><!-- #top-header -->
-		<div id="main-header" class="row">
+		<div id="main-header">
 			<div class="container">
 				<div class="site-branding">
 					<?php

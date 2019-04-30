@@ -59,9 +59,6 @@ h3 {
 }
 
 // --- Page Layout
-.row {
-  margin: 0 auto; // separate container & row elements
-}
 .row2 {
 	background-color: $color__background-row2;
 }
@@ -74,16 +71,8 @@ h3 {
 // --- Page Elements
 // row separator
 hr {
-	background-color: transparent;
-	border-bottom: 2px solid transparent;
-	border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
-	border-image-slice: 1;
-	height: 2px;
-	margin: 9px;
-	width: 100%;
-	z-index: -1; // enable inline separator
+
 }
-// bordered block outer & inner
 
 // post loops
 .card-title { // post loop grid outer
