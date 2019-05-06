@@ -8,10 +8,6 @@
     margin-left: 17rem;
     max-width: calc( 100% - 17rem );
   }
-  // Primary nav align right
-  #main-header .navbar .navbar-nav {
-    @include justify-content($justify-content__main-nav);
-  }
   .site-header.sticky .navbar-collapse {
     padding-top: 0;
   }

@@ -1,7 +1,21 @@
-// ----- Top header design ----- //
+// ----- Custom element ----- //
+// --- Responsive fullwidth top bar design
 #top-header {
-    border-top: 5px solid #0d1d74;    
+    border-top: none;
 }
+#main-header {
+    border-top: 5px solid #0d1d74;
+}
+@include media-breakpoint-up($breakpoint__mobile-nav) {
+    #top-header {
+        border-top: 5px solid #0d1d74;    
+    }
+    #main-header {
+        border-top: none;
+    }
+}
+
+// ----- Top header design ----- //
 // Top header apply flex
 #top-header .container {
     @include flexbox;
@@ -14,15 +28,11 @@
 #top-header .header-widget p {
     display: none;
 }
-@include media-breakpoint-up(md) {
-    // Tablet++ insert here
-}
+
 @include media-breakpoint-up($breakpoint__mobile-nav) { // <- set bootstrap mobile menu breakpoint
     // Top header properties
     #top-header {
         background-color: $color__background-top-header;
-        // border-bottom: 2px solid #034a99;
-        height: 1.75rem;
     }
     // Top header hide on fixed header scroll
     .site-header.sticky #top-header {
@@ -59,5 +69,35 @@
     // Secondary nav divider logged in
     body.logged-in #top-header .navbar .navbar-nav li:not(:first-child):before {
         right: 4.65rem;
+    }
+}
+
+// ----- Responsive top header height
+// top header xs height
+#top-header .container {
+    height: $height__xs-top-header;
+}
+@include media-breakpoint-up(sm) {
+    // top header height
+    #top-header .container {
+        height: $height__sm-top-header;
+    }
+}
+@include media-breakpoint-up(md) {
+    // top header height
+    #top-header .container {
+        height: $height__md-top-header;
+    }
+}
+@include media-breakpoint-up(lg) {
+    // top header height
+    #top-header .container {
+        height: $height__lg-top-header;
+    }
+}
+@include media-breakpoint-up(xl) {
+    // top header height
+    #top-header .container {
+        height: $height__xl-top-header;
     }
 }

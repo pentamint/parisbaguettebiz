@@ -32,6 +32,10 @@
   max-width: $size__logo-mobile-x;
   max-height: $size__logo-mobile-y;
 }
+// Fixed header height div if exist
+.header-sticky-height {
+  overflow: visible;
+}
 
 @include media-breakpoint-up($breakpoint__mobile-nav) {
   // Header enclose child contents
@@ -56,5 +60,35 @@
   .navbar {
     top: 0;
     left: 0;
+  }
+}
+
+// ----- Responsive main header height
+// main header xs height
+#main-header .container {
+  height: $height__xs-main-header;
+}
+@include media-breakpoint-up(sm) {
+  // main header height
+  #main-header .container {
+      height: $height__sm-main-header;
+  }
+}
+@include media-breakpoint-up(md) {
+  // main header height
+  #main-header .container {
+      height: $height__md-main-header;
+  }
+}
+@include media-breakpoint-up(lg) {
+  // main header height
+  #main-header .container {
+      height: $height__lg-main-header;
+  }
+}
+@include media-breakpoint-up(xl) {
+  // main header height
+  #main-header .container {
+      height: $height__xl-main-header;
   }
 }

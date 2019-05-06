@@ -11,7 +11,7 @@
 		display: none !important; // hide hamburger on larger devices
 	}
 	.navbar-nav {
-		@include justify-content(center);
+		@include justify-content($justify-content__main-nav);
 	}
 	.navbar-nav .dropdown-menu.show {
 		position: absolute; // dropdown ignore width

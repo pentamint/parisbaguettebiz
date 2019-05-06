@@ -43,3 +43,33 @@
     margin-top: 20px;
   }
 }
+
+// ----- Responsive main header height
+// main header xs height
+.header-sticky-height {
+  height: $height__xs-fixed-main-header;
+}
+@include media-breakpoint-up(sm) {
+  // main header height
+  .header-sticky-height {
+      height: $height__sm-fixed-main-header;
+  }
+}
+@include media-breakpoint-up(md) {
+  // main header height
+  .header-sticky-height {
+      height: $height__md-fixed-main-header;
+  }
+}
+@include media-breakpoint-up(lg) {
+  // main header height
+  .header-sticky-height {
+      height: $height__lg-fixed-main-header;
+  }
+}
+@include media-breakpoint-up(xl) {
+  // main header height
+  .header-sticky-height {
+      height: $height__xl-fixed-main-header;
+  }
+}

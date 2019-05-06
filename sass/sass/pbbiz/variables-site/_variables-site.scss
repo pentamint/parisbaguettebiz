@@ -1,8 +1,9 @@
-@import "colors";
-@import "typography";
-@import "structure";
-@import "columns";
+@import "colors"; // set color properties
+@import "typography"; // set font-family
+@import "structure"; // set layout properties
+@import "columns"; // set column properties
 
-// Custom made
-@import "custom-fonts";
-@import "custom-logo";
+// Custom made scss
+@import "custom-fonts"; // import custom fonts
+@import "custom-logo"; // set logo xy size
+@import "custom-header"; // set responsive header height

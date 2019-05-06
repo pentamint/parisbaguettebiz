@@ -1,0 +1,50 @@
+// ----- Mainhead height
+
+// xs < sm === 575.98px header height
+$height__xs-main-header: 70px;
+
+// sm < md === 767.98px header height
+$height__sm-main-header: 70px;
+
+// md < lg === 991.98px header height
+$height__md-main-header: 70px;
+
+// lg < xl === 1199.98px header height
+$height__lg-main-header: 70px;
+
+// xl >= 1199.98px header height
+$height__xl-main-header: 70px;
+
+// ----- Mainhead fixed height
+
+// xs < sm === 575.98px header height
+$height__xs-fixed-main-header: 70px;
+
+// sm < md === 767.98px header height
+$height__sm-fixed-main-header: 70px;
+
+// md < lg === 991.98px header height
+$height__md-fixed-main-header: 70px;
+
+// lg < xl === 1199.98px header height
+$height__lg-fixed-main-header: 70px;
+
+// xl >= 1199.98px header height
+$height__xl-fixed-main-header: 70px;
+
+// ----- Top header height if exist
+
+// xs < sm === 575.98px header height
+$height__xs-top-header: 0;
+
+// sm < md === 767.98px header height
+$height__sm-top-header: 0;
+
+// md < lg === 991.98px header height
+$height__md-top-header: 0;
+
+// lg < xl === 1199.98px header height
+$height__lg-top-header: 27px;
+
+// xl >= 1199.98px header height
+$height__xl-top-header: 27px;
