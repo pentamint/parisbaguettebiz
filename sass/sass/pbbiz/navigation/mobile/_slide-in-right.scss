@@ -126,4 +126,13 @@
     .navbar :not(.show).collapse {
         display: block;
     }
+    .menu-primary {
+        ul {
+            li {
+                a {
+                    opacity: 1;
+                }
+            }
+        }
+    }
 }
