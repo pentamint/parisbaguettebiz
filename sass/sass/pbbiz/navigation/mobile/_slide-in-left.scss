@@ -35,7 +35,8 @@
   display: none;
 }
 .menu-primary.navbar-collapse.show {
-  height: 100vh;
+  height: 100vh; // height fallback for non supported browser
+  height: calc(var(--vh, 1vh) * 100);
   background-color: $color__background-mobile-menu-inner;
   ul { // navbar-nav
     li { // menu-item show

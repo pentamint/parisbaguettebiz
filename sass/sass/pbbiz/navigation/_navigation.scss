@@ -11,7 +11,8 @@
 /*--------------------------------------------------------------
 ## Mobile Menus
 --------------------------------------------------------------*/
-@import "mobile/slide-in-left";
+// @import "mobile/slide-in-left";
+@import "mobile/slide-in-right";
 
 /*--------------------------------------------------------------
 ## Navigation Layout
@@ -36,8 +37,8 @@
   padding-top: 7.7rem;
 }
 // Mobile menu list max width #RF01
-.navbar-collapse.show, .navbar-collapse {
-  max-width: 450px;
+.menu-primary.show, .navbar-collapse {
+  max-width: 22rem;
 }
 // Mobile menu item spacing
 .navbar-nav > li > .nav-link {

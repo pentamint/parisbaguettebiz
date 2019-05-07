@@ -226,6 +226,8 @@ function custom_add_google_fonts() {
 }
 add_action( 'wp_enqueue_scripts', 'custom_add_google_fonts' );
 
+// ----- Register Custom Menu ----- //
+
 // Register Secondary Nav Menu
 register_nav_menus( array(
 	'secondary' => esc_html__( 'Secondary Menu', 'PBBiz' ),

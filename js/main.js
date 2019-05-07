@@ -40,26 +40,20 @@
     function myFunction() {
       if (window.pageYOffset > sticky) {
         header.classList.add("sticky");
-        $('.site-content').css('margin-top', $('#masthead.sticky').height());
+        $('.site-content').css('margin-top', $('#masthead.sticky').height()); // add page content top spacing on scroll
+        $('.menu-primary').css('top', $('#wpadminbar').height()); // add mobile menu top spacing on scroll
       } else {
         header.classList.remove("sticky");
-        $('.site-content').css('margin-top', 0);
+        $('.site-content').css('margin-top', 0); // reset page content top spacing
+        $('.menu-primary').css('top', 0); // reset mobile menu top spacing
       }
     };
   });
 
-  // --- Fixed navigation header add top margin on scroll
-  // $(document).ready(function() {
-  //   $(window).resize(function() {
-  //     $('#masthead.sticky .site-content').css('margin-top', $('#masthead').height());
-  //   }).resize();
-  // });
-
-  // ----- Add hamburgers support for bootstrap mobile menu
+  // add hamburgers support for bootstrap mobile menu
   $('.navbar-toggle').click(function () {
-          $('.navbar-toggle').toggleClass('is-active');
-          $('.menu-secondary').toggleClass('show');
-   });
+    $('.navbar-toggle').toggleClass('is-active');
+  });
 
 	// ----- Add bootstrap container to gutenberg wp-block-column class
 	$('header.page-header').addClass('container');
