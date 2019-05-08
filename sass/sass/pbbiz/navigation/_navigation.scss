@@ -13,6 +13,8 @@
 --------------------------------------------------------------*/
 // @import "mobile/slide-in-left";
 @import "mobile/slide-in-right";
+// Menu design 1 - left bar block on hover
+@import "mobile/design/design1";
 
 /*--------------------------------------------------------------
 ## Navigation Layout
@@ -25,7 +27,7 @@
 
 // Mobile sticky hamburger menu position
 .site-header.sticky .hamburger {
-  padding: 30px 1rem;
+padding: 30px 1rem;
 }
 @media screen and (min-width: 783px) {
   .site-header.sticky .hamburger {
@@ -33,7 +35,7 @@
   }
 }
 // Mobile menu list top spacing
-.navbar-collapse {
+.menu-primary {
   padding-top: 7.7rem;
 }
 // Mobile menu list max width #RF01

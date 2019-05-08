@@ -39,13 +39,13 @@
     // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
     function myFunction() {
       if (window.pageYOffset > sticky) {
+        // Add sticky class on scroll
         header.classList.add("sticky");
-        $('.site-content').css('margin-top', $('#masthead.sticky').height()); // add page content top spacing on scroll
-        $('.menu-primary').css('top', $('#wpadminbar').height()); // add mobile menu top spacing on scroll
+        // Add page content top spacing on scroll
+        $('.site-content').css('margin-top', $('#masthead.sticky').height());
       } else {
         header.classList.remove("sticky");
         $('.site-content').css('margin-top', 0); // reset page content top spacing
-        $('.menu-primary').css('top', 0); // reset mobile menu top spacing
       }
     };
   });

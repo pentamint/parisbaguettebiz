@@ -1,0 +1,35 @@
+// Medium devices (tablets, less than 992px)
+@include media-breakpoint-down(md) {
+    .menu-primary { // navbar-collapse
+        &.show {
+            ul { // navbar-nav
+                li { // menu-item
+                    a {
+                        &[aria-expanded="true"] {
+                            &:hover {
+                            }
+                        }
+                        &[aria-expanded="false"] {
+                            &:hover {
+                            }
+                        }
+                    }
+                    ul.dropdown-menu.show { // dropdown-menu show
+                        li {
+                        &.current-menu-item {
+                            a {
+                                &:hover {
+                                }
+                            }
+                        }
+                            a {
+                                &:hover {
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
