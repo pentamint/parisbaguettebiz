@@ -30,9 +30,10 @@
 		<div id="top-header">
 			<div class="container">
 				<?php if ( is_active_sidebar ( 'top-header-widget-1' ) ) : ?>
+					<!-- #header-widget-1 -->
 					<div id="header-widget-1" class="header-widget widget-area" role="complementary">
 						<?php dynamic_sidebar ( 'top-header-widget-1' ); ?>
-					</div><!-- #header-widget-1 -->
+					</div>
 				<?php endif; ?>
 				<nav class="navbar navbar-secondary" role="navigation">
 					<div class="nav-wrapper">
@@ -88,6 +89,8 @@
 						</button>
 						<div class="collapse navbar-collapse menu-primary" id="navbar-collapse-1">
 							<?php
+							// Add search form
+							get_search_form();
 							wp_nav_menu( array(
 								'menu'           	=> '',
 								'theme_location'    => 'primary',
@@ -100,6 +103,10 @@
 								'walker'            => new wp_bootstrap_navwalker())
 							);
 							?>
+							<!-- Add toggle search icon -->
+							<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#searchform" aria-expanded="false" aria-controls="saerchform">
+								<i class="fas fa-search"></i>
+							</button>
 							<div class="menu-overlay"></div>
 						</div><!-- navbar-colapse -->
 					</div><!-- .nav-wrapper -->

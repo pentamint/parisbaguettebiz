@@ -34,10 +34,6 @@ padding: 30px 1rem;
     padding: 30px 1rem;
   }
 }
-// Mobile menu list top spacing
-.menu-primary {
-  padding-top: 7.7rem;
-}
 // Mobile menu list max width #RF01
 .menu-primary.show, .navbar-collapse {
   max-width: 22rem;
@@ -130,10 +126,6 @@ padding: 30px 1rem;
 
 /* ----- On scroll ----- */
 
-// menu list top spacing
-.site-header.sticky .navbar-collapse {
-  padding-top: 4.5rem;
-}
 @include media-breakpoint-up($breakpoint__mobile-nav) {
   // change header layout on scroll
   .site-header.sticky .site-branding {

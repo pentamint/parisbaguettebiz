@@ -35,16 +35,25 @@
     // var sticky = header.offsetTop;
     // If top header exist, get the offset position of the main header instead
     var sticky = mainheader.offsetTop;
+
+    var wpadminbar = $('#wpadminbar').height();
+
+    var headerheight = $('#masthead').height();
     
     // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
     function myFunction() {
-      if (window.pageYOffset > sticky) {
+      // For width <= 600px, add sticky class after scroll y pos is >= 46px
+      if (window.innerWidth <= 600 && window.pageYOffset > wpadminbar || (window.innerWidth > 600 && window.pageYOffset > sticky)) {
         // Add sticky class on scroll
         header.classList.add("sticky");
+        // Add absolute position on scroll
+        $('#masthead').css('position', 'fixed');
         // Add page content top spacing on scroll
-        $('.site-content').css('margin-top', $('#masthead.sticky').height());
+        $('.site-content').css('margin-top', headerheight);
       } else {
         header.classList.remove("sticky");
+        // Add relative on top pos
+        $('#masthead').css('position', 'relative');
         $('.site-content').css('margin-top', 0); // reset page content top spacing
       }
     };

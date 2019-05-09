@@ -30,7 +30,7 @@
 	// padding-top: 5.25rem; // header height padding	
 }
 // Mobile all posts & pages spacing top (not home) due to banner
-body:not(.home) .site-content {
+body:not(.home):not(.search) .site-content {
 	padding-top: 3em;
 }
 .single .entry-content {
@@ -42,7 +42,7 @@ body:not(.home) .site-content {
 		padding-bottom: 4em;
 	}
 	// PC all posts & pages spacing top (not home) due to banner
-	body:not(.home) .site-content {
+	body:not(.home):not(.search) .site-content {
 		padding-top: 4em;
 	}
 }

@@ -1,3 +1,4 @@
+// ----- Nav menu font family
 // Main header navbar font family
 .menu-primary ul li a {
 	font-family: $font__nav;
@@ -6,25 +7,29 @@
 .menu-secondary ul li a {
 	font-family: $font__sub-nav;
 }
-// Hamburger button position for Wordpress
+// ----- //
+
+// ----- Hamburger button position for Wordpress
 .hamburger { // menu list allow change position
     position: absolute;
     z-index: 10; // position above mobile menu div
 }
-.admin-bar .hamburger {
-    top: 46px;
-}
-.site-header.sticky .hamburger {
-    top: 0;
-}
-@media screen and (min-width: 783px) {
-    .admin-bar .hamburger {
-        top: 32px;
-    }
-    .site-header.sticky .hamburger {
-    }
-}
-// --- //
+// .admin-bar .hamburger {
+//     top: 46px;
+// }
+// .site-header.sticky .hamburger {
+//     top: 0;
+// }
+// @media screen and (min-width: 783px) {
+//     .admin-bar .hamburger {
+//         top: 32px;
+//     }
+//     .site-header.sticky .hamburger {
+//     }
+// }
+// ----- //
+
+
 
 @include media-breakpoint-up($breakpoint__mobile-nav) {
 	.navbar-toggle {

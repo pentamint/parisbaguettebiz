@@ -1,9 +1,29 @@
 // Medium devices (tablets, less than 992px)
 @include media-breakpoint-down(md) {
     .menu-primary { // navbar-collapse
+        #searchform {
+            opacity: 0;
+        }
         &.show {
-            ul { // navbar-nav
-                li { // menu-item
+            #searchform {
+                margin-right: 40px;
+                padding: 23px 13px 18px;
+                opacity: 1;
+            }
+            >ul { // navbar-nav
+                >li { // menu-item
+                    position: relative;
+                    &:hover {
+                        background-color: #2c333a;
+                    }
+                    &:hover:before {
+                        content: '';
+                        position: absolute;
+                        width: 5px;
+                        height: 100%;
+                        left: 0;
+                        background-color: #00b9eb;
+                    }
                     a {
                         &[aria-expanded="true"] {
                             &:hover {
