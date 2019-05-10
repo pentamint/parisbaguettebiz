@@ -16,22 +16,20 @@
 }
 
 // ----- Top header design ----- //
+// Hide on mobile
+#top-header {
+    display: none;
+}
 // Top header apply flex
 #top-header .container {
     @include flexbox;
-}
-// Mobile widget remove margin
-#top-header .header-widget .widget_text {
-    margin: 0;
-}
-// Mobile hide widget text
-#top-header .header-widget p {
-    display: none;
 }
 
 @include media-breakpoint-up($breakpoint__mobile-nav) { // <- set bootstrap mobile menu breakpoint
     // Top header properties
     #top-header {
+        // Show on PC
+        display: block;
         background-color: $color__background-top-header;
     }
     // Top header hide on fixed header scroll
@@ -49,7 +47,7 @@
     // Top header widget positioning
     #header-widget-1 {
         margin-left: 100px;
-        flex-basis: 100%;
+        width: 100%; // extend 50%
     }
     // Top header navbar-nav menu align right
     #top-header .navbar .navbar-nav {

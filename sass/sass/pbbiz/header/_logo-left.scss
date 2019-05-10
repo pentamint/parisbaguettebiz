@@ -3,10 +3,13 @@
   #main-header .container {
     @include justify-content(flex-start);
   }
-  // Logo and navbar-nav separate
+  // Logo position above navbar row
+  .site-branding {
+    z-index: 1001;
+  }
+  // Navbar align right
   #main-header .navbar {
-    margin-left: 17rem;
-    max-width: calc( 100% - 17rem );
+    right: 0;
   }
   .site-header.sticky .navbar-collapse {
     padding-top: 0;

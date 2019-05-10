@@ -7,12 +7,3 @@ img:not(.custom-logo) {
   object-fit: cover;
   font-family: 'object-fit: cover;';
 }
-// Bootstrap flex menu bug fix
-.navbar :not(.show).collapse {
-  max-height: 4em; /* menu height overflow fix */
-}
-@media (min-width: 992px) {
-  .navbar :not(.show).collapse {
-    margin: 0 auto; /* menu centering fix */
-  }
-}

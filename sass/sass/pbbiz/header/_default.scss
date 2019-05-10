@@ -37,15 +37,15 @@
 .header-sticky-height {
   overflow: visible;
 }
+// Header widget margin padding reset
+.site-header .widget {
+  margin: 0;
+}
 
 @include media-breakpoint-up($breakpoint__mobile-nav) {
   // Header enclose child contents
   .site-header .container {
     position: relative;
-  }
-  // Header widget margin padding reset
-  .site-header .header-widget .widget {
-    margin: 0;
   }
   // ----- Logo size
   // PC header logo size

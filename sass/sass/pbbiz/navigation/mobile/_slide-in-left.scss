@@ -6,16 +6,10 @@
     position: absolute;
     padding: 0;
     top: 0;
-    z-index: 1000;
-}
-// menu list left spacing removed
-.navbar-nav {
-    margin-left: 0;
-}
-.navbar :not(.show).collapse {
-    display: none;
+    z-index: 1000; // order navbar above page content
 }
 .menu-primary {
+    display: none;
     // Mobile menu transition initial state properties -> to be removed for PC
     width: 0;
     @include transition(width .1s ease-in-out, opacity .1s linear);
@@ -28,11 +22,11 @@
     }
     // --- //
     &.show {
+        display: block;
         position: absolute;
         right: 0;
         width: 100%; // mobile menu transition end state properties
-        height: 100vh; // height fallback for non supported browser
-        height: calc(var(--vh, 1vh) * 100);
+        height: 100vh;
         background-color: $color__background-mobile-menu-inner;
         ul { // navbar-nav
             li { // menu-item show
@@ -105,11 +99,10 @@
         position: inherit;
         top: inherit;
     }
-    .navbar :not(.show).collapse {
-        display: block;
-    }
     // Mobile menu transition properties reset
     .menu-primary {
+        @include flexbox;
+        @include justify-content(flex-end);
         width: 100%;
         ul {
             li {

@@ -1,26 +1,35 @@
-/*--------------------------------------------------------------
-** Light Website Color theme
+/*
+* ----- Light Website Color Scheme
+*
+* --- Primary color
+* Blue
+* #0d1d74
+*
+* --- Secondary color
+* TBA
+* TBA
+*
+* --- Accent Color
+* Orange
+*
+*/
 
-* Primary color
-Blue
-#0d1d74
 
-* Secondary color
-TBA
-TBA
 
-* Accent Color
-Orange
-#ffad00
+// ----- Default ----- //
 
---------------------------------------------------------------*/
 
 $color__background-body: #fff;
+
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
-$color__background-button: #e6e6e6;
 $color__background-pre: #eee;
-$color__background-ins: #fff9c0;
+$color__background-ins: #f2f2f2;
+
+// ----- //
+
+$color__background-button: #e6e6e6;
+
 $color__background-top-header: #f2f2f2;
 $color__background-header: #fff;
 $color__background-header-sticky: #fff;

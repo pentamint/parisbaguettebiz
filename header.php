@@ -58,6 +58,15 @@
 		</div><!-- #top-header -->
 		<div id="main-header">
 			<div class="container">
+				<!-- #mobile-header-widget-1 -->
+				<?php if ( is_active_sidebar ( 'mobile-header-widget-1' ) ) : ?>
+					<!-- #header-widget-1 -->
+					<div id="mobile-header-widget-1" class="mobile-header-widget widget-area" role="complementary">
+						<?php dynamic_sidebar ( 'mobile-header-widget-1' ); ?>
+					</div>
+				<?php endif; ?>
+
+				<!-- .site-branding -->
 				<div class="site-branding">
 					<?php
 					the_custom_logo();
@@ -89,7 +98,7 @@
 						</button>
 						<div class="collapse navbar-collapse menu-primary" id="navbar-collapse-1">
 							<?php
-							// Add search form
+							// -- Add search form -- //
 							get_search_form();
 							wp_nav_menu( array(
 								'menu'           	=> '',
@@ -104,7 +113,7 @@
 							);
 							?>
 							<!-- Add toggle search icon -->
-							<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#searchform" aria-expanded="false" aria-controls="saerchform">
+							<button class="btn btn-primary btn-search-toggle" type="button" data-toggle="collapse" data-target="#searchform" aria-expanded="false" aria-controls="saerchform">
 								<i class="fas fa-search"></i>
 							</button>
 							<div class="menu-overlay"></div>

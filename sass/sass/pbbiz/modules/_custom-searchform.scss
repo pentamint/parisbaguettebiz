@@ -1,8 +1,86 @@
+/**
+ * Module: Custom Bootstrap searchform
+ *
+ * Installation
+ *
+ * 1. add searchform.php to wp main folder
+ * 2. add <?php get_search_form(); ?> to php template
+ * 3. add below searchform toggle snippit to php template
+    <button class="btn btn-primary btn-search-toggle" type="button" data-toggle="collapse" data-target="#searchform" aria-expanded="false" aria-controls="saerchform">
+		<i class="fas fa-search"></i>
+	</button>
+ *
+ */
 
-@include media-breakpoint-up($breakpoint__mobile-nav) {
-    .menu-primary {
-        #searchform {
-            
+// ----- Theme design ----- //
+.menu-primary {
+    #searchform {
+        .form-control {
+            padding-left: .5rem;
+            @include inputPlaceholder() {
+                @include font-size(.875);
+            }
         }
     }
 }
+@include media-breakpoint-up($breakpoint__mobile-nav) {
+    .menu-primary {
+        #searchform {
+            &.show {
+                // position searchform below header
+                position: absolute;
+                margin-top: 60px;
+            }
+            .form-control {
+            }
+        }
+    }  
+}
+
+// ----- //
+
+// ----- IE Fix ----- //
+@include media-breakpoint-up($breakpoint__mobile-nav) {
+    .menu-primary {
+        #searchform {
+            &.show {
+                top: 0;
+                right: 0;
+            }
+        }
+    }
+}
+
+// ----- //
+
+// ----- Default ----- //
+.menu-primary {
+    // show on mobile
+    #searchform {
+        display: block;
+    }
+    // hide on mobile
+    .btn-search-toggle {
+        display: none;
+    }
+}
+
+@include media-breakpoint-up($breakpoint__mobile-nav) {
+    .menu-primary {
+        // hide on PC
+        #searchform {
+            @include transition(opacity .1s ease-in-out);
+            display: none;
+            opacity: 0;
+            &.show {
+                display: block;
+                opacity: 1;
+            }
+        }
+        // show on PC
+        .btn-search-toggle {
+            display: block;
+        }
+    }
+}
+// ----- //

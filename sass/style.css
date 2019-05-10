@@ -52,22 +52,21 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Applications (customized)
 # Modules (customized)
 --------------------------------------------------------------*/
-/*--------------------------------------------------------------
-** Light Website Color theme
-
-* Primary color
-Blue
-#0d1d74
-
-* Secondary color
-TBA
-TBA
-
-* Accent Color
-Orange
-#ffad00
-
---------------------------------------------------------------*/
+/*
+* ----- Light Website Color Scheme
+*
+* --- Primary color
+* Blue
+* #0d1d74
+*
+* --- Secondary color
+* TBA
+* TBA
+*
+* --- Accent Color
+* Orange
+*
+*/
 @font-face {
   font-family: 'Nanum Gothic';
   font-style: normal;
@@ -10604,16 +10603,6 @@ img:not(.custom-logo) {
   object-fit: cover;
   font-family: 'object-fit: cover;'; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_custom-cross-browser\.scss}line{font-family:\0000311}}
-.navbar :not(.show).collapse {
-  max-height: 4em;
-  /* menu height overflow fix */ }
-
-@media (min-width: 992px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_custom-cross-browser\.scss}line{font-family:\0000315}}
-  .navbar :not(.show).collapse {
-    margin: 0 auto;
-    /* menu centering fix */ } }
 /* ----- Bug fixes & bootstrap compatibility settings ----- */
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_custom-gutenberg\.scss}line{font-family:\000032}}
 .has-1-columns .wp-block-column {
@@ -10751,7 +10740,7 @@ abbr, acronym {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/typography\/_copy\.scss}line{font-family:\0000338}}
 mark, ins {
-  background: #fff9c0;
+  background: #f2f2f2;
   text-decoration: none; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/typography\/_copy\.scss}line{font-family:\0000343}}
@@ -11103,116 +11092,115 @@ a {
 /*--------------------------------------------------------------
 ## Mobile Menus
 --------------------------------------------------------------*/
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-right\.scss}line{font-family:\000032}}
-.hamburger {
-  right: 0; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-right\.scss}line{font-family:\000036}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-left\.scss}line{font-family:\000032}}
 .navbar, .nav-wrapper {
   width: 100%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-right\.scss}line{font-family:\000039}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-left\.scss}line{font-family:\000035}}
 .navbar {
   position: absolute;
   padding: 0;
   top: 0;
   z-index: 1000; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-right\.scss}line{font-family:\0000316}}
-.navbar-nav {
-  margin-left: 0; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-right\.scss}line{font-family:\0000319}}
-.navbar :not(.show).collapse {
-  display: none; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-right\.scss}line{font-family:\0000322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-left\.scss}line{font-family:\0000311}}
 .menu-primary {
+  display: none;
   width: 0;
   -moz-transition: width 0.1s ease-in-out, opacity 0.1s linear;
   -o-transition: width 0.1s ease-in-out, opacity 0.1s linear;
   -webkit-transition: width 0.1s ease-in-out, opacity 0.1s linear;
   transition: width 0.1s ease-in-out, opacity 0.1s linear; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-right\.scss}line{font-family:\0000328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-left\.scss}line{font-family:\0000318}}
   .menu-primary ul li a {
     opacity: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-right\.scss}line{font-family:\0000334}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-left\.scss}line{font-family:\0000324}}
   .menu-primary.show {
+    display: block;
     position: absolute;
     right: 0;
     width: 100%;
     height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
     background-color: #23282d; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-right\.scss}line{font-family:\0000343}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-left\.scss}line{font-family:\0000333}}
     .menu-primary.show ul li a {
       color: #eee;
       opacity: 1; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-right\.scss}line{font-family:\0000346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-left\.scss}line{font-family:\0000336}}
       .menu-primary.show ul li a[aria-expanded="true"] {
         background-color: #ffad00;
         color: #eee; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-right\.scss}line{font-family:\0000349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-left\.scss}line{font-family:\0000339}}
         .menu-primary.show ul li a[aria-expanded="true"]:hover {
           background-color: #ffad00;
           color: #eee; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-right\.scss}line{font-family:\0000355}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-left\.scss}line{font-family:\0000345}}
       .menu-primary.show ul li a[aria-expanded="false"]:hover {
         background-color: #191e23;
         color: #ffad00; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-right\.scss}line{font-family:\0000361}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-left\.scss}line{font-family:\0000351}}
     .menu-primary.show ul li ul.dropdown-menu.show {
       background-color: #32373c; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-right\.scss}line{font-family:\0000365}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-left\.scss}line{font-family:\0000355}}
       .menu-primary.show ul li ul.dropdown-menu.show li.current-menu-item a {
         background-color: #32373c;
         color: #fff;
         font-weight: 700; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-right\.scss}line{font-family:\0000369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-left\.scss}line{font-family:\0000359}}
         .menu-primary.show ul li ul.dropdown-menu.show li.current-menu-item a:hover {
           color: #fff; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-right\.scss}line{font-family:\0000375}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-left\.scss}line{font-family:\0000365}}
       .menu-primary.show ul li ul.dropdown-menu.show li a:hover {
         background-color: #32373c;
         color: #ffad00; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-right\.scss}line{font-family:\0000387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-left\.scss}line{font-family:\0000377}}
 .dropdown-menu {
   margin: 0;
   padding: 0;
   border: none;
   border-radius: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-right\.scss}line{font-family:\0000394}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-left\.scss}line{font-family:\0000384}}
 .dropdown-item:last-child {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-right\.scss}line{font-family:\0000399}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-left\.scss}line{font-family:\0000389}}
 .dropdown-item:first-child {
   border-top-left-radius: 0;
   border-top-right-radius: 0; }
 
 @media (min-width: 992px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-right\.scss}line{font-family:\00003104}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-left\.scss}line{font-family:\0000394}}
   .hamburger {
     display: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-right\.scss}line{font-family:\00003108}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-left\.scss}line{font-family:\0000398}}
   .navbar {
     position: inherit;
     top: inherit; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-right\.scss}line{font-family:\00003112}}
-  .navbar :not(.show).collapse {
-    display: block; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-right\.scss}line{font-family:\00003116}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-left\.scss}line{font-family:\00003103}}
   .menu-primary {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    -webkit-justify-content: flex-end;
+    -moz-justify-content: flex-end;
+    justify-content: flex-end;
     width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-right\.scss}line{font-family:\00003120}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-left\.scss}line{font-family:\00003109}}
     .menu-primary ul li a {
       opacity: 1; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/_slide-in-right\.scss}line{font-family:\000034}}
+.hamburger {
+  right: 0; }
+
 @media (max-width: 991.98px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/mobile\/design\/_design1\.scss}line{font-family:\000034}}
   .menu-primary #searchform {
@@ -11919,14 +11907,14 @@ body:not(.home):not(.search) .site-content {
 .header-sticky-height {
   overflow: visible; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_default\.scss}line{font-family:\0000341}}
+.site-header .widget {
+  margin: 0; }
+
 @media (min-width: 992px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_default\.scss}line{font-family:\0000343}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_default\.scss}line{font-family:\0000347}}
   .site-header .container {
     position: relative; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_default\.scss}line{font-family:\0000347}}
-  .site-header .header-widget .widget {
-    margin: 0; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_default\.scss}line{font-family:\0000352}}
   .custom-logo-link {
@@ -11962,6 +11950,32 @@ body:not(.home):not(.search) .site-content {
   #main-header .container {
     height: 70px; } }
 /*--------------------------------------------------------------
+## Mobile header: mobile only elements
+--------------------------------------------------------------*/
+@media (max-width: 991.98px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_mobile-header\.scss}line{font-family:\000032}}
+  #mobile-header-widget-1 {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-40%);
+    left: 0;
+    margin-left: 1rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_mobile-header\.scss}line{font-family:\0000311}}
+    #mobile-header-widget-1 a {
+      color: #555; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_mobile-header\.scss}line{font-family:\0000313}}
+      #mobile-header-widget-1 a:hover {
+        color: #0d1d74; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_mobile-header\.scss}line{font-family:\0000316}}
+      #mobile-header-widget-1 a .svg-inline--fa {
+        font-size: 32px;
+        font-size: 2rem; } }
+@media (min-width: 992px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_mobile-header\.scss}line{font-family:\0000324}}
+  #mobile-header-widget-1 {
+    display: none; } }
+/*--------------------------------------------------------------
 ## Header background: block / transparent
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -11977,15 +11991,18 @@ body:not(.home):not(.search) .site-content {
     justify-content: flex-start; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_logo-left\.scss}line{font-family:\000037}}
-  #main-header .navbar {
-    margin-left: 17rem;
-    max-width: calc( 100% - 17rem ); }
+  .site-branding {
+    z-index: 1001; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_logo-left\.scss}line{font-family:\0000311}}
+  #main-header .navbar {
+    right: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_logo-left\.scss}line{font-family:\0000314}}
   .site-header.sticky .navbar-collapse {
     padding-top: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_logo-left\.scss}line{font-family:\0000314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_logo-left\.scss}line{font-family:\0000317}}
   .site-header.sticky .navbar-collapse ul {
     border-top: none; } }
 /*--------------------------------------------------------------
@@ -12074,6 +12091,10 @@ body:not(.home):not(.search) .site-content {
   #main-header {
     border-top: none; } }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000320}}
+#top-header {
+  display: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000324}}
 #top-header .container {
   display: -webkit-box;
   display: -webkit-flex;
@@ -12081,24 +12102,17 @@ body:not(.home):not(.search) .site-content {
   display: -ms-flexbox;
   display: flex; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000324}}
-#top-header .header-widget .widget_text {
-  margin: 0; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000328}}
-#top-header .header-widget p {
-  display: none; }
-
 @media (min-width: 992px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000334}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000330}}
   #top-header {
+    display: block;
     background-color: #f2f2f2; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000336}}
   .site-header.sticky #top-header {
     display: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000342}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000340}}
   #top-header .widget-area p {
     display: block;
     font-size: .69rem;
@@ -12106,12 +12120,12 @@ body:not(.home):not(.search) .site-content {
     margin-bottom: 0;
     margin-top: .2rem; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000348}}
   #header-widget-1 {
     margin-left: 100px;
-    flex-basis: 100%; }
+    width: 100%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000355}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000353}}
   #top-header .navbar .navbar-nav {
     -webkit-box-pack: end;
     -ms-flex-pack: end;
@@ -12119,7 +12133,7 @@ body:not(.home):not(.search) .site-content {
     -moz-justify-content: flex-end;
     justify-content: flex-end; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000357}}
   #top-header .navbar .navbar-nav li:not(:first-child):before {
     display: block;
     position: absolute;
@@ -12130,38 +12144,38 @@ body:not(.home):not(.search) .site-content {
     background-color: #808080;
     content: ''; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000368}}
   body.logged-in #top-header .navbar .navbar-nav li:not(:first-child):before {
     right: 4.65rem; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000377}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000375}}
 #top-header .container {
   height: 0; }
 
 @media (min-width: 576px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000382}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000380}}
   #top-header .container {
     height: 0; } }
 @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000388}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000386}}
   #top-header .container {
     height: 0; } }
 @media (min-width: 992px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000394}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000392}}
   #top-header .container {
     height: 27px; } }
 @media (min-width: 1200px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\00003100}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000398}}
   #top-header .container {
     height: 27px; } }
 /* ----- Theme ----- */
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_header\.scss}line{font-family:\0000330}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_header\.scss}line{font-family:\0000335}}
 .site-branding {
   padding: 5px;
   background-color: #fff;
   border-radius: 100px; }
 
 @media (min-width: 992px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_header\.scss}line{font-family:\0000338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_header\.scss}line{font-family:\0000343}}
   .site-branding {
     margin-top: -25px; } }
 /*--------------------------------------------------------------
@@ -12436,5 +12450,72 @@ object {
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_plugin-kboard\.scss}line{font-family:\0000328}}
 #kboard-default-latest table td {
   padding: 0.625rem 0 0.625rem 0.75rem !important; }
+
+/**
+ * Module: Custom Bootstrap searchform
+ *
+ * Installation
+ *
+ * 1. add searchform.php to wp main folder
+ * 2. add <?php get_search_form(); ?> to php template
+ * 3. add below searchform toggle snippit to php template
+    <button class="btn btn-primary btn-search-toggle" type="button" data-toggle="collapse" data-target="#searchform" aria-expanded="false" aria-controls="saerchform">
+		<i class="fas fa-search"></i>
+	</button>
+ *
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_custom-searchform\.scss}line{font-family:\0000318}}
+.menu-primary #searchform .form-control {
+  padding-left: .5rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/mixins\/_input-placeholder\.scss}line{font-family:\0000335}}
+  .menu-primary #searchform .form-control::-moz-placeholder {
+    font-size: 14px;
+    font-size: 0.875rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/mixins\/_input-placeholder\.scss}line{font-family:\0000335}}
+  .menu-primary #searchform .form-control::-webkit-input-placeholder {
+    font-size: 14px;
+    font-size: 0.875rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/mixins\/_input-placeholder\.scss}line{font-family:\0000335}}
+  .menu-primary #searchform .form-control:-ms-input-placeholder {
+    font-size: 14px;
+    font-size: 0.875rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/mixins\/_input-placeholder\.scss}line{font-family:\0000344}}
+  .menu-primary #searchform .form-control::placeholder {
+    font-size: 14px;
+    font-size: 0.875rem; }
+
+@media (min-width: 992px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_custom-searchform\.scss}line{font-family:\0000329}}
+  .menu-primary #searchform.show {
+    position: absolute;
+    margin-top: 60px; } }
+@media (min-width: 992px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_custom-searchform\.scss}line{font-family:\0000346}}
+  .menu-primary #searchform.show {
+    top: 0;
+    right: 0; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_custom-searchform\.scss}line{font-family:\0000359}}
+.menu-primary #searchform {
+  display: block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_custom-searchform\.scss}line{font-family:\0000363}}
+.menu-primary .btn-search-toggle {
+  display: none; }
+
+@media (min-width: 992px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_custom-searchform\.scss}line{font-family:\0000371}}
+  .menu-primary #searchform {
+    -moz-transition: opacity 0.1s ease-in-out;
+    -o-transition: opacity 0.1s ease-in-out;
+    -webkit-transition: opacity 0.1s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
+    display: none;
+    opacity: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_custom-searchform\.scss}line{font-family:\0000375}}
+    .menu-primary #searchform.show {
+      display: block;
+      opacity: 1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_custom-searchform\.scss}line{font-family:\0000381}}
+  .menu-primary .btn-search-toggle {
+    display: block; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -114,8 +114,17 @@ function pbbiz_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => 'Top Header Widget', 'PBBiz',
+		'name'          => 'Top Header Left Widget', 'PBBiz',
 		'id'            => 'top-header-widget-1',
+		'description'   => 'Add widgets here.', 'PBBiz',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => 'Mobile Header Widget', 'PBBiz',
+		'id'            => 'mobile-header-widget-1',
 		'description'   => 'Add widgets here.', 'PBBiz',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
