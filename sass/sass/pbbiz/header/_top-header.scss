@@ -4,11 +4,11 @@
     border-top: none;
 }
 #main-header {
-    border-top: 5px solid #0d1d74;
+    border-top: 5px solid;
 }
 @include media-breakpoint-up($breakpoint__mobile-nav) {
     #top-header {
-        border-top: 5px solid #0d1d74;    
+        border-top: 5px solid;    
     }
     #main-header {
         border-top: none;
@@ -30,7 +30,6 @@
     #top-header {
         // Show on PC
         display: block;
-        background-color: $color__background-top-header;
     }
     // Top header hide on fixed header scroll
     .site-header.sticky #top-header {
@@ -61,7 +60,6 @@
         right: 4rem;
         width: 1px;
         height: .5rem;
-        background-color: #808080;
         content: '';
     }
     // Secondary nav divider logged in

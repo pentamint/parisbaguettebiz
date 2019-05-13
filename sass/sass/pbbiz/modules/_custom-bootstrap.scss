@@ -1,0 +1,15 @@
+// ----- Bootstrap Rest Global ----- //
+// --- Button Design --- //
+// Remove button box shadow property on active and focus
+.btn:focus, .btn.focus, .btn-primary:focus, .btn-primary.focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-primary.dropdown-toggle:focus {
+    box-shadow: none;
+}
+// --- //
+
+@include media-breakpoint-down(md) {
+
+}
+
+@include media-breakpoint-up(breakpoint__mobile) {
+
+}
