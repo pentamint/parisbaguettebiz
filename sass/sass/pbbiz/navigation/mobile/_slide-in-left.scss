@@ -100,14 +100,16 @@
         top: inherit;
     }
     // Mobile menu transition properties reset
-    .menu-primary {
-        @include flexbox;
-        @include justify-content(flex-end);
-        width: 100%;
-        ul {
-            li {
-                a {
-                    opacity: 1;
+    .navbar-primary {
+        .menu-primary {
+            @include flexbox;
+            @include justify-content(flex-end);
+            width: 100%;
+            ul {
+                li {
+                    a {
+                        opacity: 1;
+                    }
                 }
             }
         }

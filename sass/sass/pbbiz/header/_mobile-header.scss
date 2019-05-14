@@ -9,10 +9,6 @@
         left: 0;
         margin-left: 1rem;
         a {
-            color: #555;
-            &:hover {
-               color: #0d1d74; 
-            }
             .svg-inline--fa {
                 @include font-size(2);
             }

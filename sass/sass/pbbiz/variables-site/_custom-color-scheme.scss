@@ -5,6 +5,8 @@
 *
 */
 
+// ----- Color Scheme ----- //
+
 // Base Color - background header, body etc.
 $base-color: #fff;
 
@@ -27,3 +29,33 @@ $accent-color: #f6be07;
 // Sub Color - Brown #735A0D
 // $sub-color: #614F1F;
 $accent-sub-color: #AD8515;
+
+// ----- //
+
+
+// ----- Typography ----- //
+
+// Primary - Light Area Font
+$font-color: #333;
+
+// Negative Primary - Dark Area Font
+$font-color-ng: #fff;
+
+// Accent - Light Area Accent
+$font-color-ac:  #2643AD;
+
+// Negative Accent - Dark Area Accent
+$font-color-ng-ac: #f6be07;
+
+// ----- //
+
+
+// ----- Structural ----- //
+
+// Line / Divider - Light Area
+$line-color: #808080;
+
+// Negative Line / Divider - Dark Area
+$line-color-ng: #ccc;
+
+// ----- //
