@@ -38,7 +38,7 @@
     // Top header text widget design
     #top-header .widget-area p {
         display: block;
-        font-size: .69rem;
+        @include font-size(.69);
         font-weight: 900;
         margin-bottom: 0;
         margin-top: .2rem;

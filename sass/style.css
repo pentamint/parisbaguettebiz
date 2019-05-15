@@ -12337,7 +12337,7 @@ body:not(.home):not(.search) .site-content {
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_top-header\.scss}line{font-family:\0000339}}
   #top-header .widget-area p {
     display: block;
-    font-size: .69rem;
+    font-size: 0.043125rem;
     font-weight: 900;
     margin-bottom: 0;
     margin-top: .2rem; }
