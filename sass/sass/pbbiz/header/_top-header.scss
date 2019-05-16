@@ -1,5 +1,5 @@
-// ----- Custom element ----- //
-// --- Responsive fullwidth top bar design
+// ----- Custom Elements ----- //
+// --- Responsive fullwidth border-top bar design --- //
 #top-header {
     border-top: none;
 }
@@ -14,19 +14,21 @@
         border-top: none;
     }
 }
+// --- //
 
-// ----- Top header design ----- //
-// Hide on mobile
+// ----- Top Header Design ----- //
+// --- Hide on mobile --- //
 #top-header {
     display: none;
+    // Top header apply flex
+    .container {
+        @include flexbox;
+    }
 }
-// Top header apply flex
-#top-header .container {
-    @include flexbox;
-}
+// --- //
 
 @include media-breakpoint-up($breakpoint__mobile-nav) { // <- set bootstrap mobile menu breakpoint
-    // Top header properties
+    // --- Top header properties --- //
     #top-header {
         // Show on PC
         display: block;
@@ -35,41 +37,64 @@
     .site-header.sticky #top-header {
         display: none;
     }
-    // Top header text widget design
-    #top-header .widget-area p {
-        display: block;
-        @include font-size(.69);
-        font-weight: 900;
-        margin-bottom: 0;
-        margin-top: .2rem;
+    // --- //
+
+    // --- Widget left text widget design --- //
+    #top-header {
+        .container {
+            // Left widget text
+            #header-widget-1 {
+                margin-left: 100px; // widget positioning
+                width: 100%; // extend to 50%
+                .widget {
+                    .textwidget {
+                        p {
+                            display: block;
+                            @include rfs(12);
+                            font-weight: 900;
+                            margin-bottom: 0;
+                            margin-top: .2rem; 
+                        }
+                    }
+                }
+            }
+            // Right widget secondary nav
+            .navbar-secondary {
+                .nav-wrapper {
+                    .menu-secondary {
+                        // Display none reset
+                        @include flexbox;
+                        // Nav position right
+                        @include justify-content(flex-end);
+                        // Top header nav align right
+                        .navbar-nav {
+                            @include flex-just(flex-end);
+                            li {
+                                // Secondary nav divider
+                                &:not(:first-child):before  {
+                                    display: block;
+                                    position: absolute;
+                                    top: .5rem;
+                                    right: 4rem;
+                                    width: 1px;
+                                    height: .5rem;
+                                    content: '';
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
-    // Top header widget positioning
-    #header-widget-1 {
-        margin-left: 100px;
-        width: 100%; // extend 50%
-    }
-    // Top header navbar-nav menu align right
-    #top-header .navbar .navbar-nav {
-    @include flex-just(flex-end);
-    }
-    // Secondary nav divider logged out
-    #top-header .navbar .navbar-nav li:not(:first-child):before {
-        display: block;
-        position: absolute;
-        top: .5rem;
-        right: 4rem;
-        width: 1px;
-        height: .5rem;
-        content: '';
-    }
-    // Secondary nav divider logged in
+    // Secondary nav divider login pos
     body.logged-in #top-header .navbar .navbar-nav li:not(:first-child):before {
         right: 4.65rem;
     }
 }
 
 // ----- Responsive top header height
-// top header xs height
+// Top header xs height
 #top-header .container {
     height: $height__xs-top-header;
 }

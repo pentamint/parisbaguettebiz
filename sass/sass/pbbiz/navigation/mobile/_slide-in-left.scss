@@ -99,14 +99,16 @@
         position: inherit;
         top: inherit;
     }
-    // Mobile menu transition properties reset
+    // Mobile menu properties reset
     .navbar-primary {
         .menu-primary {
+            // Display none reset
             @include flexbox;
             @include justify-content(flex-end);
             width: 100%;
             ul {
                 li {
+                    // Opacity 0 reset
                     a {
                         opacity: 1;
                     }

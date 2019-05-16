@@ -21,7 +21,7 @@
 						a.dropdown-item {
 							padding-left: 1rem;
 							color: $color__link;
-							@include font-size(.875);
+							@include rfs(14);
 						}
 					}
 				}

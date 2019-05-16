@@ -1,8 +1,4 @@
-// Rem output with px fallback
-@mixin font-size($sizeValue: 1) {
-	font-size: ($sizeValue * 16) * 1px;
-	font-size: $sizeValue * 1rem;
-}
+// ----- Default Underscore Theme Mixins ----- //
 
 // Center block
 @mixin center-block {
@@ -28,11 +24,15 @@
 	width: map-get( $columns, $numberColumns ) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
 
+// ----- //
+
+// ----- Custom Mixins ----- //
+
 // Box shadow
 @mixin box-shadow($value) {
-  -webkit-box-shadow: $value;
-  -moz-box-shadow: $value;
-  box-shadow: $value;
+	-webkit-box-shadow: $value;
+	-moz-box-shadow: $value;
+	box-shadow: $value;
 }
 
 // Flexbox mixins
@@ -46,3 +46,5 @@
 
 // Input Placeholder mixins
 @import "input-placeholder";
+
+// ----- //

@@ -18,7 +18,7 @@
         .form-control {
             padding-left: .5rem;
             @include inputPlaceholder() {
-                @include font-size(.875);
+                @include rfs(14);
             }
         }
     }

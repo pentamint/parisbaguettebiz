@@ -56,7 +56,7 @@ padding: 30px 1rem;
   // PC top header navbar design
   .menu-secondary > ul > li > .nav-link {
     padding: .28rem .75rem;
-    @include font-size(0.621);
+    @include rfs(10);
     font-weight: 900;
   }
   // PC main header navbar expanded menu text color
@@ -79,7 +79,7 @@ padding: 30px 1rem;
 }
 // mobile menu font size
 .navbar, .dropdown-menu {
-  @include font-size(0.875);
+  @include rfs(14);
 }
 @include media-breakpoint-up($breakpoint__mobile-nav) {
   // nav bar position
@@ -87,7 +87,7 @@ padding: 30px 1rem;
     >ul {
       >li {
         >a { // nav link color
-          @include font-size(0.8);
+          @include rfs(13);
           color: $color__text-nav;
           font-weight: 900;
           &:hover {
@@ -109,7 +109,7 @@ padding: 30px 1rem;
                 background-color: $color__background-nav-dropdown-active;
               }
               color: $color__text-nav-dropdown;
-              @include font-size(0.75);
+              @include rfs(12);
             }
           }
         }
