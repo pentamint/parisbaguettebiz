@@ -32,7 +32,7 @@
           @include flex-grow(0); // stop element growth
           p {
             font-family: $font__sub-nav;
-            @include font-size(1);
+            @include rfs(16);
             font-weight: 900;
             color: #0d1d74;
           }
@@ -50,7 +50,7 @@
                 border-top: none;
               }
               .kboard-latest-title {
-                @include font-size(0.8);
+                @include rfs(13);
                 font-weight: 900;
               }
             }
@@ -65,14 +65,14 @@
         }
         .view_more_btn {
           @include flex-grow(0); // stop element growth
-          @include font-size(1.5);
+          @include rfs(24);
           a {
             color: $color__text-nav-hover;
           }
         }
         .promo_preview_title {
           font-family: $font__sub-nav;
-          @include font-size(1);
+          @include rfs(16);
           color: #fff;
           font-weight: 900;
         }
@@ -172,14 +172,14 @@
             .kboard-latest-title {
               // Left line height
               height: 55px;
-              @include font-size(0.875);
+              @include rfs(14);
             }
             .kboard-latest-date {
             }
           }
           .view_more_btn {
             @include flex-grow(0);
-            @include font-size(1.5);
+            @include rfs(24);
             a {
               &:hover {
                 color: #ffd780;

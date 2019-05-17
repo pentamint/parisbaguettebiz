@@ -26,9 +26,6 @@
 .entry-header {
 	display: none;
 }
-.site-header.sticky .site-content {
-	// padding-top: 5.25rem; // header height padding	
-}
 // Mobile all posts & pages spacing top (not home) due to banner
 body:not(.home):not(.search) .site-content {
 	padding-top: 3em;

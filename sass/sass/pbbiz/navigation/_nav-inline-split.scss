@@ -18,7 +18,7 @@
 		flex-direction: $flex-direction__main-nav; // menu direction
 	}
 	.navbar-nav a {
-		@include font-size(1);
+		@include rfs(16);
 	}
 	.navbar-collapse {
 		ul {
@@ -28,7 +28,7 @@
 						a.dropdown-item {
 							padding-left: 1rem;
 							color: $color__link;
-							@include font-size(.875);
+							@include rfs(14);
 						}
 					}
 				}
