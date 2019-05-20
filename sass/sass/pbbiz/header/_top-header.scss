@@ -44,13 +44,15 @@
         .container {
             // Left widget text
             #header-widget-1 {
-                margin-left: 100px; // widget positioning
+                @include flexbox;
+                @include align-items(center);
+                margin-left: 110px; // widget positioning
                 width: 100%; // extend to 50%
                 .widget {
                     .textwidget {
                         p {
                             display: block;
-                            @include rfs(12);
+                            @include rfs(11);
                             font-weight: 900;
                             margin-bottom: 0;
                             margin-top: .2rem; 
@@ -74,8 +76,8 @@
                                 &:not(:first-child):before  {
                                     display: block;
                                     position: absolute;
-                                    top: .5rem;
-                                    right: 4rem;
+                                    top: 13px;
+                                    right: 80px;
                                     width: 1px;
                                     height: .5rem;
                                     content: '';
@@ -89,7 +91,7 @@
     }
     // Secondary nav divider login pos
     body.logged-in #top-header .navbar .navbar-nav li:not(:first-child):before {
-        right: 4.65rem;
+        right: 70px;
     }
 }
 
