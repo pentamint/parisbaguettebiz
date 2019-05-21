@@ -77,7 +77,7 @@
                                     display: block;
                                     position: absolute;
                                     top: 13px;
-                                    right: 80px;
+                                    right: 69px;
                                     width: 1px;
                                     height: .5rem;
                                     content: '';
@@ -90,8 +90,8 @@
         }
     }
     // Secondary nav divider login pos
-    body.logged-in #top-header .navbar .navbar-nav li:not(:first-child):before {
-        right: 70px;
+    body.logged-in #top-header .container .navbar-secondary .nav-wrapper .menu-secondary .navbar-nav li:not(:first-child):before {
+        right: 80px;
     }
 }
 

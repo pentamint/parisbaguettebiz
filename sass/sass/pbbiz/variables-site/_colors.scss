@@ -12,8 +12,8 @@
     #masthead {
         // Header background
         background-color: $base-color;
-        // Fixed header background
         &.sticky {
+            // Fixed header background
             background-color: $base-color;
         }
         #top-header {
@@ -24,8 +24,8 @@
             // Header border top
             border-top-color: $secondary-color;
             #mobile-header-widget-1 {
-                // Top header widget icon
                 a {
+                    // My account widget icon
                     color: $font-color;
                     &:hover {
                         color: $font-color-ac;
@@ -35,6 +35,55 @@
             // Logo background
             .site-branding {
                 background-color: $base-color;
+            }
+            .navbar-primary {
+                .nav-wrapper {
+                    .menu-primary {
+                        &.show {
+                            // primary nav background
+                            background-color: $ng-base-color;
+                            #menu-primary-menu {
+                                >.nav-item {
+                                    &:hover:before {
+                                        // hover left highlight bar
+                                        background-color: $accent-color;
+                                    }
+                                    >.nav-link {
+                                        color: $font-color-ng;
+                                        &[aria-expanded="true"] {
+                                            background-color: $primary-color;
+                                            color: $font-color-ng;
+                                            &:hover {
+                                                background-color: $secondary-color;
+                                                color: $font-color-ng;
+                                            }
+                                        }
+                                        &[aria-expanded="false"] {
+                                            &:hover {
+                                                background-color: $secondary-color;
+                                                color: $font-color-ng;
+                                            }
+                                        }
+                                    }
+                                    .dropdown-menu.show {
+                                        background-color: $ng-base-sub-color;
+                                        .nav-item {
+                                            &.current-menu-item {
+                                                .nav-link {
+                                                    background-color: $ng-base-sub-color;
+                                                    color: $font-color-ng;
+                                                    &:hover {
+                                                        color: $font-color-ng;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -150,7 +199,6 @@ $color__background-mobile-menu-list-active: #AD8515;
 $color__background-mobile-menu-list-2-hover: #32373c;
 $color__background-mobile-menu-list-2-active: #32373c;
 
-$color__link-mobile-menu-list: #eee;
 $color__link-mobile-menu-list-hover: #AD8515;
 $color__link-mobile-menu-list-active: #fff;
 $color__link-mobile-menu-list-2-hover: #AD8515;

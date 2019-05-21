@@ -1,70 +1,59 @@
-// Navbar menu design
-.navbar, .nav-wrapper { // navbar menu fullwidth
-    width: 100%;
-}
-.navbar { // slide in layout
+// ----- Default ----- //
+// --- Layout --- //
+.navbar-primary {
+    width: 100%; // expand collapsed wrapper
     position: absolute;
     padding: 0;
     top: 0;
     z-index: 1000; // order navbar above page content
-}
-.menu-primary {
-    display: none;
-    // Mobile menu transition initial state properties -> to be removed for PC
-    width: 0;
-    @include transition(width .1s ease-in-out, opacity .1s linear);
-    ul {
-        li {
-            a {
-                opacity: 0;
-            }
-        }
-    }
-    // --- //
-    &.show {
-        display: block;
-        position: absolute;
-        right: 0;
-        width: 100%; // mobile menu transition end state properties
-        height: 100vh;
-        background-color: $color__background-mobile-menu-inner;
-        ul { // navbar-nav
-            li { // menu-item show
-                a {
-                    color: $color__link-mobile-menu-list;
-                    opacity: 1; // mobile menu transition end state properties
-                    &[aria-expanded="true"] {
-                        background-color: $color__background-mobile-menu-list-active;
-                        color: $color__link-mobile-menu-list;
-                        &:hover {
-                            background-color: $color__background-mobile-menu-list-active;
-                            color: $color__link-mobile-menu-list;
-                        }
-                    }
-                    &[aria-expanded="false"] {
-                        &:hover {
-                            background-color: $color__background-mobile-menu-list-hover;
-                            color: $color__link-mobile-menu-list-hover;
-                        }
+    .nav-wrapper {
+        .menu-primary {
+            // Mobile menu transition initial state properties -> to be removed for PC
+            width: 0;
+            @include transition(width .1s ease-in-out, opacity .1s linear);
+            #menu-primary-menu {
+                .nav-item {
+                    .nav-link {
+                        opacity: 0;
                     }
                 }
-                ul.dropdown-menu.show { // dropdown-menu show
-                    background-color: $color__background-mobile-menu-dropdown;
-                    li {
-                    &.current-menu-item {
-                        a {
-                        background-color: $color__background-mobile-menu-list-2-hover;
-                        color: $color__link-mobile-menu-list-2-active;
-                        font-weight: 700;
-                            &:hover {
-                                color: $color__link-mobile-menu-list-2-active;
-                            }
-                        }
-                    }
-                        a {
-                            &:hover {
-                            background-color: $color__background-mobile-menu-list-2-active;
-                            color: $color__link-mobile-menu-list-2-hover;
+            }
+            &.show {
+                display: block;
+                position: absolute;
+                right: 0;
+                width: 100%; // mobile menu transition end state properties
+                height: 100vh;
+                #menu-primary-menu {
+                    >.nav-item {
+                        >.nav-link {
+                            opacity: 1; // mobile menu transition end state properties
+                            .dropdown-menu.show {
+                                // dropdown menu spacing
+                                margin: 0;
+                                padding: 0;
+                                border: none;
+                                border-radius: 0;
+                                .nav-item {
+                                    &.current-menu-item {
+                                        .dropdown-item {
+                                            // active link bold
+                                            font-weight: 700;
+                                        }
+                                    }
+                                    .dropdown-item {
+                                        &:first-child {
+                                            // removed border radius
+                                            border-top-left-radius: 0;
+                                            border-top-right-radius: 0;
+                                        }
+                                        &:last-child {
+                                            // removed border radius
+                                            border-bottom-right-radius: 0;
+                                            border-bottom-left-radius: 0;
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -73,23 +62,7 @@
         }
     }
 }
-// menu list 2nd spacing
-.dropdown-menu {
-    margin: 0;
-    padding: 0;
-    border: none;
-    border-radius: 0;
-}
-// removed border radius
-.dropdown-item:last-child {
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-}
-// removed border radius
-.dropdown-item:first-child {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
+
 @include media-breakpoint-up($breakpoint__mobile-nav) {
     .hamburger {
         display: none;
@@ -98,6 +71,7 @@
     .navbar {
         position: inherit;
         top: inherit;
+        @include justify-content(flex-end);
     }
     // Mobile menu properties reset
     .navbar-primary {
@@ -106,10 +80,10 @@
             @include flexbox;
             @include justify-content(flex-end);
             width: 100%;
-            ul {
-                li {
-                    // Opacity 0 reset
-                    a {
+            #menu-primary-menu {
+                .nav-item {
+                    .nav-link {
+                        // Opacity 0 reset
                         opacity: 1;
                     }
                 }

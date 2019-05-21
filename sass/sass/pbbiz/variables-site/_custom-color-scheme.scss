@@ -1,17 +1,11 @@
 /*
-* Primary Color: #1f2d60
 * 
+* Primary Color: #1f2d60 
 * Complementary Scheme
 *
 */
 
 // ----- Color Scheme ----- //
-
-// Base Color - background header, body etc.
-$base-color: #fff;
-
-// Base Sub Color - background header sub, body sub etc.
-$base-sub-color: #f2f2f2;
 
 // Primary Color - Navy Blue #1f2d60
 $primary-color: #1f2d60;
@@ -51,6 +45,24 @@ $font-color-ng-ac: #f6be07;
 
 
 // ----- Structural ----- //
+
+// --- Layout --- //
+
+// PC //
+
+// Base Color - background header, body etc.
+$base-color: #fff;
+
+// Base Sub Color - background header sub, body sub etc.
+$base-sub-color: #f2f2f2;
+
+// Mobile //
+
+// Negative Base Color - nav background
+$ng-base-color: #23282d;
+
+// Negative Base Sub Color - expanded nav background
+$ng-base-sub-color: #191e23;
 
 // Line / Divider - Light Area
 $line-color: #808080;

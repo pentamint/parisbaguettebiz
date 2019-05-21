@@ -56,12 +56,6 @@
     max-height: $size__logo-pc-y;
   }
 }
-@include media-breakpoint-down(md) {
-  .navbar {
-    top: 0;
-    left: 0;
-  }
-}
 
 // ----- Responsive main header height
 // main header xs height

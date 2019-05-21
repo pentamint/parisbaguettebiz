@@ -59,18 +59,10 @@ padding: 30px 1rem;
     @include rfs(10);
     font-weight: 900;
   }
-  // PC main header navbar expanded menu text color
-  .menu-primary > ul > li > a[aria-expanded=true] {
-    color: $color__text-nav-hover;
-  }
   // PC main header navbar expanded menu top border design
   .menu-primary > ul > li > .dropdown-menu {
     border-top: 3px solid #0d1d74;
   }
-}
-// dropdown menu link color
-.navbar-collapse ul li ul.dropdown-menu.show li a:hover {
-  color: $color__text-nav-dropdown-hover;
 }
 
 // menu item 2nd spacing
