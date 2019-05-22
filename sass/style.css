@@ -12142,12 +12142,12 @@ body:not(.home):not(.search) .site-content {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_default\.scss}line{font-family:\0000351}}
   .custom-logo-link {
-    max-width: 95px; }
+    max-width: 85px; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_default\.scss}line{font-family:\0000354}}
   .custom-logo-link img {
-    max-width: 95px;
-    max-height: 95px; } }
+    max-width: 85px;
+    max-height: 85px; } }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_default\.scss}line{font-family:\0000362}}
 #main-header .container {
   height: 70px; }
@@ -12250,11 +12250,11 @@ body:not(.home):not(.search) .site-content {
 @media (min-width: 992px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_fixed\.scss}line{font-family:\0000332}}
   .site-header.sticky .custom-logo-link {
-    max-width: 95px; }
+    max-width: 85px; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_fixed\.scss}line{font-family:\0000335}}
   .site-header.sticky .custom-logo-link img {
-    max-height: 95px; }
+    max-height: 85px; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/header\/_fixed\.scss}line{font-family:\0000339}}
   .site-header.sticky .site-branding {
