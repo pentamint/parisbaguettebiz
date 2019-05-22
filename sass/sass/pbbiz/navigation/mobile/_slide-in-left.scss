@@ -28,30 +28,30 @@
                     >.nav-item {
                         >.nav-link {
                             opacity: 1; // mobile menu transition end state properties
-                            .dropdown-menu.show {
-                                // dropdown menu spacing
-                                margin: 0;
-                                padding: 0;
-                                border: none;
-                                border-radius: 0;
-                                .nav-item {
-                                    &.current-menu-item {
-                                        .dropdown-item {
-                                            // active link bold
-                                            font-weight: 700;
-                                        }
-                                    }
+                        }
+                        .dropdown-menu.show {
+                            // dropdown menu spacing
+                            margin: 0;
+                            padding: 0;
+                            border: none;
+                            border-radius: 0;
+                            .nav-item {
+                                &.current-menu-item {
                                     .dropdown-item {
-                                        &:first-child {
-                                            // removed border radius
-                                            border-top-left-radius: 0;
-                                            border-top-right-radius: 0;
+                                        // active link bold
+                                        font-weight: 700;
+                                    }
+                                }
+                                .dropdown-item {
+                                    &:first-child {
+                                        // removed border radius
+                                        border-top-left-radius: 0;
+                                        border-top-right-radius: 0;
                                         }
-                                        &:last-child {
-                                            // removed border radius
-                                            border-bottom-right-radius: 0;
-                                            border-bottom-left-radius: 0;
-                                        }
+                                    &:last-child {
+                                        // removed border radius
+                                        border-bottom-right-radius: 0;
+                                        border-bottom-left-radius: 0;
                                     }
                                 }
                             }
@@ -75,16 +75,18 @@
     }
     // Mobile menu properties reset
     .navbar-primary {
-        .menu-primary {
-            // Display none reset
-            @include flexbox;
-            @include justify-content(flex-end);
-            width: 100%;
-            #menu-primary-menu {
-                .nav-item {
-                    .nav-link {
-                        // Opacity 0 reset
-                        opacity: 1;
+        .nav-wrapper {
+            .menu-primary {
+                // Display none reset
+                @include flexbox;
+                @include justify-content(flex-end);
+                width: 100%;
+                #menu-primary-menu {
+                    .nav-item {
+                        .nav-link {
+                            // Opacity 0 reset
+                            opacity: 1;
+                        }
                     }
                 }
             }
