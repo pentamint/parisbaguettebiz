@@ -1,6 +1,8 @@
 // Medium devices (tablets, less than 992px)
 @include media-breakpoint-down(md) {
-    .menu-primary { // navbar-collapse
+    .menu-primary { // .navbar-collapse
+        // slide-in-menu max width
+        max-width: 22rem;
         #searchform {
             opacity: 0;
         }
@@ -10,8 +12,8 @@
                 padding: 23px 13px 18px;
                 opacity: 1;
             }
-            >#menu-primary-menu {
-                >.nav-item {
+            >ul { //  #menu-primary-menu, .navbar-nav
+                >li { // .nav-item
                     // hover left highlight bar height
                     position: relative;
                     &:hover:before {
@@ -20,6 +22,10 @@
                         width: 5px;
                         height: 100%;
                         left: 0;
+                    }
+                    a { // .nav-link (depth 1), .dropdown-item (depth 2)
+                        // link spacing
+                        padding: 0.75rem 1rem;
                     }
                 }
             }

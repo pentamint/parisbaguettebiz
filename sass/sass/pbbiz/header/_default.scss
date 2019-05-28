@@ -1,63 +1,64 @@
-// Site meta removed
-.site-title, .site-description {
-  display: none;
-}
-// Header default design
-.site-header {
+// ----- Mobile Default ----- //
+.site-header { // #masthead
   position: relative; // pro tip - make box shadow visible!
   -webkit-box-shadow: 0px 3px 64px -17px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 3px 64px -17px rgba(0,0,0,0.75);
   box-shadow: 0px 3px 64px -17px rgba(0,0,0,0.75);
-}
-// Logo position above header row
-.site-branding {
-  z-index: 1;
-}
-// Header apply flex
-#main-header .container {
-  @include flexbox;
-  @include align-items(center); // vertical middle elements
-  @include justify-content(center); // mobile center logo
-}
-// ----- Logo size
-// Default
-.custom-logo-link {
-  width: 100%;
-}
-// Mobile header logo size
-.custom-logo-link {
-  max-width: $size__logo-mobile-x;
-}
-.custom-logo-link img {
-  max-width: $size__logo-mobile-x;
-  max-height: $size__logo-mobile-y;
-}
-// Fixed header height div if exist
-.header-sticky-height {
-  overflow: visible;
-}
-// Header widget margin padding reset
-.site-header .widget {
-  margin: 0;
+  #main-header {
+    .container {
+      // Header apply flex
+      @include flexbox;
+      @include align-items(center); // vertical middle elements
+      @include justify-content(center); // mobile center logo
+      .site-branding {
+        // logo position above header row
+        z-index: 1;
+        >a { // .custom-logo-link
+          // logo default
+          width: 100%;
+          // mobile header logo size
+          max-width: $size__logo-mobile-x;
+          >img { // .custom-logo
+            max-width: $size__logo-mobile-x;
+            max-height: $size__logo-mobile-y;
+          }
+        }
+        p { // .site-title & .site-description
+          // remove site meta
+          display: none;
+        }
+      }
+    }
+  }
+  // Header widget margin padding reset
+  .widget {
+    margin: 0;
+  }
 }
 
+// ----- PC Default ----- //
 @include media-breakpoint-up($breakpoint__mobile-nav) {
-  // Header enclose child contents
-  .site-header .container {
-    position: relative;
-  }
-  // ----- Logo size
-  // PC header logo size
-  .custom-logo-link {
-    max-width: $size__logo-pc-x;
-  }
-  .custom-logo-link img {
-    max-width: $size__logo-pc-x;
-    max-height: $size__logo-pc-y;
+  .site-header { // #masthead
+    #main-header {
+      // Header enclose child contents
+      .container {
+        position: relative;
+        .site-branding {
+          >a { // .custom-logo-link
+            // PC logo size
+            max-width: $size__logo-pc-x;
+            >img { // .custom-logo
+              max-width: $size__logo-pc-x;
+              max-height: $size__logo-pc-y;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
-// ----- Responsive main header height
+// ----- Responsive Main Header Height ----- //
 // main header xs height
 #main-header .container {
   height: $height__xs-main-header;

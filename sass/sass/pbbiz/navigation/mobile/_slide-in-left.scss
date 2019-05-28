@@ -11,9 +11,9 @@
             // Mobile menu transition initial state properties -> to be removed for PC
             width: 0;
             @include transition(width .1s ease-in-out, opacity .1s linear);
-            #menu-primary-menu {
-                .nav-item {
-                    .nav-link {
+            >ul { // #menu-primary-menu, .navbar-nav
+                >li { // .nav-item
+                    >a { // .nav-link
                         opacity: 0;
                     }
                 }
@@ -24,34 +24,36 @@
                 right: 0;
                 width: 100%; // mobile menu transition end state properties
                 height: 100vh;
-                #menu-primary-menu {
-                    >.nav-item {
-                        >.nav-link {
+                >ul { // #menu-primary-menu, .navbar-nav
+                    >li { // .nav-item
+                        >a { // .nav-link
                             opacity: 1; // mobile menu transition end state properties
                         }
-                        .dropdown-menu.show {
-                            // dropdown menu spacing
-                            margin: 0;
-                            padding: 0;
-                            border: none;
-                            border-radius: 0;
-                            .nav-item {
-                                &.current-menu-item {
-                                    .dropdown-item {
-                                        // active link bold
-                                        font-weight: 700;
-                                    }
-                                }
-                                .dropdown-item {
-                                    &:first-child {
-                                        // removed border radius
-                                        border-top-left-radius: 0;
-                                        border-top-right-radius: 0;
+                        >ul { // .dropdown-menu
+                            &.show {
+                                // dropdown menu spacing
+                                margin: 0;
+                                padding: 0;
+                                border: none;
+                                border-radius: 0;
+                                >li { // .nav-item
+                                    &.current-menu-item {
+                                        >a { // .dropdown-item
+                                            // active link bold
+                                            font-weight: 700;
                                         }
-                                    &:last-child {
-                                        // removed border radius
-                                        border-bottom-right-radius: 0;
-                                        border-bottom-left-radius: 0;
+                                    }
+                                    >a { // .dropdown-item
+                                        &:first-child {
+                                            // removed border radius
+                                            border-top-left-radius: 0;
+                                            border-top-right-radius: 0;
+                                            }
+                                        &:last-child {
+                                            // removed border radius
+                                            border-bottom-right-radius: 0;
+                                            border-bottom-left-radius: 0;
+                                        }
                                     }
                                 }
                             }
@@ -67,25 +69,22 @@
     .hamburger {
         display: none;
     }
-    // Unset mobile navbar settings
-    .navbar {
+    // Mobile menu properties reset
+    .navbar-primary { // .navbar
+        // Unset mobile navbar settings
         position: inherit;
         top: inherit;
         @include justify-content(flex-end);
-    }
-    // Mobile menu properties reset
-    .navbar-primary {
         .nav-wrapper {
-            .menu-primary {
+            .menu-primary { // .navbar-collapse
                 // Display none reset
                 @include flexbox;
                 @include justify-content(flex-end);
                 width: 100%;
-                #menu-primary-menu {
-                    .nav-item {
-                        .nav-link {
-                            // Opacity 0 reset
-                            opacity: 1;
+                >ul { // #menu-primary-menu, .navbar-nav
+                    >li { // .nav-item
+                        >a { // .nav-link
+                            opacity: 1; // opacity 0 reset
                         }
                     }
                 }

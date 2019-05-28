@@ -1,20 +1,39 @@
 @include media-breakpoint-up($breakpoint__mobile-nav) {
-  // Logo align left
-  #main-header .container {
-    @include justify-content(flex-start);
-  }
-  // Logo position above navbar row
-  .site-branding {
-    z-index: 1001;
-  }
-  // Navbar align right
-  #main-header .navbar {
-    right: 0;
-  }
-  .site-header.sticky .navbar-collapse {
-    padding-top: 0;
-  }
-  .site-header.sticky .navbar-collapse ul {
-    border-top: none;
+  .site-header { // #masthead
+    &.sticky {
+      #main-header {
+        .container {
+          nav { // .navbar
+            .nav-wrapper {
+              .menu-primary { // .navbar-collapse
+                padding-top: 0;
+                ul { // #menu-primary-menu .navbar-nav
+                  border-top: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    #main-header {
+      .container {
+        // Logo align left
+        @include justify-content(flex-start);
+        .site-branding {
+          // Logo position above navbar row
+          z-index: 1001;
+          >a { // .custom-logo-link
+            >img {
+
+            }
+          }
+        }
+        nav { // .navbar
+          // Navbar align right
+          right: 0;
+        }
+      }
+    }
   }
 }

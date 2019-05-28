@@ -1,19 +1,24 @@
-.site-header {
+.site-header { // #masthead
   top: 0;
-}
-.site-header.sticky {
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-}
-// ----- Logo size
-// Mobile fixed header logo size
-.site-header.sticky .custom-logo-link {
-  max-width: $size__logo-mobile-fixed-x;
-}
-.site-header.sticky .custom-logo-link img {
-  max-height: $size__logo-mobile-fixed-y;
+  &.sticky {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    #main-header {
+      .container {
+        .site-branding {
+          >a { // .custom-logo-link
+            // Mobile Fixed Header Logo Size
+            max-width: $size__logo-mobile-fixed-x;
+            >img { // .custom-logo
+              max-height: $size__logo-mobile-fixed-y;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 601px) {
@@ -27,46 +32,23 @@
   }
 }
 @include media-breakpoint-up($breakpoint__mobile-nav) {
-  // ----- Logo size
-  // PC fixed header logo size
-  .site-header.sticky .custom-logo-link {
-    max-width: $size__logo-pc-fixed-x;
-  }
-  .site-header.sticky .custom-logo-link img {
-    max-height: $size__logo-pc-fixed-y;
-  }
-  // PC fixed header logo repositioning
-  .site-header.sticky .site-branding {
-    margin-top: 20px;
-  }
-}
-
-// ----- Responsive main header height
-// main header xs height
-.header-sticky-height {
-  height: $height__xs-fixed-main-header;
-}
-@include media-breakpoint-up(sm) {
-  // main header height
-  .header-sticky-height {
-      height: $height__sm-fixed-main-header;
-  }
-}
-@include media-breakpoint-up(md) {
-  // main header height
-  .header-sticky-height {
-      height: $height__md-fixed-main-header;
-  }
-}
-@include media-breakpoint-up(lg) {
-  // main header height
-  .header-sticky-height {
-      height: $height__lg-fixed-main-header;
-  }
-}
-@include media-breakpoint-up(xl) {
-  // main header height
-  .header-sticky-height {
-      height: $height__xl-fixed-main-header;
+  .site-header { // #masthead
+    &.sticky {
+      #main-header {
+        .container {
+          .site-branding {
+            // PC fixed header logo repositioning
+            margin-top: 20px;
+            >a { // .custom-logo-link
+              // PC fixed header logo size
+              max-width: $size__logo-pc-fixed-x;
+              >img { // .custom-logo
+                max-height: $size__logo-pc-fixed-y;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
