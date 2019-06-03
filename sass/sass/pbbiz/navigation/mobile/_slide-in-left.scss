@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // ----- Default ----- //
 // --- Layout --- //
 .navbar-primary {
@@ -93,3 +94,99 @@
         }
     }
 }
+=======
+// ----- Default ----- //
+// --- Layout --- //
+.navbar-primary {
+    width: 100%; // expand collapsed wrapper
+    position: absolute;
+    padding: 0;
+    top: 0;
+    z-index: 1000; // order navbar above page content
+    .nav-wrapper {
+        .menu-primary {
+            // Mobile menu transition initial state properties -> to be removed for PC
+            width: 0;
+            @include transition(width .1s ease-in-out, opacity .1s linear);
+            >ul { // #menu-primary-menu, .navbar-nav
+                >li { // .nav-item
+                    >a { // .nav-link
+                        opacity: 0;
+                    }
+                }
+            }
+            &.show {
+                display: block;
+                position: absolute;
+                right: 0;
+                width: 100%; // mobile menu transition end state properties
+                height: 100vh;
+                >ul { // #menu-primary-menu, .navbar-nav
+                    >li { // .nav-item
+                        >a { // .nav-link
+                            opacity: 1; // mobile menu transition end state properties
+                        }
+                        >ul { // .dropdown-menu
+                            &.show {
+                                // dropdown menu spacing
+                                margin: 0;
+                                padding: 0;
+                                border: none;
+                                border-radius: 0;
+                                >li { // .nav-item
+                                    &.current-menu-item {
+                                        >a { // .dropdown-item
+                                            // active link bold
+                                            font-weight: 700;
+                                        }
+                                    }
+                                    >a { // .dropdown-item
+                                        &:first-child {
+                                            // removed border radius
+                                            border-top-left-radius: 0;
+                                            border-top-right-radius: 0;
+                                            }
+                                        &:last-child {
+                                            // removed border radius
+                                            border-bottom-right-radius: 0;
+                                            border-bottom-left-radius: 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up($breakpoint__mobile-nav) {
+    .hamburger {
+        display: none;
+    }
+    // Mobile menu properties reset
+    .navbar-primary { // .navbar
+        // Unset mobile navbar settings
+        position: inherit;
+        top: inherit;
+        @include justify-content(flex-end);
+        .nav-wrapper {
+            .menu-primary { // .navbar-collapse
+                // Display none reset
+                @include flexbox;
+                @include justify-content(flex-end);
+                width: 100%;
+                >ul { // #menu-primary-menu, .navbar-nav
+                    >li { // .nav-item
+                        >a { // .nav-link
+                            opacity: 1; // opacity 0 reset
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+>>>>>>> d9850c54d7043671e4444022cd16ca5e8accb430

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Site meta removed
 .site-title, .site-description {
   display: none;
@@ -85,4 +86,94 @@
   #main-header .container {
       height: $height__xl-main-header;
   }
+=======
+// ----- Mobile Default ----- //
+.site-header { // #masthead
+  position: relative; // pro tip - make box shadow visible!
+  -webkit-box-shadow: 0px 3px 64px -17px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 3px 64px -17px rgba(0,0,0,0.75);
+  box-shadow: 0px 3px 64px -17px rgba(0,0,0,0.75);
+  #main-header {
+    .container {
+      // Header apply flex
+      @include flexbox;
+      @include align-items(center); // vertical middle elements
+      @include justify-content(center); // mobile center logo
+      .site-branding {
+        // logo position above header row
+        z-index: 1;
+        >a { // .custom-logo-link
+          // logo default
+          width: 100%;
+          // mobile header logo size
+          max-width: $size__logo-mobile-x;
+          >img { // .custom-logo
+            max-width: $size__logo-mobile-x;
+            max-height: $size__logo-mobile-y;
+          }
+        }
+        p { // .site-title & .site-description
+          // remove site meta
+          display: none;
+        }
+      }
+    }
+  }
+  // Header widget margin padding reset
+  .widget {
+    margin: 0;
+  }
+}
+
+// ----- PC Default ----- //
+@include media-breakpoint-up($breakpoint__mobile-nav) {
+  .site-header { // #masthead
+    #main-header {
+      // Header enclose child contents
+      .container {
+        position: relative;
+        .site-branding {
+          >a { // .custom-logo-link
+            // PC logo size
+            max-width: $size__logo-pc-x;
+            >img { // .custom-logo
+              max-width: $size__logo-pc-x;
+              max-height: $size__logo-pc-y;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// ----- Responsive Main Header Height ----- //
+// main header xs height
+#main-header .container {
+  height: $height__xs-main-header;
+}
+@include media-breakpoint-up(sm) {
+  // main header height
+  #main-header .container {
+      height: $height__sm-main-header;
+  }
+}
+@include media-breakpoint-up(md) {
+  // main header height
+  #main-header .container {
+      height: $height__md-main-header;
+  }
+}
+@include media-breakpoint-up(lg) {
+  // main header height
+  #main-header .container {
+      height: $height__lg-main-header;
+  }
+}
+@include media-breakpoint-up(xl) {
+  // main header height
+  #main-header .container {
+      height: $height__xl-main-header;
+  }
+>>>>>>> d9850c54d7043671e4444022cd16ca5e8accb430
 }

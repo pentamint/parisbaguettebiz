@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .site-header {
   top: 0;
 }
@@ -70,3 +71,59 @@
       height: $height__xl-fixed-main-header;
   }
 }
+=======
+.site-header { // #masthead
+  top: 0;
+  &.sticky {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    #main-header {
+      .container {
+        .site-branding {
+          >a { // .custom-logo-link
+            // Mobile Fixed Header Logo Size
+            max-width: $size__logo-mobile-fixed-x;
+            >img { // .custom-logo
+              max-height: $size__logo-mobile-fixed-y;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .admin-bar .site-header.sticky {
+    top: 46px;
+  }
+}
+@media screen and (min-width: 783px) {
+  .admin-bar .site-header.sticky {
+    top: 32px;
+  }
+}
+@include media-breakpoint-up($breakpoint__mobile-nav) {
+  .site-header { // #masthead
+    &.sticky {
+      #main-header {
+        .container {
+          .site-branding {
+            // PC fixed header logo repositioning
+            margin-top: 20px;
+            >a { // .custom-logo-link
+              // PC fixed header logo size
+              max-width: $size__logo-pc-fixed-x;
+              >img { // .custom-logo
+                max-height: $size__logo-pc-fixed-y;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+>>>>>>> d9850c54d7043671e4444022cd16ca5e8accb430

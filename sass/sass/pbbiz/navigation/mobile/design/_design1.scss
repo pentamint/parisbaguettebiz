@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Medium devices (tablets, less than 992px)
 @include media-breakpoint-down(md) {
     .menu-primary { // navbar-collapse
@@ -25,4 +26,39 @@
             }
         }
     }
+=======
+// Medium devices (tablets, less than 992px)
+@include media-breakpoint-down(md) {
+    .menu-primary { // .navbar-collapse
+        // slide-in-menu max width
+        max-width: 22rem;
+        #searchform {
+            opacity: 0;
+        }
+        &.show {
+            #searchform {
+                margin-right: 40px;
+                padding: 23px 13px 18px;
+                opacity: 1;
+            }
+            >ul { //  #menu-primary-menu, .navbar-nav
+                >li { // .nav-item
+                    // hover left highlight bar height
+                    position: relative;
+                    &:hover:before {
+                        content: '';
+                        position: absolute;
+                        width: 5px;
+                        height: 100%;
+                        left: 0;
+                    }
+                    a { // .nav-link (depth 1), .dropdown-item (depth 2)
+                        // link spacing
+                        padding: 0.75rem 1rem;
+                    }
+                }
+            }
+        }
+    }
+>>>>>>> d9850c54d7043671e4444022cd16ca5e8accb430
 }

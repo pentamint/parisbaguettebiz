@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @include media-breakpoint-up($breakpoint__mobile-nav) {
   // Logo align left
   #main-header .container {
@@ -18,3 +19,44 @@
     border-top: none;
   }
 }
+=======
+@include media-breakpoint-up($breakpoint__mobile-nav) {
+  .site-header { // #masthead
+    &.sticky {
+      #main-header {
+        .container {
+          nav { // .navbar
+            .nav-wrapper {
+              .menu-primary { // .navbar-collapse
+                padding-top: 0;
+                ul { // #menu-primary-menu .navbar-nav
+                  border-top: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    #main-header {
+      .container {
+        // Logo align left
+        @include justify-content(flex-start);
+        .site-branding {
+          // Logo position above navbar row
+          z-index: 1001;
+          >a { // .custom-logo-link
+            >img {
+
+            }
+          }
+        }
+        nav { // .navbar
+          // Navbar align right
+          right: 0;
+        }
+      }
+    }
+  }
+}
+>>>>>>> d9850c54d7043671e4444022cd16ca5e8accb430
