@@ -63,12 +63,12 @@
             // Right widget secondary nav
             .navbar-secondary {
                 width: 100%;
+                // Nav position right
+                @include justify-content(flex-end);
                 .nav-wrapper {
                     .menu-secondary {
                         // Display none reset
                         @include flexbox;
-                        // Nav position right
-                        @include justify-content(flex-end);
                         // Top header nav align right
                         .navbar-nav {
                             @include flex-just(flex-end);
