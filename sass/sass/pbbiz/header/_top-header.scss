@@ -41,8 +41,10 @@
 
     // --- Widget left text widget design --- //
     #top-header {
+        // top header bottom line
+        border-bottom: 1px solid #e9e9e9;
         .container {
-            // Left widget text
+            // left widget text
             #header-widget-1 {
                 @include flexbox;
                 @include align-items(center);
@@ -61,18 +63,18 @@
                 }
             }
             // Right widget secondary nav
-            .navbar-secondary {
+            nav { // .navbar, .navbar-secondary
                 width: 100%;
+                // Top header nav align right
+                @include justify-content(flex-end);
                 .nav-wrapper {
-                    .menu-secondary {
+                    .menu-secondary { // .navbar-collapse
                         // Display none reset
                         @include flexbox;
                         // Nav position right
                         @include justify-content(flex-end);
-                        // Top header nav align right
-                        .navbar-nav {
-                            @include flex-just(flex-end);
-                            li {
+                        >ul { // #menu-secondary-menu .navbar-nav
+                            >li { // .nav-item
                                 // Secondary nav divider
                                 &:not(:first-child):before  {
                                     display: block;
