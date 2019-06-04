@@ -3,13 +3,10 @@
     &.sticky {
       #main-header {
         .container {
-          nav { // .navbar
+          nav { // .navbar-primary .navbar
             .nav-wrapper {
-              .menu-primary { // .navbar-collapse
+              .navbar-collapse { // .menu-primary
                 padding-top: 0;
-                ul { // #menu-primary-menu .navbar-nav
-                  border-top: none;
-                }
               }
             }
           }
@@ -23,15 +20,6 @@
         .site-branding {
           // Logo position above navbar row
           z-index: 1001;
-          >a { // .custom-logo-link
-            >img {
-
-            }
-          }
-        }
-        nav { // .navbar
-          // Navbar align right
-          right: 0;
         }
       }
     }

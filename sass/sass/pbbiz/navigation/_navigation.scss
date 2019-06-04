@@ -9,93 +9,50 @@
 @import "post-nav";
 
 /*--------------------------------------------------------------
-## Mobile Menus
+## Mobile Menu Type
 --------------------------------------------------------------*/
 // @import "mobile/slide-in-left";
 @import "mobile/slide-in-right";
-// Menu design 1 - left bar block on hover
-@import "mobile/design/design1";
+
+// Optional header components
+@import "mobile/icon-links";
+
+/*--------------------------------------------------------------
+## Mobile Menu Design
+--------------------------------------------------------------*/
+// Slide menu design v1 - left bar block on hover
+@import "mobile/design/slide-v1";
+//
 
 /*--------------------------------------------------------------
 ## Navigation Layout
 --------------------------------------------------------------*/
 @import "default";
-@import "nav-row-fit";
-@import "nav-secondary-menu";
 
 /* ----- Theme Codes ----- */
 
-// Mobile sticky hamburger menu position
-.site-header.sticky .hamburger {
-padding: 30px 1rem;
-}
-@media screen and (min-width: 783px) {
-  .site-header.sticky .hamburger {
-    padding: 30px 1rem;
-  }
-}
-
-@include media-breakpoint-up($breakpoint__mobile-nav) {
-  // PC main header navbar design
-  .menu-primary > ul > li > .nav-link {
-    padding: 0.5rem 1.25rem;
-  }
-  // PC top header navbar design
-  .menu-secondary > ul > li > .nav-link {
-    padding: .28rem .75rem;
-    @include rfs(10);
-    font-weight: 900;
-  }
-  // PC main header navbar expanded menu top border design
-  .menu-primary > ul > li > .dropdown-menu {
-    border-top: 3px solid #0d1d74;
-  }
-}
-
-// menu item 2nd spacing
-.dropdown-menu .dropdown-item {
-  padding: 0.5rem 0 0.5rem 1rem;
-}
-// mobile menu font size
-.navbar, .dropdown-menu {
-  @include rfs(14);
-}
-@include media-breakpoint-up($breakpoint__mobile-nav) {
-  // nav bar position
-  .menu-primary.navbar-collapse {
-    >ul {
-      >li {
-        >a { // nav link color
-          @include rfs(13);
-          color: $color__text-nav;
-          font-weight: 900;
-          &:hover {
-            color: $color__text-nav-hover;
-          }
-        }
-        >ul.dropdown-menu.show {
-          -webkit-box-shadow: 0px 3px 64px -17px rgba(0,0,0,0.75);
-          -moz-box-shadow: 0px 3px 64px -17px rgba(0,0,0,0.75);
-          box-shadow: 0px 3px 64px -17px rgba(0,0,0,0.75);
-          >li {
-            >a {
-              &:hover {
-                background-color: $color__background-nav-dropdown-hover;
-                color: $color__text-nav-dropdown-hover;
-                font-weight: 900;
+header { // #masthead .site-header
+  #main-header {
+    .container {
+      nav { // .navbar-primary .navbar
+        // 1st depth menu item font size
+        @include rfs(14);
+        .nav-wrapper {
+          .navbar-collapse { // .menu-primary
+            > ul { // #menu-primary-menu .navbar-nav
+              > li { // .nav-item
+                > ul { // .dropdown-menu
+                  // 2nd depth menu item font size
+                  @include rfs(14);
+                  > li { // .nav-item
+                    > a { // .dropdown-item
+                      // 2nd depth menu item spacing
+                      padding: 0.5rem 0 0.5rem 1rem;
+                    }
+                  }
+                }
               }
-              &:active {
-                background-color: $color__background-nav-dropdown-active;
-              }
-              color: $color__text-nav-dropdown;
-              @include rfs(12);
             }
-          }
-        }
-        // Current active menu item design
-        &.current-menu-item, &.show {
-          a {
-            color: $color__text-nav-hover;
           }
         }
       }
@@ -103,20 +60,96 @@ padding: 30px 1rem;
   }
 }
 
-/* ----- On scroll ----- */
-
 @include media-breakpoint-up($breakpoint__mobile-nav) {
-  // change header layout on scroll
-  .site-header.sticky .site-branding {
-    position: relative;
-  }
-  .site-header.sticky .navbar-collapse {
-    padding-top: 0.875rem;
-  }
-  .site-header.sticky .navbar-collapse ul li:nth-child(3) {
-    margin-right: 0;
-  }
-  .site-header.sticky .navbar-collapse ul li:nth-child(4) {
-    margin-left: 0;
+  header { // #masthead .site-header
+    #top-header {
+      .container {
+        nav { // .navbar-secondary .navbar
+          // remove top and bottom padding
+          padding: 0;
+          .nav-wrapper {
+            .navbar-collapse { // .menu-secondary
+              > ul { // #menu-secondary-menu .navbar-nav
+                // reset bootstrap default menu direction column to row
+                @include flex-direction(row);
+                > li { // .nav-item
+                  > a { // .nav-link
+                    // PC top nav menu item design
+                    padding: 0.28rem 0.75rem;
+                    @include rfs(10);
+                    font-weight: 900;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    #main-header {
+      .container {
+        nav { // .navbar-primary .navbar
+          .nav-wrapper {
+            .navbar-collapse { // .menu-primary
+              > ul { // #menu-primary-menu .navbar-nav
+                // reset bootstrap default menu direction column to row
+                @include flex-direction(row);
+                > li { // .nav-item
+                  > a { // .nav-link
+                    // PC main nav menu item spacing                    
+                    padding: 0.5rem 1.25rem;
+                    @include rfs(13);
+                    font-weight: 900;
+                  }
+                  > ul { // .dropdown-menu
+                    // PC main nav expanded dropdown menu top border design                   
+                    border-top: 3px solid #2643AD;
+                    &.show {
+                      > li { // .nav-item
+                        > a { // .dropdown-item
+                          // dropdown item font size
+                          @include rfs(12);
+                          &:hover {
+                            font-weight: 900;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &.sticky {
+      // on scroll change header layout
+      #main-header {
+        .container {
+          .site-branding {
+            position: relative;
+          }
+          nav { // .navbar-primary .navbar
+            .nav-wrapper {
+              .navbar-collapse { // .menu-primary
+                padding-top: 0.875rem;
+                > ul { // #menu-primary-menu .navbar-nav
+                   > li { // .nav-item
+                     &:nth-child(3) {
+                      margin-right: 0;
+                     }
+                     &:nth-child(4) {
+                      margin-left: 0;
+                     }
+                   }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
+

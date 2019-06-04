@@ -30,10 +30,10 @@
 @include media-breakpoint-up($breakpoint__mobile-nav) { // <- set bootstrap mobile menu breakpoint
     // --- Top header properties --- //
     #top-header {
-        // Show on PC
+        // show on PC
         display: block;
     }
-    // Top header hide on fixed header scroll
+    // top header hide on fixed header scroll
     .site-header.sticky #top-header {
         display: none;
     }
@@ -62,20 +62,18 @@
                     }
                 }
             }
-            // Right widget secondary nav
+            // right widget secondary nav
             nav { // .navbar, .navbar-secondary
                 width: 100%;
-                // Top header nav align right
+                // top header nav align right
                 @include justify-content(flex-end);
                 .nav-wrapper {
-                    .menu-secondary { // .navbar-collapse
-                        // Display none reset
+                    .navbar-collapse { //  .menu-secondary
+                        // display none reset
                         @include flexbox;
-                        // Nav position right
-                        @include justify-content(flex-end);
                         >ul { // #menu-secondary-menu .navbar-nav
                             >li { // .nav-item
-                                // Secondary nav divider
+                                // secondary nav divider
                                 &:not(:first-child):before  {
                                     display: block;
                                     position: absolute;
@@ -92,14 +90,14 @@
             }
         }
     }
-    // Secondary nav divider login pos
+    // secondary nav divider login pos
     body.logged-in #top-header .container .navbar-secondary .nav-wrapper .menu-secondary .navbar-nav li:not(:first-child):before {
         right: 80px;
     }
 }
 
 // ----- Responsive top header height
-// Top header xs height
+// top header xs height
 #top-header .container {
     height: $height__xs-top-header;
 }
