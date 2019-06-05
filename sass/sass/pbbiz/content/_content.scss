@@ -4,20 +4,20 @@
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-@import "woocommerce-single";
-@import "primary/posts-and-pages";
+@import "../../site/primary/posts-and-pages";
 @import "default"; // pm resets
 @import "home"; // home page
 @import "about-us"; // about us page
+@import "woocommerce-single";
 
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
-@import "primary/comments";
+@import "../../site/primary/comments";
 
-/* ----- Theme ----- */
+/* ----- Theme Style ----- */
 
-/* ----- Global Elements ----- */
+/* --- Global --- */
 // remove single post thumbnails
 .post-thumbnail {
 	display: none;
@@ -33,7 +33,7 @@ body:not(.home):not(.search) .site-content {
 .single .entry-content {
 	margin-top: 0;
 }
-@include media-breakpoint-up(lg) {
+@include media-breakpoint-up($breakpoint__mobile-nav) {
 	// all posts & pages spacing bottom
 	.site-content {
 		padding-bottom: 4em;

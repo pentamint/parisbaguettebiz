@@ -1,7 +1,7 @@
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
-@import "links-clean";
+@import "links";
 
 /*--------------------------------------------------------------
 ## Post Navigation
@@ -133,7 +133,6 @@ header { // #masthead .site-header
           nav { // .navbar-primary .navbar
             .nav-wrapper {
               .navbar-collapse { // .menu-primary
-                padding-top: 0.875rem;
                 > ul { // #menu-primary-menu .navbar-nav
                    > li { // .nav-item
                      &:nth-child(3) {

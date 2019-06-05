@@ -10,16 +10,17 @@
     .line_left {
       position: absolute;
       left: 0;
-      width: 50%;
-      height: 100%;
+      width: 100%;
+      height: 50%;
       background-color: #fff;
       z-index: -1;
     }
     .line_right {
       position: absolute;
+      bottom: 0;
       right: 0;
-      width: 50%;
-      height: 100%;
+      width: 100%;
+      height: 50%;
       background-color: #333;
       z-index: -1;
     }
@@ -64,10 +65,14 @@
           }
         }
         .view_more_btn {
+          // notice expand button
           @include flex-grow(0); // stop element growth
           @include rfs(24);
           a {
-            color: $color__text-nav-hover;
+            color: $accent-color;
+            &:hover {
+              color: $accent-sub-color;
+            }
           }
         }
         .promo_preview_title {
@@ -145,8 +150,12 @@
   .page-id-19 {
     .line_notice {
       .line_left {
+        width: 50%;
+        height: 100%;
       }
       .line_right {
+        width: 50%;
+        height: 100%;        
       }
       .container {
         .row {
@@ -178,13 +187,7 @@
             }
           }
           .view_more_btn {
-            @include flex-grow(0);
             @include rfs(24);
-            a {
-              &:hover {
-                color: #ffd780;
-              }              
-            }
           }
           .promo_preview_title {
             @include flex-grow(0);

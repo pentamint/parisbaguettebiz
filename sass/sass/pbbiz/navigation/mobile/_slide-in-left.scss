@@ -27,6 +27,8 @@ header { // #masthead .site-header
                             right: 0;
                             width: 100%; // mobile menu transition end state properties
                             height: 100vh;
+                            border-left-style: solid;
+                            border-left-width: 1px;
                             >ul { // #menu-primary-menu, .navbar-nav
                                 >li { // .nav-item
                                     >a { // .nav-link
@@ -70,7 +72,6 @@ header { // #masthead .site-header
         }
     }
 }
-
 
 @include media-breakpoint-up($breakpoint__mobile-nav) {
     header {

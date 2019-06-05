@@ -46,11 +46,10 @@ h3 {
 
 }
 .row_title {
-	color: $color__text-title;
+
 }
 .row_subtitle {
 	@include rfs(24);
-	color: $color__text-subtitle;
 	font-weight: 700;
 	margin-bottom: 1.25rem;
 }
@@ -60,10 +59,10 @@ h3 {
 
 // --- Page Layout
 .row2 {
-	background-color: $color__background-row2;
+
 }
 .row4 {
-	background-color: $color__background-row4;
+
 }
 .row2 .wp-block-column, .row4 .wp-block-column { // enable child z-index lower than parent
 	z-index: 0;

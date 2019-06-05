@@ -14,73 +14,81 @@
 
 // ----- Theme design ----- //
 .menu-primary {
-    #searchform {
-        .form-control {
-            padding-left: .5rem;
-            @include inputPlaceholder() {
-                @include rfs(14);
-            }
+  #searchform {
+    .input-group {
+      .form-control {
+        padding-left: 0.5rem;
+        border-radius: 3px 0 0 3px;
+        @include inputPlaceholder() {
+          @include rfs(14);
         }
+      }
+      .input-group-btn {
+        button { // .btn-primary
+            border-radius: 0 3px 3px 0;
+        }
+      }
     }
+  }
 }
 @include media-breakpoint-up($breakpoint__mobile-nav) {
-    .menu-primary {
-        #searchform {
-            &.show {
-                // position searchform below header
-                position: absolute;
-                margin-top: 45px;
-            }
-            .form-control {
-            }
-        }
-    }  
+  .menu-primary {
+    #searchform {
+      &.show {
+        // position searchform below header
+        position: absolute;
+        margin-top: 45px;
+      }
+      .form-control {
+      }
+    }
+  }
 }
 
 // ----- //
 
 // ----- IE Fix ----- //
 @include media-breakpoint-up($breakpoint__mobile-nav) {
-    .menu-primary {
-        #searchform {
-            &.show {
-                top: 0;
-                right: 0;
-            }
-        }
+  .menu-primary {
+    #searchform {
+      &.show {
+        top: 0;
+        right: 0;
+      }
     }
+  }
 }
 
 // ----- //
 
 // ----- Default ----- //
 .menu-primary {
-    // show on mobile
-    #searchform {
-        display: block;
-    }
-    // hide on mobile
-    .btn-search-toggle {
-        display: none;
-    }
+  // show on mobile
+  #searchform {
+    display: block;
+  }
+  // hide on mobile
+  .btn-search-toggle {
+    display: none;
+  }
 }
 
 @include media-breakpoint-up($breakpoint__mobile-nav) {
-    .menu-primary {
-        // hide on PC
-        #searchform {
-            @include transition(opacity .1s ease-in-out);
-            display: none;
-            opacity: 0;
-            &.show {
-                display: block;
-                opacity: 1;
-            }
-        }
-        // show on PC
-        .btn-search-toggle {
-            display: block;
-        }
+  .menu-primary {
+    // hide on PC
+    #searchform {
+      @include transition(opacity 0.1s ease-in-out);
+      display: none;
+      opacity: 0;
+      &.show {
+        display: block;
+        opacity: 1;
+      }
     }
+    // show on PC
+    .btn-search-toggle {
+      display: block;
+    }
+  }
 }
 // ----- //

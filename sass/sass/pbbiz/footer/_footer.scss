@@ -1,34 +1,49 @@
 @import "default";
 
-/* custom style */
+// ----- Theme Style ----- //
 
-// ----- Layout ----- //
 .footer-wrapper {
   padding: 4rem 0 2rem 0;
-}
-#footer-sidebar {
-  // @include font-size(0.8125);
-}
-#footer-sidebar > div {
-  margin-bottom: 1.25rem;
-}
-#menu-footer-menu li {
-	margin-bottom: .25rem;
+  .container {
+    footer { // #footer-sidebar .row .widget-area
+      > div {
+        // footer sidebar columns bottom margins
+        margin-bottom: 1.25rem;
+      }
+    }
+  }
 }
 .colophon-wrapper {
-  padding: 0.9375rem 0;
+  .container {
+    .row {
+      padding: 1.25rem 0;
+    }
+  }
 }
-#colophon {
-  // @include font-size(0.6875);
-}
-//
-@include media-breakpoint-up(md) {
 
+@include media-breakpoint-up($breakpoint__mobile-nav) {
+  .footer-wrapper {
+    padding: 4rem 0 2rem 0;
+    .container {
+      footer { // #footer-sidebar .row .widget-area
+        > div {
+          // footer sidebar columns bottom margins
+          margin-bottom: 1.25rem;
+        }
+      }
+    }
+  }
+  .colophon-wrapper {
+    .container {
+      .row {
+        padding: 1.5rem 0;
+        .col-md-12 {
+          footer { // #colophon .site-footer
+
+          }
+        }
+      }
+    }
+  }
 }
-// Daum Map
-.root_daum_roughmap {
-  width: 100% !important;
-}
-.root_daum_roughmap .wrap_map {
-  height: 200px !important;
-}
+

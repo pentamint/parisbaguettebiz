@@ -34,6 +34,7 @@
               &.show {
                 // primary nav background
                 background-color: $ng-base-color;
+                border-left-color: $line-color-ng;
                 > ul { // #menu-primary-menu .navbar-nav
                   > li { // .nav-item
                     &:hover:before {
@@ -90,6 +91,28 @@
       }
     } // #main-header
   } // header
+  .footer-wrapper {
+    background-color: $ng-base-color;
+    border-top-color: $base-color;
+  }
+  .colophon-wrapper {
+    background-color: $ng-base-sub-color;
+    border-top-color: $line-color-ng;
+    .container {
+      .row {
+        .col-md-12 {
+          footer {
+            .site-info {
+              color: $font-color-ng;
+              > a {
+                color: $font-color-ng;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 // ----- Large Devices and Larger (lg,xl) ----- //
@@ -117,6 +140,50 @@
         .site-branding {
           // PC logo background
           background-color: $base-color;
+        }
+        nav { // .navbar-primary .navbar
+          .nav-wrapper {
+            .navbar-collapse { // .menu-primary
+              > ul { // #menu-primary-menu .navbar-nav
+                > li { // .nav-item
+                  > a { // .nav-link
+                    &:hover {
+                      // main nav menu item hover color
+                      color: $accent-color;
+                    }
+                  }
+                  &.current-menu-item {
+                    > a { // .nav-link
+                      // current main nav menu item color
+                      color: $accent-color;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer-wrapper {
+    background-color: $ng-base-color;
+    border-top-color: $base-color;
+  }
+  .colophon-wrapper {
+    background-color: $ng-base-sub-color;
+    border-top-color: $line-color-ng;
+    .container {
+      .row {
+        .col-md-12 {
+          footer {
+            .site-info {
+              color: $font-color-ng;
+              > a {
+                color: $font-color-ng;
+              }
+            }
+          }
         }
       }
     }
@@ -154,66 +221,26 @@
 }
 
 // ----- //
-// --- Background scheme --- //
-$color__background-body: #fff;
 
+// ----- Underscore Default ----- //
+
+$color__background-body: #fff;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
-$color__background-pre: #eee;
-$color__background-ins: #f2f2f2;
-
-// ----- //
-
-// ----- Primary color elements ----- //
 $color__background-button: #e6e6e6;
-
-$color__background-footer: #f9f9f9;
-$color__background-colophon: #e9e9e9;
-$color__background-nav: initial;
-$color__background-nav-dropdown: initial;
-$color__background-nav-dropdown-hover: #f9f9f9;
-$color__background-nav-dropdown-active: #f9f9f9;
-$color__background-row2: #696156; // row 2 background color
-$color__background-row4: #1f2d60; // row 4 background color == primary color
+$color__background-pre: #eee;
+$color__background-ins: #fff9c0;
 
 $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__link: #333; // a font color
-$color__link-hover: #1f2d60;
-$color__link-visited: #333;
-$color__text-title: #333; // title font color
-$color__text-subtitle: #666; // subtitle font color
-$color__text-main: #333; // body font color
-$color__text-sub: #9a9999; // body font color light
-$color__text-footer: #333; // footer font color
-$color__text-colophon: #969696; // colophon font color
-$color__text-nav: #333; // lg+ main nav font color
-$color__text-nav-hover: #ad8515;
-$color__text-nav-dropdown: #333; // lg+ main nav dropdown font color
-$color__text-nav-dropdown-hover: #1f2d60;
-$color__text-nav-dropdown-active: #f9f9f9;
+$color__link: royalblue;
+$color__link-visited: purple;
+$color__link-hover: midnightblue;
+$color__text-main: #404040;
 
-// border color scheme
-$color__border-primary: #1f2d60;
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
-$color__border-footer: #fff;
-$color__border-colophon: #fff;
-
-// mobile design
-$color__background-mobile-menu-wrapper: #23282d;
-$color__background-mobile-menu-inner: #23282d;
-$color__background-mobile-menu-dropdown: #32373c;
-$color__background-mobile-menu-list-hover: #191e23;
-$color__background-mobile-menu-list-active: #ad8515;
-$color__background-mobile-menu-list-2-hover: #32373c;
-$color__background-mobile-menu-list-2-active: #32373c;
-
-$color__link-mobile-menu-list-hover: #ad8515;
-$color__link-mobile-menu-list-active: #fff;
-$color__link-mobile-menu-list-2-hover: #ad8515;
-$color__link-mobile-menu-list-2-active: #fff;

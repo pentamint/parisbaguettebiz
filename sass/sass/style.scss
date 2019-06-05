@@ -25,35 +25,32 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 ----------------------------------------------------------------
 # Normalize
 # Bootstrap
-# Woocommerce
-# PBBiz (customized)
-  ## Utilities
-  ## Transitions
-# Typography
-# Elements (customized)
+# [Custom] Initialize Underscore
+# [Custom] Woocommerce
+# [Custom] PBBiz Essentials
+# [Custom] Typography
+# [Custom] Elements
 # Forms
-# Theme (customized)
-# Navigation (customized)
+# [Custom] Theme
+# [Custom] Navigation
 	## Links
 	## Menus
 # Accessibility
 # Alignments
 # Clearings
 # Widgets
-# Content (customized)
+# [Custom] Content
 	## Posts and pages
 	## Comments
-# Footer (customized)
-# Header (customized)
+# [Custom] Footer
+# [Custom] Header
 # Infinite scroll
 # Media
 	## Captions
 	## Galleries
-# Applications (customized)
-# Modules (customized)
+# [Custom] Applications
+# [Custom] Plugin Modules
 --------------------------------------------------------------*/
-@import "pbbiz/variables-site/variables-site";
-@import "pbbiz/mixins/mixins-master";
 
 /*--------------------------------------------------------------
 # Normalize
@@ -66,18 +63,26 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "../bootstrap/scss/bootstrap";
 
 /*--------------------------------------------------------------
+# Initialize Underscore
+--------------------------------------------------------------*/
+@import "pbbiz/variables-site/variables-site";
+@import "pbbiz/mixins/mixins-master";
+
+/*--------------------------------------------------------------
 # Woocommerce
 --------------------------------------------------------------*/
 @import "pbbiz/modules/plugin-woocommerce";
 
 /*--------------------------------------------------------------
-# PBBiz
+# PBBiz Essentials
 --------------------------------------------------------------*/
 @import "pbbiz/base";
 @import "pbbiz/utility";
 @import "pbbiz/transitions/transitions";
 @import "pbbiz/modules/custom-cross-browser";
 @import "pbbiz/modules/custom-gutenberg";
+@import "pbbiz/modules/custom-bootstrap";
+@import "pbbiz/modules/custom-searchform";
 
 /*--------------------------------------------------------------
 # Typography
@@ -156,10 +161,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "pbbiz/applications/hamburgers/hamburgers";
 
 /*--------------------------------------------------------------
-# Modules
+# Plugin Modules
 --------------------------------------------------------------*/
 @import "pbbiz/modules/plugin-custom-content-shortcode";
 @import "pbbiz/modules/plugin-tablepress";
 @import "pbbiz/modules/plugin-kboard";
-@import "pbbiz/modules/custom-bootstrap";
-@import "pbbiz/modules/custom-searchform";

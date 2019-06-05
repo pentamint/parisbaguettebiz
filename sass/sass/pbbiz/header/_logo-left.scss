@@ -1,18 +1,5 @@
 @include media-breakpoint-up($breakpoint__mobile-nav) {
   .site-header { // #masthead
-    &.sticky {
-      #main-header {
-        .container {
-          nav { // .navbar-primary .navbar
-            .nav-wrapper {
-              .navbar-collapse { // .menu-primary
-                padding-top: 0;
-              }
-            }
-          }
-        }
-      }
-    }
     #main-header {
       .container {
         // Logo align left
@@ -20,6 +7,17 @@
         .site-branding {
           // Logo position above navbar row
           z-index: 1001;
+        }
+        nav { // .navbar-primary .navbar
+          .nav-wrapper {
+            .navbar-collapse { // .menu-primary
+              ul { // #menu-primary-menu .navbar-nav
+                // main nav spacing left and right
+                margin-left: 15px;
+                margin-right: 15px;
+              }
+            }
+          }
         }
       }
     }

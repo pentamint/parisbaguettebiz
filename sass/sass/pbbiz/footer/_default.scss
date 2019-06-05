@@ -1,14 +1,16 @@
-/* 2 columns footer col-md-3 col-md-9 */
-
 // remove edit button
 .entry-footer {
   display: none;
 }
+
+// footer area
 .footer-wrapper {
-  background-color: $color__background-footer;
-  border-top: 3px solid $color__border-footer;
+  border-top-style: solid;
+  border-top-width: 3px;
 }
+
+// colophon area
 .colophon-wrapper {
-  background-color: $color__background-colophon;
-  border-top: 1px solid $color__border-colophon;
+  border-top-style: solid;
+  border-top-width: 1px;
 }
