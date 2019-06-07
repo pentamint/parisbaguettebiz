@@ -100,11 +100,23 @@
     border-top-color: $line-color-ng;
     .container {
       .row {
-        .col-md-12 {
-          footer {
-            .site-info {
-              color: $font-color-ng;
-              > a {
+        div {
+          &:nth-of-type(1) { // colophon column 1
+            footer {
+              .site-info {
+                color: $font-color-ng;
+                > a {
+                  color: $font-color-ng;
+                  &:hover {
+                    color: $font-color-ng-ac;
+                  }
+                }
+              }
+            }
+          }
+          &:nth-of-type(2) { // colophon column 2
+            .btn-group {
+              button { // .btn-colophon .dropdown-toggle .btn
                 color: $font-color-ng;
               }
             }
@@ -175,11 +187,23 @@
     border-top-color: $line-color-ng;
     .container {
       .row {
-        .col-md-12 {
-          footer {
-            .site-info {
-              color: $font-color-ng;
-              > a {
+        div {
+          &:nth-of-type(1) { // colophon column 1
+            footer {
+              .site-info {
+                color: $font-color-ng;
+                > a {
+                  color: $font-color-ng;
+                  &:hover {
+                    color: $font-color-ng-ac;
+                  }
+                }
+              }
+            }
+          }
+          &:nth-of-type(2) { // colophon column 2
+            .btn-group {
+              button { // .btn-colophon .dropdown-toggle .btn
                 color: $font-color-ng;
               }
             }

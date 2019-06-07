@@ -104,6 +104,7 @@ add_action( 'after_setup_theme', 'pbbiz_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function pbbiz_widgets_init() {
+	// Global sidebar area
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'PBBiz' ),
 		'id'            => 'sidebar-1',
@@ -113,6 +114,7 @@ function pbbiz_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	// Top header left tagline area
 	register_sidebar( array(
 		'name'          => 'Top Header Left Widget', 'PBBiz',
 		'id'            => 'top-header-widget-1',
@@ -122,6 +124,7 @@ function pbbiz_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	// Mobile header left icon menu
 	register_sidebar( array(
 		'name'          => 'Mobile Header Widget', 'PBBiz',
 		'id'            => 'mobile-header-widget-1',
@@ -131,41 +134,55 @@ function pbbiz_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	// Footer sidebar area 1/4
 	register_sidebar( array(
-		'name' => 'Footer Sidebar 1',
-		'id' => 'footer-sidebar-1',
-		'description' => 'Appears in the footer area',
+		'name'          => 'Footer Sidebar 1',
+		'id'            => 'footer-sidebar-1',
+		'description'   => 'Appears in the footer area',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget' => '</section>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
 	) );
+	// Footer sidebar area 2/4	
 	register_sidebar( array(
-		'name' => 'Footer Sidebar 2',
-		'id' => 'footer-sidebar-2',
-		'description' => 'Appears in the footer area',
+		'name'          => 'Footer Sidebar 2',
+		'id'            => 'footer-sidebar-2',
+		'description'   => 'Appears in the footer area',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget' => '</section>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
 	) );
+	// Footer sidebar area 3/4
 	register_sidebar( array(
-		'name' => 'Footer Sidebar 3',
-		'id' => 'footer-sidebar-3',
-		'description' => 'Appears in the footer area',
+		'name'          => 'Footer Sidebar 3',
+		'id'            => 'footer-sidebar-3',
+		'description'   => 'Appears in the footer area',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget' => '</section>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
 	) );
+	// Footer sidebar area 4/4
 	register_sidebar( array(
-		'name' => 'Footer Sidebar 4',
-		'id' => 'footer-sidebar-4',
-		'description' => 'Appears in the footer area',
+		'name'          => 'Footer Sidebar 4',
+		'id'            => 'footer-sidebar-4',
+		'description'   => 'Appears in the footer area',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget' => '</section>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	// Colophon widget area
+	register_sidebar( array(
+		'name'          => 'Colophon Widget',
+		'id'            => 'colophon-widget-1',
+		'description'   => 'Appears in the colophon area',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
 	) );
 }
 add_action( 'widgets_init', 'pbbiz_widgets_init' );
@@ -229,6 +246,12 @@ if ( class_exists( 'WooCommerce' ) ) {
 // Register Custom Navigation Walker
 require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 
+// Enqueueing Bootstrap Components
+function custom_add_bootstrap_components() {
+	wp_enqueue_script( 'popper-js', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', false );
+}
+add_action( 'wp_enqueue_scripts', 'custom_add_bootstrap_components' );
+
 // Enqueueing Google Fonts
 function custom_add_google_fonts() {
  wp_enqueue_style( 'custom-google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,700', false );
@@ -240,4 +263,14 @@ add_action( 'wp_enqueue_scripts', 'custom_add_google_fonts' );
 // Register Secondary Nav Menu
 register_nav_menus( array(
 	'secondary' => esc_html__( 'Secondary Menu', 'PBBiz' ),
+) );
+
+// Register Footer Nav Menu
+register_nav_menus( array(
+	'footer' => esc_html__( 'Footer Menu', 'PBBiz' ),
+) );
+
+// Register Colophon Nav Menu
+register_nav_menus( array(
+	'colophon' => esc_html__( 'Colophon Menu', 'PBBiz' ),
 ) );
