@@ -10,6 +10,8 @@
       @include flexbox;
       @include align-items(center); // vertical middle elements
       @include justify-content(center); // mobile center logo
+      // contain inner elements
+      position: relative;
       .site-branding {
         // logo position above header row
         z-index: 1;

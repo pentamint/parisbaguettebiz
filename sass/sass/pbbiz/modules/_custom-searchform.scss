@@ -12,55 +12,45 @@
  *
  */
 
-// ----- Theme design ----- //
-.menu-primary {
-  #searchform {
+.navbar-collapse { // .menu-primary
+  form { // #searchform
     .input-group {
-      .form-control {
+      > input { // .form-control
         padding-left: 0.5rem;
-        border-radius: 3px 0 0 3px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
         @include inputPlaceholder() {
           @include rfs(14);
         }
       }
-      .input-group-btn {
-        button { // .btn-primary
-            border-radius: 0 3px 3px 0;
+      > span { // .input-group-btn
+        > button { // floating button
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
         }
       }
     }
   }
 }
 @include media-breakpoint-up($breakpoint__mobile-nav) {
-  .menu-primary {
-    #searchform {
+  .navbar-collapse { // .menu-primary
+    form { // #searchform
       &.show {
         // position searchform below header
         position: absolute;
         margin-top: 45px;
-      }
-      .form-control {
-      }
-    }
-  }
-}
-
-// ----- //
-
-// ----- IE Fix ----- //
-@include media-breakpoint-up($breakpoint__mobile-nav) {
-  .menu-primary {
-    #searchform {
-      &.show {
+        // IE fix
         top: 0;
         right: 0;
       }
     }
   }
-}
+}  
+// ----- //
 
 // ----- //
 
+  
 // ----- Default ----- //
 .menu-primary {
   // show on mobile
@@ -72,7 +62,7 @@
     display: none;
   }
 }
-
+  
 @include media-breakpoint-up($breakpoint__mobile-nav) {
   .menu-primary {
     // hide on PC
@@ -92,3 +82,4 @@
   }
 }
 // ----- //
+
