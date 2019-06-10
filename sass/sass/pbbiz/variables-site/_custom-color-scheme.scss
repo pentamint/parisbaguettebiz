@@ -6,7 +6,6 @@
 */
 
 // ----- Color Scheme ----- //
-
 // Primary Color - Navy Blue #1f2d60
 $primary-color: #1f2d60;
 
@@ -23,12 +22,10 @@ $accent-color: #f6be07;
 // Sub Color - Brown #735A0D
 // $sub-color: #614F1F;
 $accent-sub-color: #AD8515;
-
 // ----- //
 
 
 // ----- Typography ----- //
-
 // Primary - Light Area Font
 $font-color: #333;
 
@@ -40,29 +37,34 @@ $font-color-ac:  #2643AD;
 
 // Negative Accent - Dark Area Accent
 $font-color-ng-ac: #f6be07;
-
 // ----- //
 
 
 // ----- Structural ----- //
-
-// --- Layout --- //
-
-// PC //
-
+// --- Header --- //
 // Base Color - background header, body etc.
 $base-color: #fff;
 
 // Base Sub Color - background header sub, body sub etc.
 $base-sub-color: #f2f2f2;
 
-// Mobile //
-
+// --- Navigation --- //
 // Negative Base Color - nav background
 $ng-base-color: #23282d;
 
 // Negative Base Sub Color - expanded nav background
 $ng-base-sub-color: #191e23;
+
+// --- Footer --- //
+// Top footer BG Color
+$top-footer-bg-color: #2643AD;
+
+// Main footer BG Color
+$footer-bg-color: #0f182b;
+
+// Bottom footer BG Color
+$bottom-footer-bg-color: #080c17;
+
 
 // Line / Divider - Light Area
 $line-color: #e2e2e2;

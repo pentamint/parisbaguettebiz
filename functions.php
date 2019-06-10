@@ -134,6 +134,16 @@ function pbbiz_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	// Top footer widget area
+	register_sidebar( array(
+		'name'          => 'Top Footer Widget',
+		'id'            => 'top-footer-widget-1',
+		'description'   => 'Appears in the top footer area',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 	// Footer sidebar area 1/4
 	register_sidebar( array(
 		'name'          => 'Footer Sidebar 1',
@@ -267,7 +277,7 @@ register_nav_menus( array(
 
 // Register Footer Nav Menu
 register_nav_menus( array(
-	'footer' => esc_html__( 'Footer Menu', 'PBBiz' ),
+	'top-footer' => esc_html__( 'Top Footer Menu', 'PBBiz' ),
 ) );
 
 // Register Colophon Nav Menu

@@ -13,7 +13,36 @@
 
 	</div><!-- #content -->
 
-	<div class="footer-wrapper">
+	<div id="top-footer" class="footer-wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="top-footer-nav col-md-9">
+					<?php
+						wp_nav_menu( array(
+							'menu'           	=> '',
+							'theme_location'    => 'top-footer',
+							'depth'             => 2,
+							'container'         => '',
+							'container_class'   => 'dropdown dropdown-toggle',
+							'container_id'      => 'top-footer-navbar-collapse-1',
+							'menu_class'        => 'nav navbar-nav',
+							'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+							'walker'            => new wp_bootstrap_navwalker())
+						);
+					?>
+				</div>
+				<div class="top-footer-social-links col-md-3">
+					<?php
+						if(is_active_sidebar('top-footer-widget-1')){
+							dynamic_sidebar('top-footer-widget-1');
+						}
+					?>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="main-footer" class="footer-wrapper">
 		<div class="container">
 			<footer id="footer-sidebar" class="row widget-area">
 				<div id="footer-sidebar1" class="col-md-3">
@@ -48,7 +77,7 @@
 		</div><!-- .container -->
 	</div><!-- .footer-wrapper -->
 
-	<div class="colophon-wrapper">
+	<div id="bottom-footer" class="footer-wrapper">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-9">
