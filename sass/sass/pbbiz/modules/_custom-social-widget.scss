@@ -2,7 +2,12 @@
  * Module: Custom Social Widget
  *
  */
-
+.top-footer-social-links {
+    .widget {
+        // remove default margin bottom
+        margin: 0;
+    }
+}
 .social_links {
     @include flexbox;
     @include justify-content(center);
