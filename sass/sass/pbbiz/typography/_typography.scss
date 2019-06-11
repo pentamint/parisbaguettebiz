@@ -4,7 +4,7 @@ input,
 select,
 optgroup,
 textarea {
-	color: $color__text-main;
+	color: $font-color;
 	font-family: $font__main;
 	@include rfs(16);
 	line-height: $font__line-height-body;
@@ -13,14 +13,7 @@ textarea {
 
 }
 @include media-breakpoint-up(md) { // 768px and up
-	body,
-	button,
-	input,
-	select,
-	optgroup,
-	textarea {
-		@include rfs(13);
-	}
+
 }
 @include media-breakpoint-up(lg) { // 992px and up
 

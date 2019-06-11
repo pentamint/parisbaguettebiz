@@ -8,13 +8,13 @@
 
 ( function( $ ) {
 
-	// ----- Site visible after all elements are loaded. Fix object fit for IE
+	// ----- Site visible after all elements are loaded. Fix object fit for IE ----- //
 	$(document).ready(function() {
 	  document.getElementsByTagName("html")[0].style.visibility = "visible";
 		objectFitImages();
 	});
 
-  // ----- Cross browser vh range fix
+  // ----- Cross browser vh range fix ----- //
   // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
   let vh = window.innerHeight * 0.01;
   // Then we set the value in the --vh custom property to the root of the document. `${vh}px`
@@ -59,17 +59,28 @@
     };
   });
 
-  // add hamburgers support for bootstrap mobile menu
+  // ----- Bootstrap Support ----- //
+  // --- Underscore --- //
+  $('header.page-header').addClass('container');
+  $('header.entry-header').addClass('container');
+  $('body:not(.no-sidebar) .site-content').wrapInner("<div class='container' />");
+  // --- Woocommerce --- //
+  $('body.woocommerce .site-content').wrapInner("<div class='container' />");
+  // --- Gutenberg & Stackable extension --- //
+  $('.wp-block-columns').addClass('row');
+  $('.wp-block-column').addClass('col');
+  // --- Stackable - Gutenberg Blocks --- //
+  if ( $('.ugb-container').hasClass('fullwidth') ) {
+    $('.fullwidth .ugb-container__content-wrapper').addClass('container-fluid');
+  }
+  if ( $('.ugb-container').hasClass('boxed') ) {
+    $('.boxed .ugb-container__content-wrapper').addClass('container');
+    $('.boxed .ugb-container__content-wrapper').attr('style','margin-right: auto; margin-left: auto');
+  }
+  // --- Hamburgers Menu --- //
   $('.navbar-toggle').click(function () {
     $('.navbar-toggle').toggleClass('is-active');
   });
-
-	// ----- Add bootstrap container to gutenberg wp-block-column class
-	$('header.page-header').addClass('container');
-	$('header.entry-header').addClass('container');
-  $('.entry-content > .wp-block-columns:not(.fullwidth)').wrapInner("<div class='container' />");
-  $('body:not(.no-sidebar) .site-content').wrapInner("<div class='container' />");
-  $('body.woocommerce .site-content').wrapInner("<div class='container' />");
 
 
 } )( jQuery );

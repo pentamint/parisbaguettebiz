@@ -1,9 +1,33 @@
-// ----- Bootstrap Support for Stackable - Gutenberg Blocks ----- //
-// restore container padding
-.ugb-container:not(.ugb--has-background):not(.ugb-has-background):not(.alignfull) {
-  padding-left: 15px;
-  padding-right: 15px;
+// ----- Gutenberg ----- //
+// --- Default --- //
+
+// --- Bootstrap Support --- //
+// - Grid System Fixes - //
+@media (min-width: 600px) {
+  .wp-block-column:nth-child(2n) {
+    margin-left: 0; // 32px;
+  }
 }
+@include media-breakpoint-up(md) {
+  .wp-block-column:not(:first-child) {
+    margin-left: 0; // 32px
+  }
+}
+
+// ----- Stackable - Gutenberg Blocks ----- //
+// --- Default --- //
+// remove top & bottom margins
+.ugb-container {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+// --- Bootstrap Support for Stackable - Gutenberg Blocks --- //
+
+// // restore container padding
+// .ugb-container:not(.ugb--has-background):not(.ugb-has-background):not(.alignfull) {
+//   padding-left: 15px;
+//   padding-right: 15px;
+// }
 
 // /* ----- Bug fixes & bootstrap compatibility settings ----- */
 // .has-1-columns .wp-block-column { // row 1col bug fix
