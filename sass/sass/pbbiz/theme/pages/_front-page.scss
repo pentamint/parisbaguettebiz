@@ -1,0 +1,225 @@
+/* ----- Main Home ----- */
+
+// --- Row 1 hero slider ---
+
+
+// --- Row 2 notice & promo ---
+.page-id-19 {
+  .line_notice {
+    position: relative;
+    .line_left {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background-color: #0f182b;
+      z-index: -1;
+    }
+    .line_right {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 50%;
+      background-color: #fff;
+      z-index: -1;
+    }
+    .container {
+      @include flexbox;
+      @include align-items(center);
+      .row {
+        @include align-items(center);
+        .notice_preview_title {
+          @include flex-grow(0); // stop element growth
+          p {
+            font-family: $font__sub-nav;
+            @include rfs(18);
+            font-weight: 700;
+            color: #f6be07;
+          }
+        }
+        .notice_preview_content {
+          #kboard-default-latest {
+            table {
+              margin-bottom: 0; // remove margin bottom
+              border-bottom: none; // remove border bottom
+              >thead {
+                display: none;
+              }
+              td {
+                // notice row height
+                padding: 1.25rem 0 1.25rem 0.75rem !important;
+                border-top: none;
+              }
+              .kboard-latest-title {
+                @include rfs(14);
+                font-weight: 700;
+              }
+            }
+          }
+          // Line notice text color
+          .kboard-default-cut-strings, .kboard-latest-date {
+            color: #fff;
+          }
+          .kboard-latest-date {
+            display: none;
+          }
+        }
+        .view_more_btn {
+          // notice expand button
+          @include flex-grow(0); // stop element growth
+          @include rfs(24);
+          text-align: center;
+          padding-left: 18px;
+          a {
+            color: $accent-color;
+            &:hover {
+              color: $accent-sub-color;
+            }
+          }
+        }
+        .promo_preview_title {
+          font-family: $font__sub-nav;
+          @include rfs(18);
+          color: #0d1d74;
+          font-weight: 700;
+        }
+        .promo_preview_content {
+          padding: 1.25rem 0 1.25rem 1.5rem !important;
+          @include rfs(14);
+          color: #333;
+          font-weight: 700;
+        }
+        .promo_btn {
+          text-align: center;
+          button {
+            padding: 0.375rem 1rem;
+          }
+        }
+      } // !--- .row 
+    } // !--- .container
+    // row with no p bottom margin
+    p {
+      margin-bottom: 0;
+    }
+  } // !--- .line_notice.container-fluid
+} // !--- .page-id-19
+@include media-breakpoint-down(sm) {
+  // notice view more repositioned
+  .view_more_btn {
+    padding-left: 0;
+  }
+}
+
+// --- Row 3 toggle promo ---
+// remove top & bottom padding
+.row_promo {
+  padding: 0;
+}
+
+// --- Row 4 Biz member promo
+.row_membership {
+  color: #fff;
+  // for small tile repeated background
+  &.ugb--has-background-image {
+    background-size: inherit;
+  }
+}
+
+// --- Row 5 bulk ordering
+.row_bulkorder {
+  background-color: #f2f2f2;
+}
+
+// --- Row 6 gift certificates
+.row_giftcerts {
+
+}
+// --- Row 7 anniversary delivery
+
+
+// --- Row 8 catering
+
+
+@include media-breakpoint-down(lg) { // 1199.98px and down
+
+}
+@include media-breakpoint-down(md) { // 991.98px and down
+
+}
+@include media-breakpoint-down(sm) { // 767.98px and down
+
+} 
+@include media-breakpoint-down(xs) { // 575.98px and down
+
+}
+
+
+
+@include media-breakpoint-up(sm) { // 576px and up
+
+}
+@include media-breakpoint-up(md) { // 768px and up
+  .page-id-19 {
+    .line_notice {
+      .line_left {
+        width: 50%;
+        height: 100%;
+      }
+      .line_right {
+        width: 50%;
+        height: 100%;        
+      }
+      .container {
+        .row {
+          .notice_preview_title {
+            @include flex-grow(0);
+            p {
+            }
+          }
+          .notice_preview_content {
+            flex-basis: 26%;
+            @include flex-grow(1);
+            #kboard-default-latest {
+              table {
+                >thead {
+                }
+                td {
+                }
+              }
+            }
+            // Line notice text color
+            .kboard-default-cut-strings, .kboard-latest-date {
+            }
+            .kboard-latest-title {
+              // Left line height
+              height: 55px;
+              @include rfs(14);
+            }
+            .kboard-latest-date {
+            }
+          }
+          .view_more_btn {
+            @include rfs(24);
+          }
+          .promo_preview_title {
+            @include flex-grow(0);
+          }
+          .promo_preview_content {
+            flex-basis: 24%;
+            @include flex-grow(1);
+          }
+          .promo_btn {
+            @include flex-grow(0);
+          }
+        } // !--- .row
+      } // !--- .container
+    } // !--- .line_notice 
+  } // !--- .page-id-19
+}
+@include media-breakpoint-up(lg) { // 992px and up
+
+}
+@include media-breakpoint-up(xl) { // 1200px and up
+
+}

@@ -1,4 +1,4 @@
-@import "default";
+@import "../footer/default";
 
 // ----- Theme Style ----- //
 
@@ -39,7 +39,6 @@
 #bottom-footer {
   .container {
     .row {
-      position: relative;
       padding: 1.25rem 0;
       > div {
         &:nth-of-type(1) { // column 1
@@ -48,6 +47,7 @@
         }
         &:nth-of-type(2) { // column 2
           position: absolute;
+          left: 0;
           bottom: 0;
           text-align: center;
           background-color: #222;

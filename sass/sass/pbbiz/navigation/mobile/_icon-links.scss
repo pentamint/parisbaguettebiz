@@ -8,11 +8,6 @@
         //
         left: 0;
         margin-left: 1rem;
-        a {
-            .svg-inline--fa {
-                @include rfs(32);
-            }
-        }
     }
 }
 

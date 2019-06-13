@@ -1,76 +1,120 @@
-/*
-* Color Structure
-* 
-* Light Color Scheme, Flat Design, Edged Corners
-*
-*/
-@import "custom-color-scheme";
-
+// ----- All Devices ----- //
+// --- Header --- //
+.site-header { // #masthead header
+  // header background
+  background-color: $base-color;
+  &.sticky {
+    // fixed header background
+    background-color: $base-color;
+  }
+  #main-header {
+    .container {
+      // Logo background
+      .site-branding {
+        background-color: $base-color;
+      }
+    }
+  }
+}
+// --- Footer --- //
+#top-footer {
+  background-color: $top-footer-bg-color;
+}
+#main-footer {
+  background-color: $footer-bg-color;
+  border-top-color: $secondary-color;
+}
+#bottom-footer {
+  background-color: $bottom-footer-bg-color;
+  border-top-color: $line-color-ng;
+  .container {
+    .row {
+      > div {
+        &:nth-of-type(1) {
+          // column 1
+          footer {
+            .site-info {
+              color: $font-color-ng;
+              > a {
+                color: $font-color-ng;
+                &:hover {
+                  color: $font-color-ng-ac;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 // ----- Medium Devices and Smaller (xs,sm,md) ----- //
 @media (max-width: 991.98px) {
-  // Use raw breakpoints -> Bootstrap loads after
-  header { // #masthead .site-header
-    // header background
-    background-color: $base-color;
-    &.sticky {
-      // fixed header background
-      background-color: $base-color;
-    }
-    #top-header {
-      // top header background
-      background-color: $base-color;
-    }
+  // ------ Mobile Header ----- //  
+  .site-header {
+    // #masthead header
     #main-header {
       // header border top
       border-top-color: $secondary-color;
       .container {
         // Logo background
-        .site-branding {
-          background-color: $base-color;
-        }
-        nav { // .navbar-primary .navbar
+        nav {
+          // .navbar-primary .navbar
           .nav-wrapper {
-            .navbar-collapse { // .menu-primary
+            .navbar-collapse {
+              // .menu-primary
               &.show {
                 // primary nav background
                 background-color: $ng-base-color;
                 border-left-color: $line-color-ng;
-                > ul { // #menu-primary-menu .navbar-nav
-                  > li { // .nav-item
+                > ul {
+                  // #menu-primary-menu .navbar-nav
+                  > li {
+                    // .nav-item
                     &:hover:before {
-                      // hover left highlight bar
-                      background-color: $accent-color;
+                        // hover left highlight bar
+                        background-color: #00b9eb;
                     }
-                    > a { // .nav-link
+                    &.show:before {
+                        // dropdown show left highlight bar
+                        background-color: #00b9eb;
+                    }
+                    > a {
+                      // .nav-link
                       color: $font-color-ng;
+                      &:hover {
+                          background-color: #0f182b;
+                      }
                       &[aria-expanded="true"] {
-                        background-color: $primary-color;
+                        background-color: #0f182b;
                         color: $font-color-ng;
                         &:hover {
-                          background-color: $secondary-color;
+                          background-color: #0f182b;
                           color: $font-color-ng;
                         }
                       }
                       &[aria-expanded="false"] {
                         &:hover {
-                          background-color: $secondary-color;
-                          color: $font-color-ng;
+                          background-color: #080c17;
                         }
                       }
                     }
-                    > ul { // .dropdown-menu
+                    > ul {
+                      // .dropdown-menu
                       &.show {
-                        background-color: $ng-base-sub-color;
-                        > li { // .nav-item
-                          > a { // .dropdown-item
-                            background-color: $ng-base-sub-color;
+                        > li {
+                          // .nav-item
+                          > a {
+                            // .dropdown-item
+                            background-color: #080c17;
                             color: $font-color-ng;
                             &:hover {
                               color: $font-color-ng;
                             }
                           }
                           &.current-menu-item {
-                            > a { // .dropdown-item
+                            > a {
+                              // .dropdown-item
                               background-color: $ng-base-sub-color;
                               color: $font-color-ng;
                               &:hover {
@@ -91,48 +135,13 @@
       }
     } // #main-header
   } // header
-  #top-footer {
-    background-color: $top-footer-bg-color;
-  }
-  #main-footer {
-    background-color: $footer-bg-color;
-    border-top-color: $secondary-color;
-  }
-  #bottom-footer {
-    background-color: $bottom-footer-bg-color;
-    border-top-color: $line-color-ng;
-    .container {
-      .row {
-        > div {
-          &:nth-of-type(1) { // column 1
-            footer {
-              .site-info {
-                color: $font-color-ng;
-                > a {
-                  color: $font-color-ng;
-                  &:hover {
-                    color: $font-color-ng-ac;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
 }
 
 // ----- Large Devices and Larger (lg,xl) ----- //
 @media (min-width: 992px) {
-  // Use raw breakpoints -> Bootstrap loads after
-  header { // #masthead .site-header
-    // Header background
-    background-color: $base-color;
-    // Fixed header background
-    &.sticky {
-      background-color: $base-color;
-    }
+  // ----- PC Header ----- //
+  .site-header {
+    // #masthead header
     #top-header {
       // Top header background
       background-color: $base-color;
@@ -145,23 +154,25 @@
     }
     #main-header {
       .container {
-        .site-branding {
-          // PC logo background
-          background-color: $base-color;
-        }
-        nav { // .navbar-primary .navbar
+        nav {
+          // .navbar-primary .navbar
           .nav-wrapper {
-            .navbar-collapse { // .menu-primary
-              > ul { // #menu-primary-menu .navbar-nav
-                > li { // .nav-item
-                  > a { // .nav-link
+            .navbar-collapse {
+              // .menu-primary
+              > ul {
+                // #menu-primary-menu .navbar-nav
+                > li {
+                  // .nav-item
+                  > a {
+                    // .nav-link
                     &:hover {
                       // main nav menu item hover color
                       color: $accent-color;
                     }
                   }
                   &.current-menu-item {
-                    > a { // .nav-link
+                    > a {
+                      // .nav-link
                       // current main nav menu item color
                       color: $accent-color;
                     }
@@ -187,7 +198,8 @@
     .container {
       .row {
         > div {
-          &:nth-of-type(1) { // column 1
+          &:nth-of-type(1) {
+            // column 1
             footer {
               .site-info {
                 color: $font-color-ng;
@@ -237,26 +249,3 @@
 }
 
 // ----- //
-
-// ----- Underscore Default ----- //
-
-$color__background-body: #fff;
-$color__background-screen: #f1f1f1;
-$color__background-hr: #ccc;
-$color__background-button: #e6e6e6;
-$color__background-pre: #eee;
-$color__background-ins: #fff9c0;
-
-$color__text-screen: #21759b;
-$color__text-input: #666;
-$color__text-input-focus: #111;
-$color__link: royalblue;
-$color__link-visited: purple;
-$color__link-hover: midnightblue;
-$color__text-main: #404040;
-
-$color__border-button: #ccc #ccc #bbb;
-$color__border-button-hover: #ccc #bbb #aaa;
-$color__border-button-focus: #aaa #bbb #bbb;
-$color__border-input: #ccc;
-$color__border-abbr: #666;

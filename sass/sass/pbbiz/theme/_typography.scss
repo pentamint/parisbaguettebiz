@@ -1,0 +1,28 @@
+@import "../typography/custom-fonts"; // Import Custom Fonts
+@import "../typography/headings";
+@import "../typography/copy";
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: $font-color;
+	font-family: $font__main;
+	@include rfs(16);
+	line-height: $font__line-height-body;
+}
+@include media-breakpoint-up(sm) { // 576px and up
+
+}
+@include media-breakpoint-up(md) { // 768px and up
+
+}
+@include media-breakpoint-up(lg) { // 992px and up
+
+}
+@include media-breakpoint-up(xl) { // 1200px and up
+
+}
+

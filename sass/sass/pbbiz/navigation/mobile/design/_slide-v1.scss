@@ -23,6 +23,13 @@
                         height: 100%;
                         left: 0;
                     }
+                    &.show:before {
+                        content: '';
+                        position: absolute;
+                        width: 5px;
+                        height: 100%;
+                        left: 0;
+                    }
                     a { // .nav-link (depth 1), .dropdown-item (depth 2)
                         // link spacing
                         padding: 0.75rem 1rem;

@@ -11,8 +11,6 @@ header { // #masthead .site-header
                 z-index: 1000; // order navbar above page content
                 .nav-wrapper {
                     .navbar-collapse { // .menu-primary
-                        // remove slide in menu top gap
-                        margin-top: -5px;
                         // Mobile menu transition initial state properties -> to be removed for PC
                         width: 0;
                         @include transition(width .1s ease-in-out, opacity .1s linear);

@@ -1,0 +1,40 @@
+@import "../header/default";
+
+/*--------------------------------------------------------------
+## Header background: block / transparent
+--------------------------------------------------------------*/
+// @import "../header/transparent";
+
+/*--------------------------------------------------------------
+## Logo position: logo-center / logo-right
+--------------------------------------------------------------*/
+@import "../header/logo-left";
+// @import "../header/logo-center";
+// @import "../header/logo-right";
+
+/*--------------------------------------------------------------
+## Header on scroll: block / fixed
+--------------------------------------------------------------*/
+@import "../header/fixed";
+
+/*--------------------------------------------------------------
+## Top header
+--------------------------------------------------------------*/
+@import "top-header";
+
+/* ----- Theme ----- */
+
+// ----- Mobile ----- //
+
+// Logo design
+.site-branding {
+  padding: 5px;
+  border-radius: 100px;
+}
+
+@include media-breakpoint-up($breakpoint__mobile-nav) {
+  // Logo PC positioning
+  .site-branding {
+    margin-top: -35px;
+  }
+}

@@ -51,6 +51,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # [Custom] Applications
 # [Custom] Plugin Modules
 --------------------------------------------------------------*/
+@import "pbbiz/variables-site/variables-site";
+@import "pbbiz/mixins/mixins-master";
 
 /*--------------------------------------------------------------
 # Normalize
@@ -58,15 +60,18 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "normalize";
 
 /*--------------------------------------------------------------
-# Bootstrap
+# Initialize Bootstrap
 --------------------------------------------------------------*/
-@import "../bootstrap/scss/bootstrap";
+@import "../bootstrap/scss/bootstrap"; // if dedicated theme exist, comment out
 
 /*--------------------------------------------------------------
-# Initialize Underscore
+# Initialize Theme Defaults
 --------------------------------------------------------------*/
-@import "pbbiz/variables-site/variables-site";
-@import "pbbiz/mixins/mixins-master";
+@import "pbbiz/base";
+@import "pbbiz/modules/custom-cross-browsing";
+@import "pbbiz/modules/custom-gutenberg"; // if dedicated page builder exist, comment out
+@import "pbbiz/modules/custom-bootstrap"; // if dedicated theme exist, comment out
+@import "pbbiz/modules/custom-utilities";
 
 /*--------------------------------------------------------------
 # Woocommerce
@@ -74,21 +79,15 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "pbbiz/modules/plugin-woocommerce";
 
 /*--------------------------------------------------------------
-# PBBiz Essentials
+# Initialize Theme Customizations
 --------------------------------------------------------------*/
-@import "pbbiz/base";
-@import "pbbiz/utility";
-@import "pbbiz/transitions/transitions";
-@import "pbbiz/modules/custom-cross-browser";
-@import "pbbiz/modules/custom-gutenberg";
-@import "pbbiz/modules/custom-bootstrap";
-@import "pbbiz/modules/custom-searchform";
-@import "pbbiz/modules/custom-social-widget";
-
-/*--------------------------------------------------------------
-# Typography
---------------------------------------------------------------*/
-@import "pbbiz/typography/typography";
+@import "pbbiz/theme/colors";
+@import "pbbiz/theme/transitions";
+@import "pbbiz/theme/typography";
+@import "pbbiz/theme/navigation";
+@import "pbbiz/theme/header";
+@import "pbbiz/theme/content";
+@import "pbbiz/theme/footer";
 
 /*--------------------------------------------------------------
 # Elements
@@ -99,16 +98,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Forms
 --------------------------------------------------------------*/
 @import "forms/forms";
-
-/*--------------------------------------------------------------
-# Theme
---------------------------------------------------------------*/
-@import "pbbiz/theme";
-
-/*--------------------------------------------------------------
-# Navigation
---------------------------------------------------------------*/
-@import "pbbiz/navigation/navigation";
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -131,21 +120,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "site/secondary/widgets";
 
 /*--------------------------------------------------------------
-# Content
---------------------------------------------------------------*/
-@import "pbbiz/content/content";
-
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
-@import "pbbiz/footer/footer";
-
-/*--------------------------------------------------------------
-# Header
---------------------------------------------------------------*/
-@import "pbbiz/header/header";
-
-/*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
 @import "modules/infinite-scroll";
@@ -158,12 +132,14 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Applications
 --------------------------------------------------------------*/
-@import "pbbiz/navigation/hamburgers-settings";
+@import "pbbiz/theme/hamburgers-settings";
 @import "pbbiz/applications/hamburgers/hamburgers";
 
 /*--------------------------------------------------------------
-# Plugin Modules
+# Plugin Modules & Custom Codess
 --------------------------------------------------------------*/
+@import "pbbiz/modules/custom-searchform";
+@import "pbbiz/modules/custom-social-widget";
 @import "pbbiz/modules/plugin-custom-content-shortcode";
 @import "pbbiz/modules/plugin-tablepress";
 @import "pbbiz/modules/plugin-kboard";

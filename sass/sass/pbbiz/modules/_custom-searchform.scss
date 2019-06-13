@@ -17,8 +17,6 @@
     .input-group {
       > input { // .form-control
         padding-left: 0.5rem;
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
         @include inputPlaceholder() {
           @include rfs(14);
         }
