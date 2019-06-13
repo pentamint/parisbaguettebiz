@@ -14,8 +14,7 @@
 @import "../../site/primary/comments";
 
 /* ----- Theme Style ----- */
-
-/* --- Global --- */
+// ----- Global ----- //
 // remove single post thumbnails
 .post-thumbnail {
 	display: none;
@@ -41,4 +40,4 @@ body:not(.home):not(.search) .site-content {
 		padding-top: 4em;
 	}
 }
-/* ----- /Global Elements ----- */
+// ----- End Global ----- //
