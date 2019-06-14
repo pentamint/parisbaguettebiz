@@ -82,3 +82,16 @@
 .kr {
 	font-family: $font__kor !important;
 }
+
+// --- Responsive --- //
+.pc-only {
+	display: none;
+}
+@include media-breakpoint-up($breakpoint__mobile-nav) {
+	.pc-only {
+		display: block;
+	}
+	.mobile-only {
+		display: none;
+	}
+}

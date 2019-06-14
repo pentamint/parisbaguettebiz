@@ -35,7 +35,7 @@
           @include flex-grow(0); // stop element growth
           p {
             font-family: $font__sub-nav;
-            @include rfs(12);
+            @include rfs(13);
             font-weight: 700;
             color: #f6be07;
           }
@@ -50,11 +50,11 @@
               }
               td {
                 // notice row height
-                padding: 1.25rem 0 !important;
+                padding: 22px 0 24px !important;
                 border-top: none;
               }
               .kboard-latest-title {
-                @include rfs(12);
+                @include rfs(13);
                 font-weight: 700;
               }
             }
@@ -72,7 +72,7 @@
           padding-right: 3px;
           // notice expand button
           @include flex-grow(0); // stop element growth
-          @include rfs(14);
+          @include rfs(16);
           text-align: right;
           a {
             color: $accent-color;
@@ -87,10 +87,11 @@
           font-family: $font__sub-nav;
           @include rfs(12);
           color: #0d1d74;
+          font-weight: 700;
         }
         .promo_preview_content {
-          padding-top: 1.25rem;
-          padding-bottom: 1.25rem;
+          padding-top: 22px;;
+          padding-bottom: 24px;
           padding-right: 40px;
           @include rfs(12);
           color: #333;
@@ -128,11 +129,13 @@
 // --- Row 3 toggle promo ---
 // remove top & bottom padding
 .row_promo {
-  padding: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 // --- Row 4 Biz member promo
 .row_membership {
+  padding-bottom: 3rem;
   color: #fff;
   // for small tile repeated background
   &.ugb--has-background-image {

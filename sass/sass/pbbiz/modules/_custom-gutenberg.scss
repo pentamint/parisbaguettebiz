@@ -16,10 +16,12 @@
 
 // ----- Stackable - Gutenberg Blocks ----- //
 // --- Default --- //
-// remove top & bottom margins
 .ugb-container {
+  // remove top & bottom margins
   margin-top: 0;
   margin-bottom: 0;
+  // add top padding
+  padding-top: 5rem;
 }
 // --- Bootstrap Support for Stackable - Gutenberg Blocks --- //
 

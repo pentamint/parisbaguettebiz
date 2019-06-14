@@ -29,6 +29,14 @@ header { // #masthead .site-header
                             height: 100vh;
                             border-left-style: solid;
                             border-left-width: 1px;
+                            form { // #searchform
+                                .input-group-btn {
+                                    .btn {
+                                        // button size
+                                        padding: .4375rem .875rem;
+                                    }
+                                }
+                            }
                             >ul { // #menu-primary-menu, .navbar-nav
                                 >li { // .nav-item
                                     >a { // .nav-link

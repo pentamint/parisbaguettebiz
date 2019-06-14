@@ -12,7 +12,7 @@
           @include justify-content(center);
           > li { // .nav-item
             > a { // .nav-link
-              padding: 0.75rem 1.25rem;
+              padding: 1rem 1.25rem;
               font-weight: 900;
               color: $font-color-ng;
               &:hover {
@@ -44,6 +44,11 @@
         &:nth-of-type(1) { // column 1
           padding-bottom: 45px;
           text-align: center;
+          .site-footer {
+            .site-info {
+              @include rfs(11);
+            }
+          }
         }
         &:nth-of-type(2) { // column 2
           position: absolute;

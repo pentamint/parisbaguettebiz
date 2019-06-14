@@ -37,7 +37,7 @@ header { // #masthead .site-header
         // mobile icon link size
         a {
           .svg-inline--fa {
-              @include rfs(32);
+              @include rfs(28);
           }
         }
       }

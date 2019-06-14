@@ -10,8 +10,13 @@ optgroup,
 textarea {
 	color: $font-color;
 	font-family: $font__main;
-	@include rfs(16);
+	@include rfs(14);
 	line-height: $font__line-height-body;
+}
+h2 {
+	font-family: $font__title;
+	@include rfs(22);
+	font-weight: 700;
 }
 @include media-breakpoint-up(sm) { // 576px and up
 
