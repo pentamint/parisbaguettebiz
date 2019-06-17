@@ -16,8 +16,10 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+	<script src="https://kit.fontawesome.com/ec23c08cf8.js"></script>
+	
 
 	<?php wp_head(); ?>
 </head>
@@ -27,6 +29,7 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'PBBiz' ); ?></a>
 
 	<header id="masthead" class="site-header">
+
 		<div id="top-header">
 			<div class="container">
 				<?php if ( is_active_sidebar ( 'top-header-widget-1' ) ) : ?>
@@ -56,6 +59,7 @@
 				</nav><!-- .navbar -->
 			</div><!-- .container -->
 		</div><!-- #top-header -->
+
 		<div id="main-header">
 			<div class="container">
 				<!-- #mobile-header-widget-1 -->

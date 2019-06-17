@@ -22,90 +22,39 @@
   margin-bottom: 0;
   // add top padding
   padding-top: 5rem;
-}
+  // remove top padding on first child
+  &:first-child {
+    padding-top: 0;
+  }
+} // !--- Default --- //
 // --- Bootstrap Support for Stackable - Gutenberg Blocks --- //
+// - Reset Stackable padding properties - //
+.ugb--has-background, .ugb-has-background {
+  padding-left: 0;
+  padding-right: 0;
+}
+.ugb-container {
+  padding-left: 0;
+  padding-right: 0;
+}
+@media screen and (max-width: 600px) {
+  .ugb--has-background, .ugb-has-background, .ugb-testimonial.ugb-testimonial--design-basic .ugb-testimonial__item, .ugb-video-popup, .ugb-video-popup:not([class*=ugb-video-popup--v]) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .ugb-card, .ugb-container, .ugb-cta {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media screen and (max-width: 782px) {
+  .ugb--has-background, .ugb-has-background, .ugb-testimonial.ugb-testimonial--design-basic .ugb-testimonial__item, .ugb-video-popup, .ugb-video-popup:not([class*=ugb-video-popup--v]) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .ugb-card, .ugb-container, .ugb-cta {
+    padding-left: 0;
+    padding-right: 0;
+  }
+} // !- Reset Stackable padding properties - //
 
-// // restore container padding
-// .ugb-container:not(.ugb--has-background):not(.ugb-has-background):not(.alignfull) {
-//   padding-left: 15px;
-//   padding-right: 15px;
-// }
-
-// /* ----- Bug fixes & bootstrap compatibility settings ----- */
-// .has-1-columns .wp-block-column { // row 1col bug fix
-//   margin-right: auto !important; // bootstrap col center
-//   margin-left: auto !important; // bootstrap col center
-//   flex-basis: 100%;
-// }
-// .has-2-columns .wp-block-column { // row 2cols bug fix
-//   flex-basis: calc((100% - 30px) / 2);
-// }
-// // PC columns bootstrap tweaks - col margin revised
-// @media (min-width: 600px) {
-//   .wp-block-column:not(:first-child) {
-//     margin-left: 0;
-//   }
-//   .wp-block-column:last-child {
-//     margin-right: 0;
-//   }
-// }
-// @media (max-width: 599.98px) {
-//   // Column size adjusted
-//   .wp-block-column {
-//     flex-basis: calc(50% - 8px);
-//   }
-//   // Add MR right for mobile
-//   .wp-block-column:nth-child(odd) {
-//     margin-right: 16px;
-//   }
-// }
-// /* ----- /Bug fixes & bootstrap compatibility settings ----- */
-
-// /* ----- Defaults ----- */
-// // Page content top bottom spacing
-// .entry-content > .wp-block-columns:first-of-type {
-//   padding-top: 0;
-// }
-// // row top bottom margin
-// .wp-block-columns {
-//   padding: 4rem 0 4rem;
-// }
-// //
-
-// // add flex attr to containers within gutenberg columns
-// .wp-block-columns .container {
-//   display: flex;
-//   flex-wrap: wrap;
-// }
-// @include media-breakpoint-up($breakpoint__mobile-nav) {
-//   .wp-block-columns .container {
-//     flex-wrap: nowrap;
-//   }
-// }
-// //
-
-// // enclose elements within column
-// .wp-block-column {
-//   position: relative;
-// }
-// // word wrap
-// .wp-block-column {
-//   word-break: keep-all;
-// }
-// // remove column bottom margin
-// .wp-block-column {
-//   margin-bottom: 0;
-// }
-
-// // Mobile column layout settings
-// @include media-breakpoint-down(md) {
-//   // Mobile 2 col layout
-//   .wp-block-column {
-//     flex-basis: calc(50% - 16px);
-//   }
-//   // Mobile remove margin right on every 2nd elements
-//   .wp-block-column:nth-child(2n) {
-//     margin-right: 0;
-//   }
-// //
-// }

@@ -22,7 +22,14 @@
   // Then we set the value in the --vh custom property to the root of the document. `${vh}px`
   document.documentElement.style.setProperty('--vh', vh + 'px');
 
-  // ----- Underscores Support ----- //
+  // ----- Underscores Theme Custom ----- //
+  // --- Sidebar --- //
+  // Add class to body when sidebar is active
+  $(document).ready(function() {
+    if ( $('#secondary').length > 0 ) {
+      $('body').addClass('has-sidebar');
+    }
+  });
   // --- Fixed Header --- //
 	$(document).ready(function() {
     // When the user scrolls the page, execute addFixedHeader
@@ -59,34 +66,51 @@
       }
     };
   });
+  // ----- Bootstrap Support ----- //
   // --- Sidebar --- //
-  // If sidebar exist, add class to body
-  if ( $('#secondary').length > 0 ) {
-    $('body').addClass('has-sidebar');
+  $(document).ready(function() {
+    // Add class to elements if sidebar exist
+    if ( $('body').hasClass('has-sidebar') ) {
+      $('.site-content').wrapInner("<div class='container' />");
+    };
+    // Add class to elements if sidebar does not exist
+    if ( !$('body').hasClass('has-sidebar') ) {
+      $('header.page-header').addClass('container');
+      $('header.entry-header').addClass('container');
+    };
+  });
+
+  // --- Archive --- //
+  // Add bootstrap grid to archive posts
+  if ( $('body').hasClass('archive') ) {
+    $('.site-main > article').wrapAll("<div class='row' />");
+    $('article').addClass('col-12 col-sm-6 col-md-4');
   };
 
-  // ----- Bootstrap Support ----- //
-  // --- Underscore --- //
-  $('header.page-header').addClass('container');
-  $('header.entry-header').addClass('container');
-  $('body:not(.no-sidebar) .site-content').wrapInner("<div class='container' />");
-  // --- Woocommerce --- //
-  $('body.woocommerce .site-content').wrapInner("<div class='container' />");
-  // --- Gutenberg & Stackable extension --- //
+  // --- Gutenberg  --- //
   $('.wp-block-columns').addClass('row');
   $('.wp-block-column').addClass('col');
+
   // --- Stackable - Gutenberg Blocks --- //
-  if ( $('.ugb-container').hasClass('fullwidth') ) {
-    $('.fullwidth .ugb-container__content-wrapper').addClass('container-fluid');
-  } else {
-      $('.ugb-container').addClass('boxed');
+  $(document).ready(function() {
+    if ( $('.ugb-container').hasClass('fullwidth') ) {
+      // Add class for no sidebar and fullwidth
+      $('body:not(.has-sidebar) .fullwidth .ugb-container__content-wrapper').addClass('container-fluid');
+    }
+    else {
+      // Add class for no sidebar and boxed
+      $('body:not(.has-sidebar) .ugb-container').addClass('boxed');
       $('.boxed .ugb-container__content-wrapper').addClass('container');
       $('.boxed .ugb-container__content-wrapper').attr('style','margin-right: auto; margin-left: auto');
-  };
+    }
+  });
+  
+  // --- Woocommerce --- //
+  $('body.woocommerce .site-content').wrapInner("<div class='container' />");
+
   // --- Hamburgers Menu --- //
   $('.navbar-toggle').click(function () {
     $('.navbar-toggle').toggleClass('is-active');
   });
-
 
 } )( jQuery );

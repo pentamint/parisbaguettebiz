@@ -1,0 +1,28 @@
+body.has-sidebar {
+	#primary {
+		@include flexbox;
+		@include flex-wrap(wrap);
+		#main {
+			@include flex-basis(100%);
+		}
+		#secondary {
+			@include flex-basis(100%);
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	body.has-sidebar {
+		#primary {
+			@include flexbox;
+			#main {
+				@include flex-basis(75%);
+				@include order(2);
+			}
+			#secondary {
+				@include flex-basis(25%);
+				@include order(1);
+			}
+		}
+	}
+}

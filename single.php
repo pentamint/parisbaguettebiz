@@ -30,17 +30,10 @@ get_header();
 		?>
 
 		</main><!-- #main -->
+
+		<?php get_sidebar(); ?>
+
 	</div><!-- #primary -->
 
 <?php
-
-if (in_category('12')) {
-	get_sidebar('excat');
-}
-elseif (in_category('11')) {
-	get_sidebar('exres');
-}
-else {
-	get_sidebar();
-}
 get_footer();
