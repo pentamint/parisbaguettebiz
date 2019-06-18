@@ -1,14 +1,15 @@
 /**
  * File main.js.
  *
- * Series of initialize tasks.
+ * Series of init tasks.
  *
  * Please see comments below.
  */
 
 ( function( $ ) {
 
-	// ----- Base & Cross Browsing ----- //
+  // ----- Base & Cross Browsing ----- //
+  
 	$(document).ready(function() {
     // Show site after all elements are loaded
     document.getElementsByTagName("html")[0].style.visibility = "visible";
@@ -17,19 +18,22 @@
 	});
 
   // --- vh hack: height: 100vh; height: calc(var(--vh, 1vh) * 100); -- //
+
   // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
   let vh = window.innerHeight * 0.01;
   // Then we set the value in the --vh custom property to the root of the document. `${vh}px`
   document.documentElement.style.setProperty('--vh', vh + 'px');
 
-  // ----- Underscores Theme Custom ----- //
+  // ----- Underscores Theme Support ----- //
+
   // --- Sidebar --- //
-  // Add class to body when sidebar is active
+  // If sidebar exist => add class to body
   $(document).ready(function() {
     if ( $('#secondary').length > 0 ) {
       $('body').addClass('has-sidebar');
     }
   });
+
   // --- Fixed Header --- //
 	$(document).ready(function() {
     // When the user scrolls the page, execute addFixedHeader
@@ -66,51 +70,52 @@
       }
     };
   });
+
   // ----- Bootstrap Support ----- //
-  // --- Sidebar --- //
+
+  // --- Default Init --- //
+  // Init Bootstrap toggle
+  $('.navbar-toggle').click(function () {
+    $('.navbar-toggle').toggleClass('is-active');
+  });
+
+  // --- Sidebar Layout --- //
   $(document).ready(function() {
-    // Add class to elements if sidebar exist
+    // If sidebar exist => wrap content area with container class
     if ( $('body').hasClass('has-sidebar') ) {
-      $('.site-content').wrapInner("<div class='container' />");
+      $('.content-area').wrapAll("<div class='container' />");
     };
-    // Add class to elements if sidebar does not exist
+    // If sidebar !exist => add container class to header elements
     if ( !$('body').hasClass('has-sidebar') ) {
       $('header.page-header').addClass('container');
       $('header.entry-header').addClass('container');
     };
   });
 
-  // --- Archive --- //
-  // Add bootstrap grid to archive posts
+  // --- Archive Post Layout --- //
+  // Add Bootstrap 3 col layout to archive posts
   if ( $('body').hasClass('archive') ) {
     $('.site-main > article').wrapAll("<div class='row' />");
     $('article').addClass('col-12 col-sm-6 col-md-4');
   };
 
   // --- Gutenberg  --- //
+  // Add Bootstrap properties to col
   $('.wp-block-columns').addClass('row');
   $('.wp-block-column').addClass('col');
 
   // --- Stackable - Gutenberg Blocks --- //
   $(document).ready(function() {
     if ( $('.ugb-container').hasClass('fullwidth') ) {
-      // Add class for no sidebar and fullwidth
+      // If sidebar !exist => add fullwidth class to section
       $('body:not(.has-sidebar) .fullwidth .ugb-container__content-wrapper').addClass('container-fluid');
     }
     else {
-      // Add class for no sidebar and boxed
+      // If sidebar !exist => add boxed & container classes to section
       $('body:not(.has-sidebar) .ugb-container').addClass('boxed');
       $('.boxed .ugb-container__content-wrapper').addClass('container');
       $('.boxed .ugb-container__content-wrapper').attr('style','margin-right: auto; margin-left: auto');
     }
-  });
-  
-  // --- Woocommerce --- //
-  $('body.woocommerce .site-content').wrapInner("<div class='container' />");
-
-  // --- Hamburgers Menu --- //
-  $('.navbar-toggle').click(function () {
-    $('.navbar-toggle').toggleClass('is-active');
   });
 
 } )( jQuery );

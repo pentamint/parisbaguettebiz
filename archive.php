@@ -9,7 +9,7 @@
 
 get_header();
 ?>
-<div class="container">
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
@@ -50,7 +50,6 @@ get_header();
 		<?php get_sidebar(); ?>
 
 	</div><!-- #primary -->
-</div><!-- .container -->
 
 <?php
 get_footer();
