@@ -209,7 +209,6 @@ function pbbiz_scripts() {
 
 	/** Custom Scripts **/
 	// Bootstrap Support
-	wp_enqueue_script( 'jQuery', 'https://code.jquery.com/jquery-3.3.1.slim.min.js', array(), null, true );
 	wp_enqueue_script( 'popper.js', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', array(), null, true );
 	wp_enqueue_script( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array(), null, true );	
 	// Theme Custom
