@@ -33,6 +33,12 @@ $results_count = $wp_query->found_posts;
     </div> <!-- .container -->
 </div> <!-- .jumbotron -->
 
+<!-- Custom Code -->
+<?php if(!has_body_class(has-sidebar)): ?>
+	<div class="container">
+<?php endif; ?>
+<!-- Custom Code -->
+
 <div id="primary" class="content-area">
 	<main id="main" class="site-main">
         <?php if (have_posts()) : // Results Found ?>
@@ -90,7 +96,13 @@ $results_count = $wp_query->found_posts;
 
     <?php get_sidebar(); ?>
 
-</div> <!-- .content-area -->
+</div> <!-- #primary -->
+
+<!-- Custom Code -->
+<?php if(!has_body_class(has-sidebar)): ?>
+	</div>
+<?php endif; ?>
+<!-- Custom Code -->
 
 <?php
 get_footer();

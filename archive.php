@@ -10,6 +10,12 @@
 get_header();
 ?>
 
+<!-- Custom Code -->
+<?php if(!has_body_class(has-sidebar)): ?>
+	<div class="container">
+<?php endif; ?>
+<!-- Custom Code -->
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
@@ -50,6 +56,12 @@ get_header();
 		<?php get_sidebar(); ?>
 
 	</div><!-- #primary -->
+
+<!-- Custom Code -->
+<?php if(!has_body_class(has-sidebar)): ?>
+	</div>
+<?php endif; ?>
+<!-- Custom Code -->
 
 <?php
 get_footer();
