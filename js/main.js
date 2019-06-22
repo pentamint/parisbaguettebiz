@@ -81,7 +81,7 @@
 
   // --- Sidebar Layout --- //
   $(document).ready(function() {
-    // If sidebar exist => wrap content area with container class
+    // If sidebar exist => wrap content area with container class for all page templates
     if ( $('body').hasClass('has-sidebar') ) {
       $('.content-area').wrapAll("<div class='container' />");
     };
@@ -89,6 +89,9 @@
     if ( !$('body').hasClass('has-sidebar') ) {
       $('header.page-header').addClass('container');
       $('header.entry-header').addClass('container');
+      // Wrap content area with container class for rendered pages => archive, search
+      $('.archive .content-area').wrapAll("<div class='container' />");
+      $('.search .content-area').wrapAll("<div class='container' />");
     };
   });
 

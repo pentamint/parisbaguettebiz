@@ -261,15 +261,6 @@ if ( class_exists( 'WooCommerce' ) ) {
 // Register Custom Navigation Walker
 require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 
-// ----- Register Custom Functions ----- //
-
-// Check Body Class Exist
-function has_body_class( $class ) {
-	$body_classes = get_body_class();
-	return in_array( $class, $body_classes, true );
-}
-add_action('init', 'has_body_class' );
-
 // ----- Register Custom Menus ----- //
 
 // Register Secondary Nav Menu
