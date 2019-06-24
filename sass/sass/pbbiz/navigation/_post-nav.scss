@@ -1,47 +1,43 @@
 // Post navigation
 .post-navigation {
   width: 100%;
-  min-height: 1.5em;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 6em;
-}
-.nav-next {
-  float: right;
-}
-.nav-previous {
-  float: left;
-  margin-bottom: 1em;
-}
-.nav-next::after{
-  content: "→";
-}
-.nav-previous::before {
-  content: "←";
-}
-/* / */
-@media (min-width: 576px) {
-  .post-navigation {
-    max-width: 540px;
+  .nav-links { // wrapper
+    @include flexbox;
+    @include justify-content(space-between);
+    @include flex-wrap(wrap);
+    .nav-previous {
+      padding: 15px;
+      margin-top: 15px;
+      flex-basis: 20%;
+    }
+    .nav-next {
+      padding: 15px;
+      margin-top: 15px;
+      flex-basis: 20%;
+    }
+    .title {
+      display: block;
+    }
+    .post-title {
+      display: block;
+    }
+  }
+  .fa-chevron-left {
+    margin-right: 5px;
+  }
+  .fa-chevron-right {
+    margin-left: 5px;
   }
 }
-@media (min-width: 768px) {
+@include media-breakpoint-up(md) {
   .post-navigation {
-    max-width: 720px;
+    .nav-links {
+      .nav-previous {
+        flex-basis: 40%;
+      }
+      .nav-next {
+        flex-basis: 40%;
+      }
+    }
   }
 }
-@media (min-width: 992px) {
-  .post-navigation {
-    max-width: 960px;
-    margin-bottom: 4em;
-  }
-}
-@media (min-width: 1200px) {
-  .post-navigation {
-    max-width: 1140px;
-    margin-bottom: 5em;
-  }
-}
-/* ----- /Single.php ----- */

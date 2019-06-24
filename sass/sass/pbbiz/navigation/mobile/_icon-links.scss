@@ -8,6 +8,11 @@
         //
         left: 0;
         margin-left: 1rem;
+        .mobile-login {
+            a {
+                @include rfs(26);
+            }
+        }
     }
 }
 

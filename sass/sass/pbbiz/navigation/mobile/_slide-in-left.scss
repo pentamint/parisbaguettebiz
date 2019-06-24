@@ -8,6 +8,7 @@ header { // #masthead .site-header
                 position: absolute;
                 padding: 0;
                 top: 0;
+                left: 0;
                 z-index: 1000; // order navbar above page content
                 .nav-wrapper {
                     .navbar-collapse { // .menu-primary

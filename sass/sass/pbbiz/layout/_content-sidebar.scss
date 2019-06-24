@@ -3,10 +3,12 @@ body.has-sidebar {
 		@include flexbox;
 		@include flex-wrap(wrap);
 		#main {
-			@include flex-basis(100%);
+			@include flex-basis($size__site-main-mobile);
+			max-width: $size__site-main-mobile;
 		}
 		#secondary {
-			@include flex-basis(100%);
+			@include flex-basis($size__site-sidebar-mobile);
+			max-width: $size__site-sidebar-mobile;
 		}
 	}
 }
@@ -16,10 +18,13 @@ body.has-sidebar {
 		#primary {
 			@include flexbox;
 			#main {
-				@include flex-basis(75%);
+				@include flex-basis($size__site-main);
+				padding-right: 20px;
+				max-width: $size__site-main;
 			}
 			#secondary {
-				@include flex-basis(25%);
+				@include flex-basis($size__site-sidebar);
+				max-width: $size__site-sidebar;
 			}
 		}
 	}

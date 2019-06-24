@@ -30,8 +30,25 @@
 }
 
 @include media-breakpoint-up($breakpoint__mobile-nav) {
-  // Logo PC positioning
-  .site-branding {
-    margin-top: -35px;
+  .site-header { // #masthead
+    #main-header {
+      .container {
+        .site-branding {
+          // Logo PC positioning
+          margin-top: -35px;
+        }
+      }
+    }
+    // Fixed header settings
+    &.sticky {
+      #main-header {
+        .container {
+          .site-branding {
+            // PC fixed header logo repositioning
+            margin-top: 20px;
+          }
+        }
+      }
+    }
   }
 }
