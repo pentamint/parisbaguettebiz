@@ -14,8 +14,11 @@ get_header();
 
 		<form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
 			<?php
-				if( $terms = get_terms( array( 'post_taxonomy' => 'blog', 'orderby' => 'date' ) ) ) : 
-		
+				if( $terms = get_terms( array(
+					'taxonomy' => 'category',
+					'orderby' => 'name'
+				) ) ) : 
+
 					echo '<select name="categoryfilter"><option value="">필터를 선택하세요.</option>';
 					foreach ( $terms as $term ) :
 						echo '<option value="' . $term->term_id . '">' . $term->name . '</option>'; // ID of the category as the value of an option

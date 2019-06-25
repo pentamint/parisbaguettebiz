@@ -212,8 +212,9 @@ function pbbiz_scripts() {
 	wp_enqueue_script( 'popper.js', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', array(), null, true );
 	wp_enqueue_script( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array(), null, true );	
 	// Theme Custom
-	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,700', false );
-	wp_enqueue_style( 'animate.css', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css', false );
+	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap', false );
+	wp_enqueue_style( 'nanum-fonts-nanumsquareround', 'https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css', false );
+	wp_enqueue_style( 'animate.css', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css', true );
 	wp_enqueue_script( 'ofi-min-js', get_template_directory_uri() . '/js/ofi.min.js', array(), '3.2.4', true );	
 	wp_enqueue_script( 'main-js', get_template_directory_uri() . '/js/main.js', array('jquery'),  time(), true );
 	/** Custom Scripts End **/
@@ -285,6 +286,7 @@ add_action('wp_ajax_myfilter', 'misha_filter_function'); // wp_ajax_{ACTION HERE
 add_action('wp_ajax_nopriv_myfilter', 'misha_filter_function');
  
 function misha_filter_function(){
+
 	$args = array(
 		'orderby' => 'date', // we will sort posts by date
 		'order'	=> $_POST['date'] // ASC or DESC
@@ -294,7 +296,7 @@ function misha_filter_function(){
 	if( isset( $_POST['categoryfilter'] ) )
 		$args['tax_query'] = array(
 			array(
-				'post_taxonomy' => 'blog',
+				'taxonomy' => 'category',
 				'field' => 'id',
 				'terms' => $_POST['categoryfilter']
 			)
@@ -345,7 +347,10 @@ function misha_filter_function(){
  
 	if( $query->have_posts() ) :
 		while( $query->have_posts() ): $query->the_post();
-			echo '<h2>' . $query->post->post_title . '</h2>';
+			?>
+			<a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
+			<?php
+			the_post_thumbnail();
 		endwhile;
 		wp_reset_postdata();
 	else :
@@ -354,3 +359,4 @@ function misha_filter_function(){
  
 	die();
 }
+

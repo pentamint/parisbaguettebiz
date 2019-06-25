@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*!
 Theme Name: Paris Baguette Biz
 Theme URI: http://underscores.me/
@@ -10116,7 +10115,7 @@ button:active, button:focus, input[type="button"]:active, input[type="button"]:f
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_custom-utilities\.scss}line{font-family:\0000379}}
 .en {
-  font-family: "Roboto", sans-serif !important; }
+  font-family: sans-serif !important; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/modules\/_custom-utilities\.scss}line{font-family:\0000382}}
 .kr {
@@ -10938,43 +10937,6 @@ a {
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/theme\/_transitions\.scss}line{font-family:\0000327}}
   .menu-primary.navbar-collapse > ul > li.current-menu-item, .menu-primary.navbar-collapse > ul > li.show {
     transform: scale(1.1); } }
-@font-face {
-  font-family: 'Nanum Gothic';
-  font-style: normal;
-  font-weight: normal;
-  src: url(/wp-content/themes/paris-baguette-biz/fonts/NanumGothic-Regular.eot);
-  src: url(/wp-content/themes/paris-baguette-biz/fonts/NanumGothic-Regular.eot?#iefix) format("embedded-opentype"), url(/wp-content/themes/paris-baguette-biz/fonts/NanumGothic-Regular.woff2) format("woff2"), url(/wp-content/themes/paris-baguette-biz/fonts/NanumGothic-Regular.woff) format("woff"); }
-@font-face {
-  font-family: 'Nanum Gothic';
-  font-style: normal;
-  font-weight: bold;
-  src: url(/wp-content/themes/paris-baguette-biz/fonts/NanumGothic-Bold.eot);
-  src: url(/wp-content/themes/paris-baguette-biz/fonts/NanumGothic-Bold.eot?#iefix) format("embedded-opentype"), url(/wp-content/themes/paris-baguette-biz/fonts/NanumGothic-Bold.woff2) format("woff2"), url(/wp-content/themes/paris-baguette-biz/fonts/NanumGothic-Bold.woff) format("woff"); }
-/* 나눔스퀘어라운드 웹폰트 v1.11 https://github.com/innks/NanumSquareRound */
-@font-face {
-  font-family: 'NanumSquareRound';
-  font-style: normal;
-  font-weight: 300;
-  src: local("NanumSquareRoundL"), url(/wp-content/themes/paris-baguette-biz/fonts/NanumSquareRoundL.eot), url(/wp-content/themes/paris-baguette-biz/fonts/NanumSquareRoundL.eot?#iefix) format("embedded-opentype"), url(/wp-content/themes/paris-baguette-biz/fonts/NanumSquareRoundL.woff2) format("woff2"), url(/wp-content/themes/paris-baguette-biz/fonts/NanumSquareRoundL.woff) format("woff"), url(/wp-content/themes/paris-baguette-biz/fonts/NanumSquareRoundL.ttf) format("truetype");
-  /* Safari, Android, iOS */ }
-@font-face {
-  font-family: 'NanumSquareRound';
-  font-style: normal;
-  font-weight: 400;
-  src: local("NanumSquareRoundR"), url(/wp-content/themes/paris-baguette-biz/fonts/NanumSquareRoundR.eot), url(/wp-content/themes/paris-baguette-biz/fonts/NanumSquareRoundR.eot?#iefix) format("embedded-opentype"), url(/wp-content/themes/paris-baguette-biz/fonts/NanumSquareRoundR.woff2) format("woff2"), url(/wp-content/themes/paris-baguette-biz/fonts/NanumSquareRoundR.woff) format("woff"), url(/wp-content/themes/paris-baguette-biz/fonts/NanumSquareRoundR.ttf) format("truetype");
-  /* Safari, Android, iOS */ }
-@font-face {
-  font-family: 'NanumSquareRound';
-  font-style: normal;
-  font-weight: 700;
-  src: local("NanumSquareRoundB"), url(/wp-content/themes/paris-baguette-biz/fonts/NanumSquareRoundB.eot), url(/wp-content/themes/paris-baguette-biz/fonts/NanumSquareRoundB.eot?#iefix) format("embedded-opentype"), url(/wp-content/themes/paris-baguette-biz/fonts/NanumSquareRoundB.woff2) format("woff2"), url(/wp-content/themes/paris-baguette-biz/fonts/NanumSquareRoundB.woff) format("woff"), url(/wp-content/themes/paris-baguette-biz/fonts/NanumSquareRoundB.ttf) format("truetype");
-  /* Safari, Android, iOS */ }
-@font-face {
-  font-family: 'NanumSquareRound';
-  font-style: normal;
-  font-weight: 800;
-  src: local("NanumSquareRoundEB"), url(/wp-content/themes/paris-baguette-biz/fonts/NanumSquareRoundEB.eot), url(/wp-content/themes/paris-baguette-biz/fonts/NanumSquareRoundEB.eot?#iefix) format("embedded-opentype"), url(/wp-content/themes/paris-baguette-biz/fonts/NanumSquareRoundEB.woff2) format("woff2"), url(/wp-content/themes/paris-baguette-biz/fonts/NanumSquareRoundEB.woff) format("woff"), url(/wp-content/themes/paris-baguette-biz/fonts/NanumSquareRoundEB.ttf) format("truetype");
-  /* Safari, Android, iOS */ }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/typography\/_headings\.scss}line{font-family:\000031}}
 h1, h2, h3, h4, h5, h6 {
   clear: both; }
@@ -11033,26 +10995,26 @@ select,
 optgroup,
 textarea {
   color: #333;
-  font-family: "Roboto", "Nanum Gothic", sans-serif;
+  font-family: "Nanum Gothic", sans-serif;
   font-size: 0.875rem;
   line-height: 1.5; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/theme\/_typography\.scss}line{font-family:\0000316}}
 h2 {
-  font-family: "Roboto", "NanumSquareRound", sans-serif;
+  font-family: "NanumSquareRound", sans-serif;
   font-size: 1.375rem;
   font-weight: 700; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/_default\.scss}line{font-family:\000039}}
 header #top-header .container nav .nav-wrapper .navbar-collapse > ul > li > a {
-  font-family: "Montserrat", "Nanum Gothic", sans-serif; }
+  font-family: "Nanum Gothic", sans-serif; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/_default\.scss}line{font-family:\0000323}}
 header #main-header .container nav .nav-wrapper > button {
   position: absolute;
   z-index: 10; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/_default\.scss}line{font-family:\0000330}}
 header #main-header .container nav .nav-wrapper .navbar-collapse > ul > li > a {
-  font-family: "Montserrat", "NanumSquareRound", sans-serif; }
+  font-family: "NanumSquareRound", sans-serif; }
 
 @media (min-width: 992px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/navigation\/_default\.scss}line{font-family:\0000348}}
@@ -11751,7 +11713,7 @@ body.has-sidebar #primary {
         flex-grow: 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/downloads\/git\%20repo\/pbbiz\/sass\/sass\/pbbiz\/theme\/pages\/_front-page\.scss}line{font-family:\0000336}}
         .page-id-19 .line_notice .container .row .notice_preview_title p {
-          font-family: "Montserrat", "Nanum Gothic", sans-serif;
+          font-family: "Nanum Gothic", sans-serif;
           font-size: 0.8125rem;
           font-weight: 700;
           color: #f6be07; }
@@ -11797,7 +11759,7 @@ body.has-sidebar #primary {
       .page-id-19 .line_notice .container .row .promo_preview_title {
         padding-left: 0;
         padding-right: 0;
-        font-family: "Montserrat", "Nanum Gothic", sans-serif;
+        font-family: "Nanum Gothic", sans-serif;
         font-size: 0.75rem;
         color: #0d1d74;
         font-weight: 700; }
