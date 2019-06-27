@@ -259,11 +259,14 @@ if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
 
-// Register Custom Navigation Walker
+/**
+ * Load Bootstrap compatibility file.
+ */
 require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 
-// ----- Register Custom Menus ----- //
-
+/**
+ * Customize Menus
+ */
 // Register Secondary Nav Menu
 register_nav_menus( array(
 	'secondary' => esc_html__( 'Secondary Menu', 'PBBiz' ),
@@ -279,9 +282,44 @@ register_nav_menus( array(
 	'colophon' => esc_html__( 'Colophon Menu', 'PBBiz' ),
 ) );
 
-// ----- Custom Filter Module ----- //
-// Process Filter Requests
+/**
+ * Customize Post Types
+ */
+// Change Default Post Labels
+function pm_change_post_label() {
+    global $menu;
+    global $submenu;
+    $menu[5][0] = 'B2B 블로그';
+    $submenu['edit.php'][5][0] = '모든 글'; // All Items
+	$submenu['edit.php'][10][0] = '새로 추가'; // Add New
+	$submenu['edit.php'][15][0] = '카테고리'; // Categories
+    $submenu['edit.php'][16][0] = '태그'; // Tags
+}
+function pm_change_post_object() {
+    global $wp_post_types;
+    $labels = &$wp_post_types['post']->labels;
+    $labels->name = '글';
+    $labels->singular_name = '글';
+    $labels->add_new = '글 쓰기';
+    $labels->add_new_item = '글 쓰기';
+    $labels->edit_item = '글 수정하기';
+    $labels->new_item = '새로운 글';
+    $labels->view_item = '글 보기';
+    $labels->search_items = '글 검색하기';
+    $labels->not_found = '찾는 글이 없습니다.';
+    $labels->not_found_in_trash = '찾는 글이 휴지통에 없습니다.';
+    $labels->all_items = '전체 글';
+    $labels->menu_name = 'B2B 블로그';
+    $labels->name_admin_bar = 'B2B 블로그';
+}
+ 
+add_action( 'admin_menu', 'pm_change_post_label' );
+add_action( 'init', 'pm_change_post_object' );
 
+/**
+ * Custom Filter Module
+ */
+// Process Filter Requests
 add_action('wp_ajax_myfilter', 'misha_filter_function'); // wp_ajax_{ACTION HERE} 
 add_action('wp_ajax_nopriv_myfilter', 'misha_filter_function');
  
@@ -345,12 +383,28 @@ function misha_filter_function(){
  
 	$query = new WP_Query( $args );
  
-	if( $query->have_posts() ) :
+	if( $query->have_posts() ) : ?>
+
+		<header class="page-header">
+			<?php
+			if (is_category()) :
+				$category = get_the_category();
+				echo '<div id="cat-name">' . $category[0]->cat_name . '</div>';
+				the_archive_description('<div class="archive-description">', '</div>');
+			endif;
+			?>
+		</header><!-- .page-header -->
+		
+		<?php
 		while( $query->have_posts() ): $query->the_post();
 			?>
-			<a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
-			<?php
-			the_post_thumbnail();
+			<div class="query_item col-12 col-sm-6 col-md-4">
+				<div class="wrapper">
+					<a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
+					<?php the_post_thumbnail(); ?>
+				</div>
+			</div>
+		<?php
 		endwhile;
 		wp_reset_postdata();
 	else :

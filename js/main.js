@@ -87,7 +87,8 @@
     };
     // If sidebar !exist => add container class to header elements
     if ( !$('body').hasClass('has-sidebar') ) {
-      $('header.page-header').addClass('container');
+      $('.page header.page-header').addClass('container');
+      $('.single header.page-header').addClass('container');
       $('header.entry-header').addClass('container');
       // Wrap content area with container class for rendered pages => archive, search
       $('.archive .content-area').wrapAll("<div class='container' />");

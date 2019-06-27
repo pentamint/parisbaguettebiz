@@ -26,16 +26,16 @@ get_header();
 													</span>
 													<span class="post-title">
 														%title
-													</span>' ),
+													</span>', 'pbbiz' ),
 				'next_text'                  => __( '<span class="title">
 														<i class="fas fa-chevron-right"></i>다음 글 보기
 													</span>
 													<span class="post-title">
 														%title
-													</span>' ),
+													</span>', 'pbbiz' ),
 				'in_same_term'               => true,
-				'taxonomy'                   => __( 'post_tag' ),
-				'screen_reader_text' => __( '계속 보기' ),
+				'taxonomy'                   => __( 'post_tag', 'pbbiz' ),
+				'screen_reader_text' => __( '계속 보기', 'pbbiz' ),
 			) );
 			// Custom post nav array end
 

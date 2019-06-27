@@ -21,9 +21,9 @@ get_header();
         <div class="container">
             <h1>키워드 <span class="keyword">&ldquo;<?php the_search_query(); ?>&rdquo;</span> 검색결과</h1>
             <?php if ($results_count == '' || $results_count == 0) { // No Results ?>
-                <p><span class="label label-danger"><?php _e('앗! 입력하신 키워드로 검색된 결과가 없습니다..'); ?></span>&nbsp;<br><?php _e('철자와 띄어쓰기를 확인해 보거나 다른 검색어를 입력해 보시는건 어떨까요?'); ?></p>
+                <p><span class="label label-danger"><?php _e('앗! 입력하신 키워드로 검색된 결과가 없습니다..','pbbiz'); ?></span>&nbsp;<br><?php _e('철자와 띄어쓰기를 확인해 보거나 다른 검색어를 입력해 보시는건 어떨까요?','pbbiz'); ?></p>
             <?php } else { // Results Found ?>
-                <p><span class="label label-success"><?php echo $results_count . __(' 개의 검색결과'); ?></span></p>
+                <p><span class="label label-success"><?php echo $results_count . __(' 개의 검색결과','pbbiz'); ?></span></p>
             <?php } // end results check ?>
             <div class="row">
                 <div class="col-md-4">
@@ -37,7 +37,7 @@ get_header();
             <main id="main" class="site-main">
                 <?php if (have_posts()) : // Results Found ?>
 
-                    <h2><?php _e('Search Results'); ?></h2>
+                    <h2><?php _e('Search Results','pbbiz'); ?></h2>
 
                 <?php while (have_posts()) : the_post(); ?>
 
@@ -59,10 +59,10 @@ get_header();
 
                 <?php else : // No Results ?>
 
-                    <p><?php _e('죄송합니다. 고객님께서 입력하신 키워드로 검색된 결과가 없습니다..<br>아래 최신글 목록과 사이트맵을 통해 파리바게뜨 기업구매 사이트의 컨텐츠를 간편하게 찾아보세요.'); ?></p>
+                    <p><?php _e('죄송합니다. 고객님께서 입력하신 키워드로 검색된 결과가 없습니다..<br>아래 최신글 목록과 사이트맵을 통해 파리바게뜨 기업구매 사이트의 컨텐츠를 간편하게 찾아보세요.','pbbiz'); ?></p>
                     <div class="row">
                         <div class="col-md-6 posts">
-                            <h3><?php _e('최신글 목록'); ?></h3>
+                            <h3><?php _e('최신글 목록','pbbiz'); ?></h3>
                             <ul>
                                 <?php
                                     $args = array(
@@ -77,7 +77,7 @@ get_header();
                             </ul>
                         </div> <!-- .posts -->
                         <div class="col-md-6 pages">
-                            <h3><?php _e('사이트맵'); ?></h3>
+                            <h3><?php _e('사이트맵','pbbiz'); ?></h3>
                             <ul>
                                 <?php wp_list_pages('title_li=&sort_column=menu_order'); ?>
                             </ul>
