@@ -8,7 +8,8 @@
 /*--------------------------------------------------------------
 ## Post Navigation
 --------------------------------------------------------------*/
-@import "../navigation/post-nav";
+// @import "../navigation/post-nav-wp"; // Standard WP Post Nav
+@import "../navigation/post-nav-ajax-load-more"; // Custom AJAX Post Nav with Loadmore
 
 /*--------------------------------------------------------------
 ## Mobile Menu Type

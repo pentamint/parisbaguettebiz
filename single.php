@@ -34,7 +34,7 @@ get_header();
 														%title
 													</span>', 'pbbiz' ),
 				'in_same_term'               => true,
-				'taxonomy'                   => __( 'post_tag', 'pbbiz' ),
+				'taxonomy'                   => __( 'category', 'pbbiz' ),
 				'screen_reader_text' => __( '계속 보기', 'pbbiz' ),
 			) );
 			// Custom post nav array end

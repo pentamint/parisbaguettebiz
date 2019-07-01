@@ -8806,45 +8806,24 @@ a {
 /*--------------------------------------------------------------
 ## Post Navigation
 --------------------------------------------------------------*/
-.post-navigation {
-  width: 100%; }
-  .post-navigation .nav-links {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    -webkit-justify-content: space-between;
-    -moz-justify-content: space-between;
-    justify-content: space-between;
-    -webkit-flex-wrap: wrap;
-    -moz-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap; }
-    .post-navigation .nav-links .nav-previous {
-      padding: 15px;
-      margin-top: 15px;
-      flex-basis: 20%; }
-    .post-navigation .nav-links .nav-next {
-      padding: 15px;
-      margin-top: 15px;
-      flex-basis: 20%; }
-    .post-navigation .nav-links .title {
-      display: block; }
-    .post-navigation .nav-links .post-title {
-      display: block; }
-  .post-navigation .fa-chevron-left {
-    margin-right: 5px; }
-  .post-navigation .fa-chevron-right {
-    margin-left: 5px; }
+.pm_loadmore {
+  background-color: #ddd;
+  border-radius: 2px;
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 10px 0;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out; }
 
-@media (min-width: 768px) {
-  .post-navigation .nav-links .nav-previous {
-    flex-basis: 40%; }
-  .post-navigation .nav-links .nav-next {
-    flex-basis: 40%; } }
+.pm_loadmore:hover {
+  background-color: #767676;
+  color: #fff; }
+
 /*--------------------------------------------------------------
 ## Mobile Menu Type
 --------------------------------------------------------------*/
