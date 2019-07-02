@@ -9451,12 +9451,6 @@ body.has-sidebar #primary {
   display: block; }
 
 /* ----- Theme Style ----- */
-.post-thumbnail {
-  display: none; }
-
-.entry-header {
-  display: none; }
-
 body:not(.home):not(.search) .site-content {
   padding-top: 3em; }
 

@@ -103,6 +103,19 @@
     $('article').addClass('col-12 col-sm-6 col-md-4');
   };
 
+  // --- Woocommerce Layout --- //
+  $(document).ready(function() {
+    // Move sidebar to inside of primary div
+    if ( $('body').hasClass('woocommerce') ) {
+      $('#secondary').detach().appendTo('#primary');
+    };
+    // Wrap content area with container class for no sidebar Woocommerce layout
+    if ( !$('body').hasClass('has-sidebar') ) {
+      $('.woocommerce:not(.archive) .content-area').wrapAll("<div class='container' />");
+      $('.woocommerce:not(.search) .content-area').wrapAll("<div class='container' />");
+    }
+  });
+
   // --- Gutenberg  --- //
   // Add Bootstrap properties to col
   $('.wp-block-columns').addClass('row');

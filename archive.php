@@ -16,6 +16,22 @@ get_header();
 		<!-- Custom Code -->
 
 		<form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="pm_filters">
+			<label for="pm_number_of_results">글수 보기</label>
+			<select name="pm_number_of_results" id="pm_number_of_results">
+				<option><?php echo get_option( 'posts_per_page' ) ?></option><!-- it is from Settings > Reading -->
+				<option>18</option>
+				<option>27</option>
+				<option value="-1">All</option>
+			</select>
+		
+			<label for="pm_order_by">정렬</label>
+			<select name="pm_order_by" id="pm_order_by">
+				<option value="date-DESC">날짜순 ↓</option><!-- I will explode these values by "-" symbol later -->
+				<option value="date-ASC">날짜순 ↑</option>
+				<option value="comment_count-DESC">댓글수 ↓</option>
+				<option value="comment_count-ASC">댓글수 ↑</option>
+			</select>
+
 			<?php
 			if ($terms = get_terms(array(
 				'taxonomy' => 'category',
@@ -30,19 +46,11 @@ get_header();
 				echo '</select>';
 			endif;
 			?>
-			<input type="text" name="price_min" placeholder="최소 금액" />
-			<input type="text" name="price_max" placeholder="최대 금액" />
-			<label>
-				<input type="radio" name="date" value="ASC" /> 날짜순: 예전글부터
-			</label>
-			<label>
-				<input type="radio" name="date" value="DESC" selected="selected" /> 날짜순: 최신글부터
-			</label>
-			<label>
-				<input type="checkbox" name="featured_image" /> 특성이미지 있는 포스트만 보기
-			</label>
-			<button>Apply filter</button>
-			<input type="hidden" name="action" value="myfilter">
+			
+			<input type="hidden" name="action" value="pmfilter">
+
+			<button>필터 적용하기</button>
+
 		</form>
 		<!-- <header class="page-header">
 				<?php
@@ -68,54 +76,18 @@ get_header();
 
 					endwhile;
 
-					// the_posts_navigation();
-
-					// Custom Pagination & Load More Button for AJAX Filters
-					pm_paginator( get_pagenum_link() );
-
 				else :
 
 					get_template_part('template-parts/content', 'none');
 
+				endif;
 				?>
 			</div> <!-- #pm_posts_wrap -->
-			<?php
-				global $wp_query; // you can remove this line if everything works for you
-
-				// don't display the button if there are not enough posts
-				if (  $wp_query->max_num_pages > 1 )
-					echo '<div id="pm_loadmore">More posts</div>'; // you can use <a> as well
-
-				endif;
-			?>
 		</div> <!-- #response -->
 
-		<script>
-			jQuery(function($) {
-				$('#pm_filters').submit(function() {
-					var filter = $('#pm_filters');
-					$.ajax({
-						url: filter.attr('action'),
-						data: filter.serialize(), // form data
-						type: filter.attr('method'), // POST
-						beforeSend: function(xhr) {
-							filter.find('button').text('Processing...'); // changing the button label
-						},
-						success: function(data) {
-							filter.find('button').text('Apply filter'); // changing the button label back
-							$('#pm_posts_wrap').html(data); // insert data
-						}
-					});
-					return false;
-				});
-			});
-			// jQuery(function($) {
-			// 	$document.ready(function() {
-			// 		$('#response .query_items')addClass('container');
-			// 		$('#response .query_items .wrapper')addClass('row');
-			// 	}
-			// };
-		</script>
+		<?php
+		// Custom Pagination & Load More Button for AJAX Filters
+		pm_paginator( get_pagenum_link() ); ?>
 
 		<!-- Custom Code -->
 

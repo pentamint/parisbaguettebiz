@@ -319,39 +319,38 @@ function pm_change_post_object() {
 }
  
 /**
- * Custom Pagination & Load More Button for AJAX Filters
+ * Custom AJAX Filters - Load More & Paginations
  */
 // Enqueue Load More Script
-add_action( 'wp_enqueue_scripts', 'pm_my_load_more_scripts' );
-
-function pm_my_load_more_scripts() {
-	global $wp_query; 
+add_action( 'wp_enqueue_scripts', 'pm_script_and_styles');
  
-	// register our main script but do not enqueue it yet
-	wp_register_script( 'pm_loadmore', get_stylesheet_directory_uri() . '/js/pm_loadmore.js', array('jquery') );
+function pm_script_and_styles() {
+	// absolutely need it, because we will get $wp_query->query_vars and $wp_query->max_num_pages from it.
+	global $wp_query;
  
-	// now the most interesting part
-	// we have to pass parameters to myloadmore.js script but we can get the parameters values only in PHP
-	// you can define variables directly in your HTML but I decided that the most proper way is wp_localize_script()
-	wp_localize_script( 'pm_loadmore', 'pm_loadmore_params', array(
+	// when you use wp_localize_script(), do not enqueue the target script immediately
+	wp_register_script( 'pm_ajax_filter_scripts', get_stylesheet_directory_uri() . '/js/ajax_filter.js', array('jquery'), time(), true );
+ 
+	// passing parameters here
+	// actually the <script> tag will be created and the object "pm_loadmore_params" will be inside it 
+	wp_localize_script( 'pm_ajax_filter_scripts', 'pm_loadmore_params', array(
 		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
 		'posts' => json_encode( $wp_query->query_vars ), // everything about your loop is here
-		'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
-		'max_page' => $wp_query->max_num_pages,
-		'first_page' => get_pagenum_link(1)
+		'current_page' => $wp_query->query_vars['paged'] ? $wp_query->query_vars['paged'] : 1,
+		'max_page' => $wp_query->max_num_pages
 	) );
  
- 	wp_enqueue_script( 'pm_loadmore' );
+ 	wp_enqueue_script( 'pm_ajax_filter_scripts' );
 }
 
 // Create Custom Function for AJAX Handler
-add_action('wp_ajax_loadmore', 'pm_loadmore_ajax_handler'); // wp_ajax_{action}
-add_action('wp_ajax_nopriv_loadmore', 'pm_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
-
+add_action('wp_ajax_loadmorebutton', 'pm_loadmore_ajax_handler');
+add_action('wp_ajax_nopriv_loadmorebutton', 'pm_loadmore_ajax_handler');
+ 
 function pm_loadmore_ajax_handler(){
  
 	// prepare our arguments for the query
-	$args = json_decode( stripslashes( $_POST['query'] ), true );
+	$args = json_decode( stripslashes( $_POST['query'] ), true ); // query_posts() takes care of the necessary sanitization 
 	$args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
 	$args['post_status'] = 'publish';
  
@@ -361,22 +360,83 @@ function pm_loadmore_ajax_handler(){
 	if( have_posts() ) :
  
 		// run the loop
-		while( have_posts() ): the_post();
+		while( have_posts() ): the_post(); ?>
  
-			// look into your theme code how the posts are inserted, but you can use your own HTML of course
-			// do you remember? - my example is adapted for Twenty Seventeen theme
-			get_template_part( 'template-parts/post/content', get_post_format() );
-			// for the test purposes comment the line above and uncomment the below one
-			// the_title();
-  
+		<article class="query_item col-12 col-sm-6 col-md-4">
+			<div class="wrapper">
+				<?php the_post_thumbnail(); ?>
+				<a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
+			</div>
+		</article>
+ 
+		<?php
 		endwhile;
-
-		pm_paginator( $_POST['first_page'] );
- 
 	endif;
 	die; // here we exit the script and even no wp_reset_query() required!
 }
 
+add_action('wp_ajax_pmfilter', 'pm_filter_function'); 
+add_action('wp_ajax_nopriv_pmfilter', 'pm_filter_function');
+ 
+function pm_filter_function(){
+ 
+	// example: date-ASC 
+	$order = explode( '-', $_POST['pm_order_by'] );
+ 
+	$args = array(
+		'posts_per_page' => $_POST['pm_number_of_results'], // when set to -1, it shows all posts
+		'orderby' => $order[0], // example: date
+		'order'	=> $order[1] // example: ASC
+	);
+ 
+	// for taxonomies / categories
+	if( isset( $_POST['categoryfilter'] ) )
+		$args['tax_query'] = array(
+			array(
+				'taxonomy' => 'category',
+				'field' => 'id',
+				'terms' => $_POST['categoryfilter'],
+			)
+		);
+	
+	query_posts( $args );
+ 
+	global $wp_query;
+ 
+	if( have_posts() ) :
+ 
+ 		ob_start(); // start buffering because we do not need to print the posts now
+ 
+		while( have_posts() ): the_post(); ?>
+ 
+		<article class="query_item col-12 col-sm-6 col-md-4">
+			<div class="wrapper">
+				<?php the_post_thumbnail(); ?>
+				<a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
+			</div>
+		</article>
+ 
+		<?php
+		endwhile;
+ 
+ 		$posts_html = ob_get_contents(); // we pass the posts to variable
+   		ob_end_clean(); // clear the buffer
+	else:
+		$posts_html = '<p>조건에 맞는 검색결과가 없습니다.</p>';
+	endif;
+ 
+	// no wp_reset_query() required
+ 
+ 	echo json_encode( array(
+		'posts' => json_encode( $wp_query->query_vars ),
+		'max_page' => $wp_query->max_num_pages,
+		'found_posts' => $wp_query->found_posts,
+		'content' => $posts_html
+	) );
+ 
+	die();
+}
+// pm_paginator( $_POST['first_page'] );
 // Create Custom Function for AJAX Pagination
 function pm_paginator( $first_page_url ){
  
@@ -474,110 +534,8 @@ function pm_paginator( $first_page_url ){
  
 	// haha, this is our load more posts link
 	if( $current_page < $max_page )
-		$pagination.= '<div id="pm_loadmore">More posts</div>';
+		$pagination.= '<div id="pm_loadmore">글 더보기</div>';
  
 	// replace first page before printing it
 	echo str_replace(array("/page/1?", "/page/1\""), array("?", "\""), $pagination);
 }
-
-/**
- * Custom Filter Module
- */
-// AJAX Post Filters
-add_action('wp_ajax_myfilter', 'pm_filter_function'); // wp_ajax_{ACTION HERE} 
-add_action('wp_ajax_nopriv_myfilter', 'pm_filter_function');
- 
-function pm_filter_function(){
-
-	$args = array(
-		'orderby' => 'date', // we will sort posts by date
-		'order'	=> $_POST['date'], // ASC or DESC
-		'posts_per_page' => 9
-	);
- 
-	// for taxonomies / categories
-	if( isset( $_POST['categoryfilter'] ) )
-		$args['tax_query'] = array(
-			array(
-				'taxonomy' => 'category',
-				'field' => 'id',
-				'terms' => $_POST['categoryfilter'],
-				'posts_per_page' => 2,
-				'offset' => 2
-			)
-		);
- 
-	// create $args['meta_query'] array if one of the following fields is filled
-	if( isset( $_POST['price_min'] ) && $_POST['price_min'] || isset( $_POST['price_max'] ) && $_POST['price_max'] || isset( $_POST['featured_image'] ) && $_POST['featured_image'] == 'on' )
-		$args['meta_query'] = array( 'relation'=>'AND' ); // AND means that all conditions of meta_query should be true
- 
-	// if both minimum price and maximum price are specified we will use BETWEEN comparison
-	if( isset( $_POST['price_min'] ) && $_POST['price_min'] && isset( $_POST['price_max'] ) && $_POST['price_max'] ) {
-		$args['meta_query'][] = array(
-			'key' => '_price',
-			'value' => array( $_POST['price_min'], $_POST['price_max'] ),
-			'type' => 'numeric',
-			'compare' => 'between'
-		);
-	} else {
-		// if only min price is set
-		if( isset( $_POST['price_min'] ) && $_POST['price_min'] )
-			$args['meta_query'][] = array(
-				'key' => '_price',
-				'value' => $_POST['price_min'],
-				'type' => 'numeric',
-				'compare' => '>'
-			);
- 
-		// if only max price is set
-		if( isset( $_POST['price_max'] ) && $_POST['price_max'] )
-			$args['meta_query'][] = array(
-				'key' => '_price',
-				'value' => $_POST['price_max'],
-				'type' => 'numeric',
-				'compare' => '<'
-			);
-	}
- 
- 
-	// if post thumbnail is set
-	if( isset( $_POST['featured_image'] ) && $_POST['featured_image'] == 'on' )
-		$args['meta_query'][] = array(
-			'key' => '_thumbnail_id',
-			'compare' => 'EXISTS'
-		);
-	// if you want to use multiple checkboxed, just duplicate the above 5 lines for each checkbox
- 
-	$query = new WP_Query( $args );
- 
-	if( $query->have_posts() ) : ?>
-
-		<header class="page-header">
-			<?php
-			if (is_category()) :
-				$category = get_the_category();
-				echo '<div id="cat-name">' . $category[0]->cat_name . '</div>';
-				the_archive_description('<div class="archive-description">', '</div>');
-			endif;
-			?>
-		</header><!-- .page-header -->
-		
-		<?php
-		while( $query->have_posts() ): $query->the_post();
-			?>
-			<article class="query_item col-12 col-sm-6 col-md-4">
-				<div class="wrapper">
-					<a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
-					<?php the_post_thumbnail(); ?>
-				</div>
-		</article>
-		<?php
-		endwhile;
-		wp_reset_postdata();
-	else :
-		echo 'No posts found';
-	endif;
- 
-	die();
-}
-
