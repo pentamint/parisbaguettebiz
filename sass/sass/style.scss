@@ -37,10 +37,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Initialize Theme Defaults
 --------------------------------------------------------------*/
 @import "pbbiz/base";
-@import "pbbiz/modules/custom-cross-browser";
-@import "pbbiz/modules/custom-gutenberg"; // if dedicated page builder exist, comment out
-@import "pbbiz/modules/custom-bootstrap"; // if dedicated theme exist, comment out
-@import "pbbiz/modules/custom-utilities";
+@import "pbbiz/modules/core-cross-browser";
+@import "pbbiz/modules/core-gutenberg"; // if dedicated page builder exist, comment out
+@import "pbbiz/modules/core-bootstrap"; // if dedicated theme exist, comment out
+@import "pbbiz/modules/core-utilities";
 
 /*--------------------------------------------------------------
 # Initialize Woocommerce
@@ -59,11 +59,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "pbbiz/theme/footer";
 
 /*--------------------------------------------------------------
-# Theme Components
+# Custom UI Components
 --------------------------------------------------------------*/
 
-@import "pbbiz/theme/custom-components/custom-searchform";
-@import "pbbiz/theme/custom-components/custom-social-widget";
+@import "pbbiz/modules/ui-searchform";
+@import "pbbiz/modules/ui-social-widget";
+@import "pbbiz/modules/ui-page-header-banner";
 
 /*--------------------------------------------------------------
 # Elements
@@ -108,7 +109,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Applications
 --------------------------------------------------------------*/
-@import "pbbiz/theme/hamburgers-settings";
+@import "pbbiz/variables-site/hamburgers-settings";
 @import "pbbiz/applications/hamburgers/hamburgers";
 
 /*--------------------------------------------------------------

@@ -1,7 +1,41 @@
-// Home - Recent Posts Row - 4 Category Columns
-// @import "custom-code/home-recent-post-4col"
-
-// Theme Custom //
+// home recent post 4 columns
+// default
+.home-recent-post {
+  .container {
+      .row {
+          > div { // col div
+            margin-bottom: 1rem;
+            .card-wrapper {
+              .recent-post-topbar { // topbar
+                @include flexbox;
+                @include justify-content(space-between);
+                @include align-items(center);
+                padding: 10px 10px;
+               .topbar-icon {
+                    width: 1rem;
+                }
+                .recent-post-title {
+                    @include flex-basis(80%);
+                    margin-bottom: 0;
+                }
+                .topbar-link-icon {
+                    width: 1rem;
+                }
+            }
+            .recent-post-list { // ul container
+              padding: 15px 10px;
+                li {
+                    margin-bottom: .5rem;
+                    height: 1.2rem;
+                    overflow: hidden;
+                  }
+              }
+            }
+          }
+      }
+  }
+}
+// theme custom
 .home-recent-post {
     .container {
         .row {
@@ -37,43 +71,6 @@
                     }
                   }
                 }
-            }
-        }
-    }
-}
-
-// Default //
-.home-recent-post {
-    .container {
-        .row {
-            > div { // col div
-              margin-bottom: 1rem;
-              .card-wrapper {
-                .recent-post-topbar { // topbar
-                  @include flexbox;
-                  @include justify-content(space-between);
-                  @include align-items(center);
-                  padding: 10px 10px;
-                 .topbar-icon {
-                      width: 1rem;
-                  }
-                  .recent-post-title {
-                      @include flex-basis(80%);
-                      margin-bottom: 0;
-                  }
-                  .topbar-link-icon {
-                      width: 1rem;
-                  }
-              }
-              .recent-post-list { // ul container
-                padding: 15px 10px;
-                  li {
-                      margin-bottom: .5rem;
-                      height: 1.2rem;
-                      overflow: hidden;
-                    }
-                }
-              }
             }
         }
     }

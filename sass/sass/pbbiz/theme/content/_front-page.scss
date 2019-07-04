@@ -1,4 +1,4 @@
-/* ----- Main Home ----- */
+// @import "../html-rows/home-recent-post-4col";
 
 // --- Row 1 hero slider ---
 
@@ -133,29 +133,32 @@
   padding-bottom: 0;
 }
 
-// --- Row 4 Biz member promo
+// --- Row 4 biz membership
 .row_membership {
   padding-bottom: 3rem;
   color: #fff;
+}
+
+// --- Row 5 event gallery
+.row_gallery {
   // for small tile repeated background
   &.ugb--has-background-image {
     background-size: inherit;
   }
 }
-
-// --- Row 5 bulk ordering
+// --- Row 6 bulk ordering
 .row_bulkorder {
   background-color: #f2f2f2;
 }
 
-// --- Row 6 gift certificates
+// --- Row 7 gift certificates
 .row_giftcerts {
 
 }
-// --- Row 7 anniversary delivery
+// --- Row 8 anniversary delivery
 
 
-// --- Row 8 catering
+// --- Row 9 catering
 
 
 @include media-breakpoint-down(lg) { // 1199.98px and down

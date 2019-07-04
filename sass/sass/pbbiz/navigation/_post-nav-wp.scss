@@ -33,10 +33,10 @@
   .post-navigation {
     .nav-links {
       .nav-previous {
-        flex-basis: 40%;
+        max-width: 40%;
       }
       .nav-next {
-        flex-basis: 40%;
+        max-width: 40%;
       }
     }
   }

@@ -22,16 +22,45 @@
           }
         }
       }
+      .top-footer-social-links {
+        .social_links {
+          a {
+            color: #fff;
+            &:hover {
+              color: $accent-color;
+            }
+          }
+        }
+      }
     }
   }
 }
 #main-footer {
-  padding: 4rem 0 2rem 0;
   .container {
+    position: relative;
     footer { // #footer-sidebar .row .widget-area
+      color:#e9e9e9;
+      padding: 4rem 0 2rem 0;
+      a {
+        color: #e9e9e9;
+      }
       > div {
         // footer sidebar columns bottom margins
         margin-bottom: 1.25rem;
+      }
+      #footer-sidebar4 {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        .widget {
+          margin-bottom: 0;
+          img {
+            max-height: 12rem;
+            object-fit: contain;
+            font-family: 'object-fit: contain;';
+          }
+        }
       }
     }
   }

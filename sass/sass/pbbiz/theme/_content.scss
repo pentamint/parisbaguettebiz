@@ -11,7 +11,7 @@
 --------------------------------------------------------------*/
 @import "../../site/primary/posts-and-pages";
 @import "../content/default"; // pm resets
-@import "pages/front-page"; // homepage
+@import "content/front-page"; // homepage
 
 /*--------------------------------------------------------------
 ## Comments
@@ -21,21 +21,20 @@
 /* ----- Theme Style ----- */
 // ----- Global ----- //
 
-// Mobile all posts & pages spacing top (not home) due to banner
-body:not(.home):not(.search) .site-content {
-	padding-top: 3em;
+
+// Remove padding-top for home banner
+.home {
+	.site-content { // #content
+		.content-area { // #primary
+			padding-top: 0; // padding-top remove for home
+		}
+	}
 }
-.single .entry-content {
-	margin-top: 0;
-}
+
 @include media-breakpoint-up($breakpoint__mobile-nav) {
 	// all posts & pages spacing bottom
 	.site-content {
 		padding-bottom: 4em;
-	}
-	// PC all posts & pages spacing top (not home) due to banner
-	body:not(.home):not(.search) .site-content {
-		padding-top: 4em;
 	}
 }
 // ----- End Global ----- //
