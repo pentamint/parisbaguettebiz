@@ -9286,7 +9286,7 @@ body.has-sidebar #primary {
     left: 0;
     width: 100%;
     height: 50%;
-    background-color: #0f182b;
+    background-color: #2643AD;
     z-index: -1; }
   .page-id-19 .line_notice .line_right {
     position: absolute;
@@ -9326,21 +9326,24 @@ body.has-sidebar #primary {
           font-size: 0.8125rem;
           font-weight: 700;
           color: #f6be07; }
-      .page-id-19 .line_notice .container .row .notice_preview_content #kboard-default-latest table {
-        margin-bottom: 0;
-        border-bottom: none; }
-        .page-id-19 .line_notice .container .row .notice_preview_content #kboard-default-latest table > thead {
+      .page-id-19 .line_notice .container .row .notice_preview_content {
+        height: 65px;
+        overflow: hidden; }
+        .page-id-19 .line_notice .container .row .notice_preview_content #kboard-default-latest table {
+          margin-bottom: 0;
+          border-bottom: none; }
+          .page-id-19 .line_notice .container .row .notice_preview_content #kboard-default-latest table > thead {
+            display: none; }
+          .page-id-19 .line_notice .container .row .notice_preview_content #kboard-default-latest table td {
+            padding: 22px 0 24px !important;
+            border-top: none; }
+          .page-id-19 .line_notice .container .row .notice_preview_content #kboard-default-latest table .kboard-latest-title {
+            font-size: 0.8125rem;
+            font-weight: 700; }
+        .page-id-19 .line_notice .container .row .notice_preview_content .kboard-default-cut-strings, .page-id-19 .line_notice .container .row .notice_preview_content .kboard-latest-date {
+          color: #fff; }
+        .page-id-19 .line_notice .container .row .notice_preview_content .kboard-latest-date {
           display: none; }
-        .page-id-19 .line_notice .container .row .notice_preview_content #kboard-default-latest table td {
-          padding: 22px 0 24px !important;
-          border-top: none; }
-        .page-id-19 .line_notice .container .row .notice_preview_content #kboard-default-latest table .kboard-latest-title {
-          font-size: 0.8125rem;
-          font-weight: 700; }
-      .page-id-19 .line_notice .container .row .notice_preview_content .kboard-default-cut-strings, .page-id-19 .line_notice .container .row .notice_preview_content .kboard-latest-date {
-        color: #fff; }
-      .page-id-19 .line_notice .container .row .notice_preview_content .kboard-latest-date {
-        display: none; }
       .page-id-19 .line_notice .container .row .view_more_btn {
         padding-left: 0;
         padding-right: 3px;

@@ -12,7 +12,7 @@
       left: 0;
       width: 100%;
       height: 50%;
-      background-color: #0f182b;
+      background-color: #2643AD;
       z-index: -1;
     }
     .line_right {
@@ -41,6 +41,8 @@
           }
         }
         .notice_preview_content {
+          height: 65px;
+          overflow: hidden;
           #kboard-default-latest {
             table {
               margin-bottom: 0; // remove margin bottom
