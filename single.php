@@ -7,6 +7,9 @@
  * @package PBBiz
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 get_header();
 ?>
 
@@ -21,21 +24,21 @@ get_header();
 
 			// Custom post nav array
 			the_post_navigation( array(
-				'prev_text'                  => __( '<span class="title">
-														<i class="fas fa-chevron-left"></i>이전 글 보기
-													</span>
-													<span class="post-title">
-														%title
-													</span>', 'pbbiz' ),
-				'next_text'                  => __( '<span class="title">
-														<i class="fas fa-chevron-right"></i>다음 글 보기
-													</span>
-													<span class="post-title">
-														%title
-													</span>', 'pbbiz' ),
-				'in_same_term'               => true,
-				'taxonomy'                   => __( 'category', 'pbbiz' ),
-				'screen_reader_text' => __( '계속 보기', 'pbbiz' ),
+				'prev_text'             => __( '<span class="title">
+													<i class="fas fa-chevron-left"></i>이전 글 보기
+												</span>
+												<span class="post-title">
+													%title
+												</span>', 'pbbiz' ),
+				'next_text'             => __( '<span class="title">
+													<i class="fas fa-chevron-right"></i>다음 글 보기
+												</span>
+												<span class="post-title">
+													%title
+												</span>', 'pbbiz' ),
+				'in_same_term'          => true,
+				'taxonomy'              => __( 'category', 'pbbiz' ),
+				'screen_reader_text'	=> __( '계속 보기', 'pbbiz' ),
 			) );
 			// Custom post nav array end
 

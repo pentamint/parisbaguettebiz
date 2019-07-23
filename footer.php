@@ -9,6 +9,8 @@
  * @package PBBiz
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
 ?>
 
 	</div><!-- #content -->
@@ -16,21 +18,20 @@
 	<div id="top-footer" class="footer-wrapper">
 		<div class="container">
 			<div class="row">
-				<div class="top-footer-nav col-md-9">
+				<!-- <div class="top-footer-nav col-md-9"> -->
 					<?php
 						wp_nav_menu( array(
-							'menu'           	=> '',
 							'theme_location'    => 'top-footer',
-							'depth'             => 2,
-							'container'         => '',
-							'container_class'   => 'dropdown dropdown-toggle',
-							'container_id'      => 'top-footer-navbar-collapse-1',
+							'container_class'   => 'collapse navbar-collapse col-md-9',
+							'container_id'      => 'top-footer-nav',
 							'menu_class'        => 'nav navbar-nav',
+							'menu_id'			=> 'top-footer-menu',
+							'depth'             => 2,
 							'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-							'walker'            => new wp_bootstrap_navwalker())
+							'walker'            => new wp_bootstrap_navwalker(),)
 						);
 					?>
-				</div>
+				<!-- </div> -->
 				<div class="top-footer-social-links col-md-3">
 					<?php
 						if(is_active_sidebar('top-footer-widget-1')){
@@ -92,23 +93,23 @@
 				</div><!-- .col-md-9 -->
 				<div class="col-md-3">
 					<!-- Default dropup button -->
+
 					<div class="btn-group dropup">
-						<button id="colophon-navbar-collapse-1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Brand Site
+						<button type="button" class="btn btn-tertiary btn-colophon-toggle" data-toggle="collapse" data-target="#colophon-brand-nav">
+							Brand Sites
 						</button>
-						<div class="dropdown-menu" aria-labelledby="colophon-navbar-collapse-1">
+						<div class="collapse dropdown-menu" id="colophon-brand-nav">
 							<!-- Dropdown menu links -->
 							<?php
 								wp_nav_menu( array(
-									'menu'           	=> '',
 									'theme_location'    => 'colophon',
-									'depth'             => 2,
-									'container'         => '',
-									'container_class'   => 'dropdown dropdown-toggle',
-									'container_id'      => 'colophon-navbar-collapse-1',
+									'container_class'   => 'collapse navbar-collapse',
+									'container_id'      => 'colophon-brand-nav',
 									'menu_class'        => 'nav navbar-nav',
+									'menu_id'			=> 'colophon-brand-menu',
+									'depth'             => 0,
 									'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-									'walker'            => new wp_bootstrap_navwalker())
+									'walker'            => new wp_bootstrap_navwalker(),)
 								);
 							?>
 						</div><!-- .dropdown-menu -->

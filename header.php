@@ -9,7 +9,10 @@
  * @package PBBiz
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
 ?>
+
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -17,13 +20,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<script src="https://kit.fontawesome.com/ec23c08cf8.js"></script>
-	
-
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
+
 <div id="page" class="site">
+	
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'PBBiz' ); ?></a>
 
 	<header id="masthead" class="site-header">
@@ -38,21 +41,18 @@
 				<?php endif; ?>
 				<nav class="navbar navbar-secondary" role="navigation">
 					<div class="nav-wrapper">
-						<div class="collapse navbar-collapse menu-secondary" id="top-navbar-collapse-1">
-							<?php
-								wp_nav_menu( array(
-									'menu'           	=> '',
-									'theme_location'    => 'secondary',
-									'depth'             => 2,
-									'container'         => '',
-									'container_class'   => 'collapse navbar-collapse',
-									'container_id'      => 'top-navbar-collapse-1',
-									'menu_class'        => 'nav navbar-nav',
-									'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-									'walker'            => new wp_bootstrap_navwalker())
-								);
-							?>
-						</div><!-- .navbar-colapse -->
+						<?php
+							wp_nav_menu( array(
+								'theme_location'    => 'secondary',
+								'container_class'   => 'collapse navbar-collapse',
+								'container_id'      => 'top-navbar-nav',
+								'menu_class'        => 'nav navbar-nav',
+								'menu_id'         	=> 'top-menu',
+								'depth'             => 2,
+								'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+								'walker'            => new wp_bootstrap_navwalker())
+							);
+						?>
 					</div><!-- .nav-wrapper -->
 				</nav><!-- .navbar -->
 			</div><!-- .container -->
@@ -98,18 +98,16 @@
 						<span class="hamburger-inner"></span>
 						</span>
 						</button>
-						<div class="collapse navbar-collapse menu-primary" id="navbar-collapse-1">
 							<?php
 							// -- Add search form -- //
 							get_search_form();
 							wp_nav_menu( array(
-								'menu'           	=> '',
 								'theme_location'    => 'primary',
-								'depth'             => 2,
-								'container'         => '',
 								'container_class'   => 'collapse navbar-collapse',
 								'container_id'      => 'navbar-collapse-1',
 								'menu_class'        => 'nav navbar-nav',
+								'menu_id'			=> 'main-menu',
+								'depth'             => 2,
 								'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
 								'walker'            => new wp_bootstrap_navwalker())
 							);
@@ -119,7 +117,7 @@
 								<i class="fas fa-search"></i>
 							</button>
 							<div class="menu-overlay"></div>
-						</div><!-- navbar-colapse -->
+						<!-- </div>navbar-colapse -->
 					</div><!-- .nav-wrapper -->
 				</nav><!-- .navbar -->
 			</div><!-- .container -->
