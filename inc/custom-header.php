@@ -8,33 +8,33 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package Paris_Baguette_Biz
+ * @package PBBiz
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses paris_baguette_biz_header_style()
+ * @uses pbbiz_header_style()
  */
-function paris_baguette_biz_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'paris_baguette_biz_custom_header_args', array(
+function pbbiz_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'pbbiz_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'paris_baguette_biz_header_style',
+		'wp-head-callback'       => 'pbbiz_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'paris_baguette_biz_custom_header_setup' );
+add_action( 'after_setup_theme', 'pbbiz_custom_header_setup' );
 
-if ( ! function_exists( 'paris_baguette_biz_header_style' ) ) :
+if ( ! function_exists( 'pbbiz_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see paris_baguette_biz_custom_header_setup().
+	 * @see pbbiz_custom_header_setup().
 	 */
-	function paris_baguette_biz_header_style() {
+	function pbbiz_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*

@@ -10,6 +10,7 @@ defined( 'ABSPATH' ) || exit;
 
 
 add_action( 'after_setup_theme', 'pbbiz_setup' );
+
 if ( ! function_exists( 'pbbiz_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.

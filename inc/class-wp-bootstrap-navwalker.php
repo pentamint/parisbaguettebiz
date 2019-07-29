@@ -5,6 +5,9 @@
  * @package WP-Bootstrap-Navwalker
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 /*
  * Class Name: WP_Bootstrap_Navwalker
  * Plugin Name: WP Bootstrap Navwalker
@@ -20,13 +23,13 @@
 */
 
 /* Check if Class Exists. */
-if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
+if ( ! class_exists( 'Understrap_WP_Bootstrap_Navwalker' ) ) {
 	/**
 	 * WP_Bootstrap_Navwalker class.
 	 *
 	 * @extends Walker_Nav_Menu
 	 */
-	class WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
+	class Understrap_WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
 
 		/**
 		 * Starts the list before the elements are added.
@@ -116,7 +119,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 			 * NOTE: linkmod and icon class arrays are passed by reference and
 			 * are maybe modified before being used later in this function.
 			 */
-			$classes = self::separate_linkmods_and_icons_from_classes( $classes, $linkmod_classes, $icon_classes, $depth );
+			$classes = self::seporate_linkmods_and_icons_from_classes( $classes, $linkmod_classes, $icon_classes, $depth );
 
 			// Join any icon classes plucked from $classes into a string.
 			$icon_class_string = join( ' ', $icon_classes );
@@ -179,9 +182,14 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 			}
 
 			$atts['target'] = ! empty( $item->target ) ? $item->target : '';
-			$atts['rel']    = ! empty( $item->xfn ) ? $item->xfn : '';
+			if ( '_blank' === $item->target && empty( $item->xfn ) ) { // Thanks to LukaszJaro, see https://github.com/understrap/understrap/issues/973
+				$atts['rel'] = 'noopener noreferrer';
+			} else {
+				$atts['rel'] = $item->xfn;
+			}
+
 			// If item has_children add atts to <a>.
-			if ( isset( $args->has_children ) && $args->has_children && 0 === $depth && $args->depth > 1 ) {
+			if ( isset( $args->has_children ) && $args->has_children && 0 === $depth && $args->depth !== 1 ) {
 				$atts['href']          = '#';
 				$atts['data-toggle']   = 'dropdown';
 				$atts['aria-haspopup'] = 'true';
@@ -363,7 +371,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 				if ( $menu_class ) {
 					$fallback_output .= ' class="' . esc_attr( $menu_class ) . '"'; }
 				$fallback_output .= '>';
-				$fallback_output .= '<li><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" title="' . esc_attr__( 'Add a menu', 'wp-bootstrap-navwalker' ) . '">' . esc_html__( 'Add a menu', 'wp-bootstrap-navwalker' ) . '</a></li>';
+				$fallback_output .= '<li><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" title="' . esc_attr__( 'Add a menu', 'understrap' ) . '">' . esc_html__( 'Add a menu', 'understrap' ) . '</a></li>';
 				$fallback_output .= '</ul>';
 				if ( $container ) {
 					$fallback_output .= '</' . esc_attr( $container ) . '>';
@@ -396,7 +404,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 		 *
 		 * @return array  $classes         a maybe modified array of classnames.
 		 */
-		private function separate_linkmods_and_icons_from_classes( $classes, &$linkmod_classes, &$icon_classes, $depth ) {
+		private function seporate_linkmods_and_icons_from_classes( $classes, &$linkmod_classes, &$icon_classes, $depth ) {
 			// Loop through $classes array to find linkmod or icon classes.
 			foreach ( $classes as $key => $class ) {
 				// If any special classes are found, store the class in it's
