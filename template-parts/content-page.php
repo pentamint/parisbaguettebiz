@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Paris_Baguette_Biz
+ * @package PBBiz
  */
 
 ?>
@@ -14,7 +14,7 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php paris_baguette_biz_post_thumbnail(); ?>
+	<?php pbbiz_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php

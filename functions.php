@@ -12,6 +12,7 @@ defined( 'ABSPATH' ) || exit;
 
 $pbbiz_includes = array(
 	'/setup.php',                           // Theme setup and custom theme supports.
+	'/menus.php',                           // Register custom menus.
 	'/widgets.php',                         // Register widget area.
 	'/enqueue.php',                         // Enqueue scripts and styles.
 	'/template-tags.php',                   // Custom template tags for this theme.
@@ -23,8 +24,8 @@ $pbbiz_includes = array(
 	'/jetpack.php',                         // Load Jetpack compatibility file.
 	'/class-wp-bootstrap-navwalker.php',    // Load custom WordPress nav walker.
 	'/woocommerce.php',                     // Load WooCommerce functions.
-	'/editor.php',                          // Load Editor functions.
-	'/deprecated.php',                      // Load deprecated functions.
+	// '/editor.php',                          // Load Editor functions.
+	// '/deprecated.php',                      // Load deprecated functions.
 );
 
 foreach ( $pbbiz_includes as $file ) {
@@ -34,39 +35,6 @@ foreach ( $pbbiz_includes as $file ) {
 	}
 	require_once $filepath;
 }
-
-
-
-
-/**
- * Load WooCommerce compatibility file.
- */
-if ( class_exists( 'WooCommerce' ) ) {
-	require get_template_directory() . '/inc/woocommerce.php';
-}
-
-/**
- * Load Bootstrap compatibility file.
- */
-require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
-
-/**
- * Customize Menus
- */
-// Register Secondary Nav Menu
-register_nav_menus( array(
-	'secondary' => esc_html__( 'Secondary Menu', 'PBBiz' ),
-) );
-
-// Register Footer Nav Menu
-register_nav_menus( array(
-	'top-footer' => esc_html__( 'Top Footer Menu', 'PBBiz' ),
-) );
-
-// Register Colophon Nav Menu
-register_nav_menus( array(
-	'colophon' => esc_html__( 'Colophon Menu', 'PBBiz' ),
-) );
 
 /**
  * Customize Post Types

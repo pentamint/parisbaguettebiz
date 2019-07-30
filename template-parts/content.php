@@ -4,14 +4,14 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Paris_Baguette_Biz
+ * @package PBBiz
  */
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php paris_baguette_biz_post_thumbnail(); ?>
+	<?php pbbiz_post_thumbnail(); ?>
 
 	<header class="entry-header">
 		<?php
@@ -25,8 +25,7 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				paris_baguette_biz_posted_on();
-				paris_baguette_biz_posted_by();
+				pbbiz_posted_on();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
@@ -55,6 +54,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php paris_baguette_biz_entry_footer(); ?>
+		<?php pbbiz_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
