@@ -68,7 +68,7 @@ function pm_change_post_object() {
     $labels->menu_name = 'B2B 블로그';
     $labels->name_admin_bar = 'B2B 블로그';
 }
- 
+
 /**
  * Custom AJAX Filters - Load More & Paginations
  */
