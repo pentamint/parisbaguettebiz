@@ -29,7 +29,7 @@ add_action( 'after_setup_theme', 'pbbiz_woocommerce_setup' );
  * @return void
  */
 function pbbiz_woocommerce_scripts() {
-	wp_enqueue_style( 'paris-baguette-biz-woocommerce-style', get_template_directory_uri() . '/woocommerce.css' );
+	wp_enqueue_style( 'pbbiz-woocommerce-style', get_template_directory_uri() . '/woocommerce.css' );
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {
@@ -43,7 +43,7 @@ function pbbiz_woocommerce_scripts() {
 			font-style: normal;
 		}';
 
-	wp_add_inline_style( 'paris-baguette-biz-woocommerce-style', $inline_font );
+	wp_add_inline_style( 'pbbiz-woocommerce-style', $inline_font );
 }
 add_action( 'wp_enqueue_scripts', 'pbbiz_woocommerce_scripts' );
 
@@ -224,11 +224,11 @@ if ( ! function_exists( 'pbbiz_woocommerce_cart_link' ) ) {
 	 */
 	function pbbiz_woocommerce_cart_link() {
 		?>
-		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'paris-baguette-biz' ); ?>">
+		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'pbbiz' ); ?>">
 			<?php
 			$item_count_text = sprintf(
 				/* translators: number of items in the mini cart. */
-				_n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'paris-baguette-biz' ),
+				_n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'pbbiz' ),
 				WC()->cart->get_cart_contents_count()
 			);
 			?>

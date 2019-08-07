@@ -5,6 +5,9 @@
  * @package WP-Bootstrap-Navwalker
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 /*
  * Class Name: WP_Bootstrap_Navwalker
  * Plugin Name: WP Bootstrap Navwalker
