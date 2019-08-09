@@ -9,7 +9,6 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 
-
 add_action('after_setup_theme', 'pbbiz_setup');
 
 if (!function_exists('pbbiz_setup')) :

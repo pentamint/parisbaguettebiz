@@ -7,6 +7,9 @@
  * @package PBBiz
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 if ( ! function_exists( 'pbbiz_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.

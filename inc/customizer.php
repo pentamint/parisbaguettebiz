@@ -5,6 +5,9 @@
  * @package PBBiz
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
  *

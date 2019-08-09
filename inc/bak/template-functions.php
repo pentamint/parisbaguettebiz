@@ -5,6 +5,9 @@
  * @package PM_WP_Theme
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Adds custom classes to the array of body classes.
  *
